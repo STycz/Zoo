@@ -73,8 +73,6 @@
             this.button21 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet = new Zoo.ZooDataSet();
             this.txtOpiekunImie = new System.Windows.Forms.TextBox();
             this.txtOpiekunNazwisko = new System.Windows.Forms.TextBox();
             this.txtOpiekunWiek = new System.Windows.Forms.TextBox();
@@ -84,9 +82,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.opiekunTA = new Zoo.ZooDataSetTableAdapters.OpiekunTableAdapter();
             this.comboBoxPlec = new System.Windows.Forms.ComboBox();
             this.btnOpiekunZapisz = new System.Windows.Forms.Button();
+            this.mainDataSet = new Zoo.ZooDataSet();
+            this.opiekunTA = new Zoo.ZooDataSetTableAdapters.OpiekunTableAdapter();
+            this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabJedzenie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -105,8 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabOpieka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -562,16 +562,6 @@
             this.dataGridView7.Size = new System.Drawing.Size(457, 554);
             this.dataGridView7.TabIndex = 9;
             // 
-            // opiekunBS
-            // 
-            this.opiekunBS.DataSource = this.mainDataSet;
-            this.opiekunBS.Position = 0;
-            // 
-            // mainDataSet
-            // 
-            this.mainDataSet.DataSetName = "ZooDataSet";
-            this.mainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtOpiekunImie
             // 
             this.txtOpiekunImie.Location = new System.Drawing.Point(92, 66);
@@ -645,10 +635,6 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Numer telefonu";
             // 
-            // opiekunTA
-            // 
-            this.opiekunTA.ClearBeforeFill = true;
-            // 
             // comboBoxPlec
             // 
             this.comboBoxPlec.FormattingEnabled = true;
@@ -669,6 +655,15 @@
             this.btnOpiekunZapisz.Text = "Zapisz";
             this.btnOpiekunZapisz.UseVisualStyleBackColor = true;
             this.btnOpiekunZapisz.Click += new System.EventHandler(this.btnOpiekunZapisz_Click);
+            // 
+            // mainDataSet
+            // 
+            this.mainDataSet.DataSetName = "ZooDataSet";
+            this.mainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // opiekunTA
+            // 
+            this.opiekunTA.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -703,8 +698,8 @@
             this.tabOpieka.ResumeLayout(false);
             this.tabOpieka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,8 +750,6 @@
 		private System.Windows.Forms.Button button21;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.BindingSource opiekunBS;
-        private ZooDataSet mainDataSet;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -766,9 +759,11 @@
         private System.Windows.Forms.TextBox txtOpiekunWiek;
         private System.Windows.Forms.TextBox txtOpiekunNazwisko;
         private System.Windows.Forms.TextBox txtOpiekunImie;
-        private ZooDataSetTableAdapters.OpiekunTableAdapter opiekunTA;
         private System.Windows.Forms.ComboBox comboBoxPlec;
         private System.Windows.Forms.Button btnOpiekunZapisz;
+        private ZooDataSet mainDataSet;
+        private ZooDataSetTableAdapters.OpiekunTableAdapter opiekunTA;
+        private System.Windows.Forms.BindingSource opiekunBS;
     }
 }
 

@@ -91,10 +91,10 @@ namespace Zoo
                 _selectedRow = row;
                 dbAction = DBActions.Edit;
 
-                txtOpiekunImie.Text = _selectedRow.Imię;
+                txtOpiekunImie.Text = _selectedRow.Imie;
                 txtOpiekunNazwisko.Text = _selectedRow.Nazwisko;
                 txtOpiekunWiek.Text = _selectedRow.Wiek.ToString();
-                comboBoxPlec.Text = _selectedRow.Płeć;
+                comboBoxPlec.Text = _selectedRow.Plec;
                 txtOpiekunNrTel.Text = _selectedRow.Nr_telefonu;
             }
             catch (Exception ex)
@@ -117,10 +117,10 @@ namespace Zoo
                 {
                     case DBActions.Edit:
                         {
-                            _selectedRow.Imię = txtOpiekunImie.Text;
+                            _selectedRow.Imie = txtOpiekunImie.Text;
                             _selectedRow.Nazwisko = txtOpiekunNazwisko.Text;
                             _selectedRow.Wiek = Int32.Parse(txtOpiekunWiek.Text);
-                            _selectedRow.Płeć = comboBoxPlec.Text;
+                            _selectedRow.Plec = comboBoxPlec.Text;
                             _selectedRow.Nr_telefonu = txtOpiekunNrTel.Text;
 
                             opiekunTA.Update(_selectedRow);
@@ -130,10 +130,10 @@ namespace Zoo
                         }
                     case DBActions.Add:
                         {
-                            _selectedRow.Imię = txtOpiekunImie.Text;
+                            _selectedRow.Imie = txtOpiekunImie.Text;
                             _selectedRow.Nazwisko = txtOpiekunNazwisko.Text;
                             _selectedRow.Wiek = Int32.Parse(txtOpiekunWiek.Text);
-                            _selectedRow.Płeć = comboBoxPlec.Text;
+                            _selectedRow.Plec = comboBoxPlec.Text;
                             _selectedRow.Nr_telefonu = txtOpiekunNrTel.Text;
 
                             mainDataSet.Opiekun.AddOpiekunRow(_selectedRow);

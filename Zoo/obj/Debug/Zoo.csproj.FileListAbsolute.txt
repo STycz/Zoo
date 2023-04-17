@@ -1,7 +1,6 @@
 C:\Users\tomas\source\repos\Zoo\Zoo\bin\Debug\Zoo.exe.config
 C:\Users\tomas\source\repos\Zoo\Zoo\bin\Debug\Zoo.exe
 C:\Users\tomas\source\repos\Zoo\Zoo\bin\Debug\Zoo.pdb
-C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.csproj.AssemblyReference.cache
 C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.Form1.resources
 C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.Properties.Resources.resources
 C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.csproj.GenerateResource.cache

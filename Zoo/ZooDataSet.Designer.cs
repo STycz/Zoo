@@ -36,7 +36,7 @@ namespace Zoo {
         
         private SektorDataTable tableSektor;
         
-        private ZwierzeDataTable tableZwierze;
+        private ZwierzecieDataTable tableZwierzecie;
         
         private global::System.Data.DataRelation relationFK_Jedzenie_Magazyn;
         
@@ -46,11 +46,11 @@ namespace Zoo {
         
         private global::System.Data.DataRelation relationFK_Opieka_Opiekun;
         
-        private global::System.Data.DataRelation relationFK_Opieka_Zwierze;
+        private global::System.Data.DataRelation relationFK_Opieka_Zwierzecie;
         
         private global::System.Data.DataRelation relationFK_Sektor_Magazyn;
         
-        private global::System.Data.DataRelation relationFK_Zwierze_Klatka_zwierzecia;
+        private global::System.Data.DataRelation relationFK_Zwierzecie_Klatka_zwierzecia;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -98,8 +98,8 @@ namespace Zoo {
                 if ((ds.Tables["Sektor"] != null)) {
                     base.Tables.Add(new SektorDataTable(ds.Tables["Sektor"]));
                 }
-                if ((ds.Tables["Zwierze"] != null)) {
-                    base.Tables.Add(new ZwierzeDataTable(ds.Tables["Zwierze"]));
+                if ((ds.Tables["Zwierzecie"] != null)) {
+                    base.Tables.Add(new ZwierzecieDataTable(ds.Tables["Zwierzecie"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -183,9 +183,9 @@ namespace Zoo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ZwierzeDataTable Zwierze {
+        public ZwierzecieDataTable Zwierzecie {
             get {
-                return this.tableZwierze;
+                return this.tableZwierzecie;
             }
         }
         
@@ -274,8 +274,8 @@ namespace Zoo {
                 if ((ds.Tables["Sektor"] != null)) {
                     base.Tables.Add(new SektorDataTable(ds.Tables["Sektor"]));
                 }
-                if ((ds.Tables["Zwierze"] != null)) {
-                    base.Tables.Add(new ZwierzeDataTable(ds.Tables["Zwierze"]));
+                if ((ds.Tables["Zwierzecie"] != null)) {
+                    base.Tables.Add(new ZwierzecieDataTable(ds.Tables["Zwierzecie"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -346,19 +346,19 @@ namespace Zoo {
                     this.tableSektor.InitVars();
                 }
             }
-            this.tableZwierze = ((ZwierzeDataTable)(base.Tables["Zwierze"]));
+            this.tableZwierzecie = ((ZwierzecieDataTable)(base.Tables["Zwierzecie"]));
             if ((initTable == true)) {
-                if ((this.tableZwierze != null)) {
-                    this.tableZwierze.InitVars();
+                if ((this.tableZwierzecie != null)) {
+                    this.tableZwierzecie.InitVars();
                 }
             }
             this.relationFK_Jedzenie_Magazyn = this.Relations["FK_Jedzenie_Magazyn"];
             this.relationFK_Klatka_zwierzecia_Opiekun = this.Relations["FK_Klatka_zwierzecia_Opiekun"];
             this.relationFK_Klatka_zwierzecia_Sektor = this.Relations["FK_Klatka_zwierzecia_Sektor"];
             this.relationFK_Opieka_Opiekun = this.Relations["FK_Opieka_Opiekun"];
-            this.relationFK_Opieka_Zwierze = this.Relations["FK_Opieka_Zwierze"];
+            this.relationFK_Opieka_Zwierzecie = this.Relations["FK_Opieka_Zwierzecie"];
             this.relationFK_Sektor_Magazyn = this.Relations["FK_Sektor_Magazyn"];
-            this.relationFK_Zwierze_Klatka_zwierzecia = this.Relations["FK_Zwierze_Klatka_zwierzecia"];
+            this.relationFK_Zwierzecie_Klatka_zwierzecia = this.Relations["FK_Zwierzecie_Klatka_zwierzecia"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -381,8 +381,8 @@ namespace Zoo {
             base.Tables.Add(this.tableOpiekun);
             this.tableSektor = new SektorDataTable();
             base.Tables.Add(this.tableSektor);
-            this.tableZwierze = new ZwierzeDataTable();
-            base.Tables.Add(this.tableZwierze);
+            this.tableZwierzecie = new ZwierzecieDataTable();
+            base.Tables.Add(this.tableZwierzecie);
             this.relationFK_Jedzenie_Magazyn = new global::System.Data.DataRelation("FK_Jedzenie_Magazyn", new global::System.Data.DataColumn[] {
                         this.tableMagazyn.ID_MagazynColumn}, new global::System.Data.DataColumn[] {
                         this.tableJedzenie.ID_MagazynColumn}, false);
@@ -399,18 +399,18 @@ namespace Zoo {
                         this.tableOpiekun.ID_OpiekunColumn}, new global::System.Data.DataColumn[] {
                         this.tableOpieka.ID_OpiekunColumn}, false);
             this.Relations.Add(this.relationFK_Opieka_Opiekun);
-            this.relationFK_Opieka_Zwierze = new global::System.Data.DataRelation("FK_Opieka_Zwierze", new global::System.Data.DataColumn[] {
-                        this.tableZwierze.ID_ZwierzeColumn}, new global::System.Data.DataColumn[] {
+            this.relationFK_Opieka_Zwierzecie = new global::System.Data.DataRelation("FK_Opieka_Zwierzecie", new global::System.Data.DataColumn[] {
+                        this.tableZwierzecie.ID_ZwierzeColumn}, new global::System.Data.DataColumn[] {
                         this.tableOpieka.ID_ZwierzeColumn}, false);
-            this.Relations.Add(this.relationFK_Opieka_Zwierze);
+            this.Relations.Add(this.relationFK_Opieka_Zwierzecie);
             this.relationFK_Sektor_Magazyn = new global::System.Data.DataRelation("FK_Sektor_Magazyn", new global::System.Data.DataColumn[] {
                         this.tableMagazyn.ID_MagazynColumn}, new global::System.Data.DataColumn[] {
                         this.tableSektor.ID_MagazynColumn}, false);
             this.Relations.Add(this.relationFK_Sektor_Magazyn);
-            this.relationFK_Zwierze_Klatka_zwierzecia = new global::System.Data.DataRelation("FK_Zwierze_Klatka_zwierzecia", new global::System.Data.DataColumn[] {
+            this.relationFK_Zwierzecie_Klatka_zwierzecia = new global::System.Data.DataRelation("FK_Zwierzecie_Klatka_zwierzecia", new global::System.Data.DataColumn[] {
                         this.tableKlatka_zwierzecia.ID_KlatkaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableZwierze.ID_KlatkaColumn}, false);
-            this.Relations.Add(this.relationFK_Zwierze_Klatka_zwierzecia);
+                        this.tableZwierzecie.ID_KlatkaColumn}, false);
+            this.Relations.Add(this.relationFK_Zwierzecie_Klatka_zwierzecia);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -451,7 +451,7 @@ namespace Zoo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeZwierze() {
+        private bool ShouldSerializeZwierzecie() {
             return false;
         }
         
@@ -529,7 +529,7 @@ namespace Zoo {
         public delegate void SektorRowChangeEventHandler(object sender, SektorRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ZwierzeRowChangeEventHandler(object sender, ZwierzeRowChangeEvent e);
+        public delegate void ZwierzecieRowChangeEventHandler(object sender, ZwierzecieRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -658,10 +658,10 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JedzenieRow AddJedzenieRow(int ID_Jedzenie, string Nazwa, string Rodzaj, string Opis, MagazynRow parentMagazynRowByFK_Jedzenie_Magazyn) {
+            public JedzenieRow AddJedzenieRow(string Nazwa, string Rodzaj, string Opis, MagazynRow parentMagazynRowByFK_Jedzenie_Magazyn) {
                 JedzenieRow rowJedzenieRow = ((JedzenieRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Jedzenie,
+                        null,
                         Nazwa,
                         Rodzaj,
                         Opis,
@@ -720,7 +720,11 @@ namespace Zoo {
                 base.Columns.Add(this.columnID_Magazyn);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Jedzenie}, true));
+                this.columnID_Jedzenie.AutoIncrement = true;
+                this.columnID_Jedzenie.AutoIncrementSeed = -1;
+                this.columnID_Jedzenie.AutoIncrementStep = -1;
                 this.columnID_Jedzenie.AllowDBNull = false;
+                this.columnID_Jedzenie.ReadOnly = true;
                 this.columnID_Jedzenie.Unique = true;
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 30;
@@ -869,7 +873,7 @@ namespace Zoo {
             
             private global::System.Data.DataColumn columnSzerokosc;
             
-            private global::System.Data.DataColumn columnGłebokosc;
+            private global::System.Data.DataColumn columnGlebokosc;
             
             private global::System.Data.DataColumn columnID_Sektor;
             
@@ -942,9 +946,9 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn GłebokoscColumn {
+            public global::System.Data.DataColumn GlebokoscColumn {
                 get {
-                    return this.columnGłebokosc;
+                    return this.columnGlebokosc;
                 }
             }
             
@@ -1001,14 +1005,14 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Klatka_zwierzeciaRow AddKlatka_zwierzeciaRow(int ID_Klatka, string Nazwa, int Wysokosc, int Szerokosc, int Głebokosc, SektorRow parentSektorRowByFK_Klatka_zwierzecia_Sektor, OpiekunRow parentOpiekunRowByFK_Klatka_zwierzecia_Opiekun) {
+            public Klatka_zwierzeciaRow AddKlatka_zwierzeciaRow(string Nazwa, int Wysokosc, int Szerokosc, int Glebokosc, SektorRow parentSektorRowByFK_Klatka_zwierzecia_Sektor, OpiekunRow parentOpiekunRowByFK_Klatka_zwierzecia_Opiekun) {
                 Klatka_zwierzeciaRow rowKlatka_zwierzeciaRow = ((Klatka_zwierzeciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Klatka,
+                        null,
                         Nazwa,
                         Wysokosc,
                         Szerokosc,
-                        Głebokosc,
+                        Glebokosc,
                         null,
                         null};
                 if ((parentSektorRowByFK_Klatka_zwierzecia_Sektor != null)) {
@@ -1050,7 +1054,7 @@ namespace Zoo {
                 this.columnNazwa = base.Columns["Nazwa"];
                 this.columnWysokosc = base.Columns["Wysokosc"];
                 this.columnSzerokosc = base.Columns["Szerokosc"];
-                this.columnGłebokosc = base.Columns["Głebokosc"];
+                this.columnGlebokosc = base.Columns["Glebokosc"];
                 this.columnID_Sektor = base.Columns["ID_Sektor"];
                 this.columnID_Opiekun = base.Columns["ID_Opiekun"];
             }
@@ -1066,17 +1070,27 @@ namespace Zoo {
                 base.Columns.Add(this.columnWysokosc);
                 this.columnSzerokosc = new global::System.Data.DataColumn("Szerokosc", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSzerokosc);
-                this.columnGłebokosc = new global::System.Data.DataColumn("Głebokosc", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGłebokosc);
+                this.columnGlebokosc = new global::System.Data.DataColumn("Glebokosc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGlebokosc);
                 this.columnID_Sektor = new global::System.Data.DataColumn("ID_Sektor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Sektor);
                 this.columnID_Opiekun = new global::System.Data.DataColumn("ID_Opiekun", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Opiekun);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Klatka}, true));
+                this.columnID_Klatka.AutoIncrement = true;
+                this.columnID_Klatka.AutoIncrementSeed = -1;
+                this.columnID_Klatka.AutoIncrementStep = -1;
                 this.columnID_Klatka.AllowDBNull = false;
+                this.columnID_Klatka.ReadOnly = true;
                 this.columnID_Klatka.Unique = true;
+                this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 50;
+                this.columnWysokosc.AllowDBNull = false;
+                this.columnSzerokosc.AllowDBNull = false;
+                this.columnGlebokosc.AllowDBNull = false;
+                this.columnID_Sektor.AllowDBNull = false;
+                this.columnID_Opiekun.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1214,7 +1228,7 @@ namespace Zoo {
             
             private global::System.Data.DataColumn columnNazwa;
             
-            private global::System.Data.DataColumn columnIlość;
+            private global::System.Data.DataColumn columnIlosc;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1267,9 +1281,9 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IlośćColumn {
+            public global::System.Data.DataColumn IloscColumn {
                 get {
-                    return this.columnIlość;
+                    return this.columnIlosc;
                 }
             }
             
@@ -1310,12 +1324,12 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MagazynRow AddMagazynRow(int ID_Magazyn, string Nazwa, int Ilość) {
+            public MagazynRow AddMagazynRow(string Nazwa, int Ilosc) {
                 MagazynRow rowMagazynRow = ((MagazynRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Magazyn,
+                        null,
                         Nazwa,
-                        Ilość};
+                        Ilosc};
                 rowMagazynRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMagazynRow);
                 return rowMagazynRow;
@@ -1347,7 +1361,7 @@ namespace Zoo {
             internal void InitVars() {
                 this.columnID_Magazyn = base.Columns["ID_Magazyn"];
                 this.columnNazwa = base.Columns["Nazwa"];
-                this.columnIlość = base.Columns["Ilość"];
+                this.columnIlosc = base.Columns["Ilosc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1357,15 +1371,19 @@ namespace Zoo {
                 base.Columns.Add(this.columnID_Magazyn);
                 this.columnNazwa = new global::System.Data.DataColumn("Nazwa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwa);
-                this.columnIlość = new global::System.Data.DataColumn("Ilość", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIlość);
+                this.columnIlosc = new global::System.Data.DataColumn("Ilosc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIlosc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Magazyn}, true));
+                this.columnID_Magazyn.AutoIncrement = true;
+                this.columnID_Magazyn.AutoIncrementSeed = -1;
+                this.columnID_Magazyn.AutoIncrementStep = -1;
                 this.columnID_Magazyn.AllowDBNull = false;
+                this.columnID_Magazyn.ReadOnly = true;
                 this.columnID_Magazyn.Unique = true;
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 20;
-                this.columnIlość.AllowDBNull = false;
+                this.columnIlosc.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1501,7 +1519,9 @@ namespace Zoo {
             
             private global::System.Data.DataColumn columnID_Opieka;
             
-            private global::System.Data.DataColumn columnCzas_opieki;
+            private global::System.Data.DataColumn columnStart_opieki;
+            
+            private global::System.Data.DataColumn columnKoniec_opieki;
             
             private global::System.Data.DataColumn columnData;
             
@@ -1552,9 +1572,17 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Czas_opiekiColumn {
+            public global::System.Data.DataColumn Start_opiekiColumn {
                 get {
-                    return this.columnCzas_opieki;
+                    return this.columnStart_opieki;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Koniec_opiekiColumn {
+                get {
+                    return this.columnKoniec_opieki;
                 }
             }
             
@@ -1619,19 +1647,20 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OpiekaRow AddOpiekaRow(int ID_Opieka, int Czas_opieki, System.DateTime Data, ZwierzeRow parentZwierzeRowByFK_Opieka_Zwierze, OpiekunRow parentOpiekunRowByFK_Opieka_Opiekun) {
+            public OpiekaRow AddOpiekaRow(string Start_opieki, string Koniec_opieki, string Data, ZwierzecieRow parentZwierzecieRowByFK_Opieka_Zwierzecie, OpiekunRow parentOpiekunRowByFK_Opieka_Opiekun) {
                 OpiekaRow rowOpiekaRow = ((OpiekaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Opieka,
-                        Czas_opieki,
+                        null,
+                        Start_opieki,
+                        Koniec_opieki,
                         Data,
                         null,
                         null};
-                if ((parentZwierzeRowByFK_Opieka_Zwierze != null)) {
-                    columnValuesArray[3] = parentZwierzeRowByFK_Opieka_Zwierze[0];
+                if ((parentZwierzecieRowByFK_Opieka_Zwierzecie != null)) {
+                    columnValuesArray[4] = parentZwierzecieRowByFK_Opieka_Zwierzecie[0];
                 }
                 if ((parentOpiekunRowByFK_Opieka_Opiekun != null)) {
-                    columnValuesArray[4] = parentOpiekunRowByFK_Opieka_Opiekun[0];
+                    columnValuesArray[5] = parentOpiekunRowByFK_Opieka_Opiekun[0];
                 }
                 rowOpiekaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOpiekaRow);
@@ -1663,7 +1692,8 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnID_Opieka = base.Columns["ID_Opieka"];
-                this.columnCzas_opieki = base.Columns["Czas_opieki"];
+                this.columnStart_opieki = base.Columns["Start_opieki"];
+                this.columnKoniec_opieki = base.Columns["Koniec_opieki"];
                 this.columnData = base.Columns["Data"];
                 this.columnID_Zwierze = base.Columns["ID_Zwierze"];
                 this.columnID_Opiekun = base.Columns["ID_Opiekun"];
@@ -1674,9 +1704,11 @@ namespace Zoo {
             private void InitClass() {
                 this.columnID_Opieka = new global::System.Data.DataColumn("ID_Opieka", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Opieka);
-                this.columnCzas_opieki = new global::System.Data.DataColumn("Czas_opieki", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCzas_opieki);
-                this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnStart_opieki = new global::System.Data.DataColumn("Start_opieki", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStart_opieki);
+                this.columnKoniec_opieki = new global::System.Data.DataColumn("Koniec_opieki", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKoniec_opieki);
+                this.columnData = new global::System.Data.DataColumn("Data", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnData);
                 this.columnID_Zwierze = new global::System.Data.DataColumn("ID_Zwierze", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Zwierze);
@@ -1684,8 +1716,20 @@ namespace Zoo {
                 base.Columns.Add(this.columnID_Opiekun);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Opieka}, true));
+                this.columnID_Opieka.AutoIncrement = true;
+                this.columnID_Opieka.AutoIncrementSeed = -1;
+                this.columnID_Opieka.AutoIncrementStep = -1;
                 this.columnID_Opieka.AllowDBNull = false;
+                this.columnID_Opieka.ReadOnly = true;
                 this.columnID_Opieka.Unique = true;
+                this.columnStart_opieki.AllowDBNull = false;
+                this.columnStart_opieki.MaxLength = 30;
+                this.columnKoniec_opieki.AllowDBNull = false;
+                this.columnKoniec_opieki.MaxLength = 30;
+                this.columnData.AllowDBNull = false;
+                this.columnData.MaxLength = 30;
+                this.columnID_Zwierze.AllowDBNull = false;
+                this.columnID_Opiekun.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1821,13 +1865,13 @@ namespace Zoo {
             
             private global::System.Data.DataColumn columnID_Opiekun;
             
-            private global::System.Data.DataColumn columnImię;
+            private global::System.Data.DataColumn columnImie;
             
             private global::System.Data.DataColumn columnNazwisko;
             
             private global::System.Data.DataColumn columnWiek;
             
-            private global::System.Data.DataColumn columnPłeć;
+            private global::System.Data.DataColumn columnPlec;
             
             private global::System.Data.DataColumn columnNr_telefonu;
             
@@ -1874,9 +1918,9 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ImięColumn {
+            public global::System.Data.DataColumn ImieColumn {
                 get {
-                    return this.columnImię;
+                    return this.columnImie;
                 }
             }
             
@@ -1898,9 +1942,9 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PłećColumn {
+            public global::System.Data.DataColumn PlecColumn {
                 get {
-                    return this.columnPłeć;
+                    return this.columnPlec;
                 }
             }
             
@@ -1949,14 +1993,14 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OpiekunRow AddOpiekunRow(int ID_Opiekun, string Imię, string Nazwisko, int Wiek, string Płeć, string Nr_telefonu) {
+            public OpiekunRow AddOpiekunRow(string Imie, string Nazwisko, int Wiek, string Plec, string Nr_telefonu) {
                 OpiekunRow rowOpiekunRow = ((OpiekunRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Opiekun,
-                        Imię,
+                        null,
+                        Imie,
                         Nazwisko,
                         Wiek,
-                        Płeć,
+                        Plec,
                         Nr_telefonu};
                 rowOpiekunRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOpiekunRow);
@@ -1988,10 +2032,10 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnID_Opiekun = base.Columns["ID_Opiekun"];
-                this.columnImię = base.Columns["Imię"];
+                this.columnImie = base.Columns["Imie"];
                 this.columnNazwisko = base.Columns["Nazwisko"];
                 this.columnWiek = base.Columns["Wiek"];
-                this.columnPłeć = base.Columns["Płeć"];
+                this.columnPlec = base.Columns["Plec"];
                 this.columnNr_telefonu = base.Columns["Nr_telefonu"];
             }
             
@@ -2000,27 +2044,31 @@ namespace Zoo {
             private void InitClass() {
                 this.columnID_Opiekun = new global::System.Data.DataColumn("ID_Opiekun", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Opiekun);
-                this.columnImię = new global::System.Data.DataColumn("Imię", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImię);
+                this.columnImie = new global::System.Data.DataColumn("Imie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImie);
                 this.columnNazwisko = new global::System.Data.DataColumn("Nazwisko", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwisko);
                 this.columnWiek = new global::System.Data.DataColumn("Wiek", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWiek);
-                this.columnPłeć = new global::System.Data.DataColumn("Płeć", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPłeć);
+                this.columnPlec = new global::System.Data.DataColumn("Plec", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlec);
                 this.columnNr_telefonu = new global::System.Data.DataColumn("Nr_telefonu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNr_telefonu);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Opiekun}, true));
+                this.columnID_Opiekun.AutoIncrement = true;
+                this.columnID_Opiekun.AutoIncrementSeed = -1;
+                this.columnID_Opiekun.AutoIncrementStep = -1;
                 this.columnID_Opiekun.AllowDBNull = false;
+                this.columnID_Opiekun.ReadOnly = true;
                 this.columnID_Opiekun.Unique = true;
-                this.columnImię.AllowDBNull = false;
-                this.columnImię.MaxLength = 20;
+                this.columnImie.AllowDBNull = false;
+                this.columnImie.MaxLength = 20;
                 this.columnNazwisko.AllowDBNull = false;
                 this.columnNazwisko.MaxLength = 30;
                 this.columnWiek.AllowDBNull = false;
-                this.columnPłeć.AllowDBNull = false;
-                this.columnPłeć.MaxLength = 1;
+                this.columnPlec.AllowDBNull = false;
+                this.columnPlec.MaxLength = 1;
                 this.columnNr_telefonu.MaxLength = 9;
             }
             
@@ -2255,10 +2303,10 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SektorRow AddSektorRow(int ID_Sektor, string Nazwa, MagazynRow parentMagazynRowByFK_Sektor_Magazyn) {
+            public SektorRow AddSektorRow(string Nazwa, MagazynRow parentMagazynRowByFK_Sektor_Magazyn) {
                 SektorRow rowSektorRow = ((SektorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Sektor,
+                        null,
                         Nazwa,
                         null};
                 if ((parentMagazynRowByFK_Sektor_Magazyn != null)) {
@@ -2309,8 +2357,13 @@ namespace Zoo {
                 base.Columns.Add(this.columnID_Magazyn);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Sektor}, true));
+                this.columnID_Sektor.AutoIncrement = true;
+                this.columnID_Sektor.AutoIncrementSeed = -1;
+                this.columnID_Sektor.AutoIncrementStep = -1;
                 this.columnID_Sektor.AllowDBNull = false;
+                this.columnID_Sektor.ReadOnly = true;
                 this.columnID_Sektor.Unique = true;
+                this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 30;
                 this.columnID_Magazyn.AllowDBNull = false;
             }
@@ -2444,7 +2497,7 @@ namespace Zoo {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ZwierzeDataTable : global::System.Data.TypedTableBase<ZwierzeRow> {
+        public partial class ZwierzecieDataTable : global::System.Data.TypedTableBase<ZwierzecieRow> {
             
             private global::System.Data.DataColumn columnID_Zwierze;
             
@@ -2462,8 +2515,8 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeDataTable() {
-                this.TableName = "Zwierze";
+            public ZwierzecieDataTable() {
+                this.TableName = "Zwierzecie";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2471,7 +2524,7 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ZwierzeDataTable(global::System.Data.DataTable table) {
+            internal ZwierzecieDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2488,7 +2541,7 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ZwierzeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ZwierzecieDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2560,61 +2613,61 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow this[int index] {
+            public ZwierzecieRow this[int index] {
                 get {
-                    return ((ZwierzeRow)(this.Rows[index]));
+                    return ((ZwierzecieRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ZwierzeRowChangeEventHandler ZwierzeRowChanging;
+            public event ZwierzecieRowChangeEventHandler ZwierzecieRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ZwierzeRowChangeEventHandler ZwierzeRowChanged;
+            public event ZwierzecieRowChangeEventHandler ZwierzecieRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ZwierzeRowChangeEventHandler ZwierzeRowDeleting;
+            public event ZwierzecieRowChangeEventHandler ZwierzecieRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ZwierzeRowChangeEventHandler ZwierzeRowDeleted;
+            public event ZwierzecieRowChangeEventHandler ZwierzecieRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddZwierzeRow(ZwierzeRow row) {
+            public void AddZwierzecieRow(ZwierzecieRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow AddZwierzeRow(int ID_Zwierze, string Nazwa, int Wiek, string Gatunek, string Plec, System.DateTime Data_przyjecia, Klatka_zwierzeciaRow parentKlatka_zwierzeciaRowByFK_Zwierze_Klatka_zwierzecia) {
-                ZwierzeRow rowZwierzeRow = ((ZwierzeRow)(this.NewRow()));
+            public ZwierzecieRow AddZwierzecieRow(string Nazwa, int Wiek, string Gatunek, string Plec, string Data_przyjecia, Klatka_zwierzeciaRow parentKlatka_zwierzeciaRowByFK_Zwierzecie_Klatka_zwierzecia) {
+                ZwierzecieRow rowZwierzecieRow = ((ZwierzecieRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Zwierze,
+                        null,
                         Nazwa,
                         Wiek,
                         Gatunek,
                         Plec,
                         Data_przyjecia,
                         null};
-                if ((parentKlatka_zwierzeciaRowByFK_Zwierze_Klatka_zwierzecia != null)) {
-                    columnValuesArray[6] = parentKlatka_zwierzeciaRowByFK_Zwierze_Klatka_zwierzecia[0];
+                if ((parentKlatka_zwierzeciaRowByFK_Zwierzecie_Klatka_zwierzecia != null)) {
+                    columnValuesArray[6] = parentKlatka_zwierzeciaRowByFK_Zwierzecie_Klatka_zwierzecia[0];
                 }
-                rowZwierzeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowZwierzeRow);
-                return rowZwierzeRow;
+                rowZwierzecieRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowZwierzecieRow);
+                return rowZwierzecieRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow FindByID_Zwierze(int ID_Zwierze) {
-                return ((ZwierzeRow)(this.Rows.Find(new object[] {
+            public ZwierzecieRow FindByID_Zwierze(int ID_Zwierze) {
+                return ((ZwierzecieRow)(this.Rows.Find(new object[] {
                             ID_Zwierze})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ZwierzeDataTable cln = ((ZwierzeDataTable)(base.Clone()));
+                ZwierzecieDataTable cln = ((ZwierzecieDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2622,7 +2675,7 @@ namespace Zoo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ZwierzeDataTable();
+                return new ZwierzecieDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2650,13 +2703,17 @@ namespace Zoo {
                 base.Columns.Add(this.columnGatunek);
                 this.columnPlec = new global::System.Data.DataColumn("Plec", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlec);
-                this.columnData_przyjecia = new global::System.Data.DataColumn("Data_przyjecia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnData_przyjecia = new global::System.Data.DataColumn("Data_przyjecia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnData_przyjecia);
                 this.columnID_Klatka = new global::System.Data.DataColumn("ID_Klatka", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Klatka);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Zwierze}, true));
+                this.columnID_Zwierze.AutoIncrement = true;
+                this.columnID_Zwierze.AutoIncrementSeed = -1;
+                this.columnID_Zwierze.AutoIncrementStep = -1;
                 this.columnID_Zwierze.AllowDBNull = false;
+                this.columnID_Zwierze.ReadOnly = true;
                 this.columnID_Zwierze.Unique = true;
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 50;
@@ -2666,32 +2723,34 @@ namespace Zoo {
                 this.columnPlec.AllowDBNull = false;
                 this.columnPlec.MaxLength = 1;
                 this.columnData_przyjecia.AllowDBNull = false;
+                this.columnData_przyjecia.MaxLength = 20;
+                this.columnID_Klatka.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow NewZwierzeRow() {
-                return ((ZwierzeRow)(this.NewRow()));
+            public ZwierzecieRow NewZwierzecieRow() {
+                return ((ZwierzecieRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ZwierzeRow(builder);
+                return new ZwierzecieRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ZwierzeRow);
+                return typeof(ZwierzecieRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ZwierzeRowChanged != null)) {
-                    this.ZwierzeRowChanged(this, new ZwierzeRowChangeEvent(((ZwierzeRow)(e.Row)), e.Action));
+                if ((this.ZwierzecieRowChanged != null)) {
+                    this.ZwierzecieRowChanged(this, new ZwierzecieRowChangeEvent(((ZwierzecieRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2699,8 +2758,8 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ZwierzeRowChanging != null)) {
-                    this.ZwierzeRowChanging(this, new ZwierzeRowChangeEvent(((ZwierzeRow)(e.Row)), e.Action));
+                if ((this.ZwierzecieRowChanging != null)) {
+                    this.ZwierzecieRowChanging(this, new ZwierzecieRowChangeEvent(((ZwierzecieRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2708,8 +2767,8 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ZwierzeRowDeleted != null)) {
-                    this.ZwierzeRowDeleted(this, new ZwierzeRowChangeEvent(((ZwierzeRow)(e.Row)), e.Action));
+                if ((this.ZwierzecieRowDeleted != null)) {
+                    this.ZwierzecieRowDeleted(this, new ZwierzecieRowChangeEvent(((ZwierzecieRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2717,14 +2776,14 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ZwierzeRowDeleting != null)) {
-                    this.ZwierzeRowDeleting(this, new ZwierzeRowChangeEvent(((ZwierzeRow)(e.Row)), e.Action));
+                if ((this.ZwierzecieRowDeleting != null)) {
+                    this.ZwierzecieRowDeleting(this, new ZwierzecieRowChangeEvent(((ZwierzecieRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveZwierzeRow(ZwierzeRow row) {
+            public void RemoveZwierzecieRow(ZwierzecieRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2751,7 +2810,7 @@ namespace Zoo {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ZwierzeDataTable";
+                attribute2.FixedValue = "ZwierzecieDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2919,12 +2978,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Nazwa {
                 get {
-                    try {
-                        return ((string)(this[this.tableKlatka_zwierzecia.NazwaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Nazwa\' w tabeli \'Klatka_zwierzecia\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableKlatka_zwierzecia.NazwaColumn]));
                 }
                 set {
                     this[this.tableKlatka_zwierzecia.NazwaColumn] = value;
@@ -2935,12 +2989,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Wysokosc {
                 get {
-                    try {
-                        return ((int)(this[this.tableKlatka_zwierzecia.WysokoscColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Wysokosc\' w tabeli \'Klatka_zwierzecia\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableKlatka_zwierzecia.WysokoscColumn]));
                 }
                 set {
                     this[this.tableKlatka_zwierzecia.WysokoscColumn] = value;
@@ -2951,12 +3000,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Szerokosc {
                 get {
-                    try {
-                        return ((int)(this[this.tableKlatka_zwierzecia.SzerokoscColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Szerokosc\' w tabeli \'Klatka_zwierzecia\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableKlatka_zwierzecia.SzerokoscColumn]));
                 }
                 set {
                     this[this.tableKlatka_zwierzecia.SzerokoscColumn] = value;
@@ -2965,17 +3009,12 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Głebokosc {
+            public int Glebokosc {
                 get {
-                    try {
-                        return ((int)(this[this.tableKlatka_zwierzecia.GłebokoscColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Głebokosc\' w tabeli \'Klatka_zwierzecia\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableKlatka_zwierzecia.GlebokoscColumn]));
                 }
                 set {
-                    this[this.tableKlatka_zwierzecia.GłebokoscColumn] = value;
+                    this[this.tableKlatka_zwierzecia.GlebokoscColumn] = value;
                 }
             }
             
@@ -2983,12 +3022,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Sektor {
                 get {
-                    try {
-                        return ((int)(this[this.tableKlatka_zwierzecia.ID_SektorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ID_Sektor\' w tabeli \'Klatka_zwierzecia\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableKlatka_zwierzecia.ID_SektorColumn]));
                 }
                 set {
                     this[this.tableKlatka_zwierzecia.ID_SektorColumn] = value;
@@ -2999,12 +3033,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Opiekun {
                 get {
-                    try {
-                        return ((int)(this[this.tableKlatka_zwierzecia.ID_OpiekunColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ID_Opiekun\' w tabeli \'Klatka_zwierzecia\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableKlatka_zwierzecia.ID_OpiekunColumn]));
                 }
                 set {
                     this[this.tableKlatka_zwierzecia.ID_OpiekunColumn] = value;
@@ -3035,84 +3064,12 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNazwaNull() {
-                return this.IsNull(this.tableKlatka_zwierzecia.NazwaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNazwaNull() {
-                this[this.tableKlatka_zwierzecia.NazwaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsWysokoscNull() {
-                return this.IsNull(this.tableKlatka_zwierzecia.WysokoscColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetWysokoscNull() {
-                this[this.tableKlatka_zwierzecia.WysokoscColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSzerokoscNull() {
-                return this.IsNull(this.tableKlatka_zwierzecia.SzerokoscColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSzerokoscNull() {
-                this[this.tableKlatka_zwierzecia.SzerokoscColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsGłebokoscNull() {
-                return this.IsNull(this.tableKlatka_zwierzecia.GłebokoscColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetGłebokoscNull() {
-                this[this.tableKlatka_zwierzecia.GłebokoscColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsID_SektorNull() {
-                return this.IsNull(this.tableKlatka_zwierzecia.ID_SektorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetID_SektorNull() {
-                this[this.tableKlatka_zwierzecia.ID_SektorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsID_OpiekunNull() {
-                return this.IsNull(this.tableKlatka_zwierzecia.ID_OpiekunColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetID_OpiekunNull() {
-                this[this.tableKlatka_zwierzecia.ID_OpiekunColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow[] GetZwierzeRows() {
-                if ((this.Table.ChildRelations["FK_Zwierze_Klatka_zwierzecia"] == null)) {
-                    return new ZwierzeRow[0];
+            public ZwierzecieRow[] GetZwierzecieRows() {
+                if ((this.Table.ChildRelations["FK_Zwierzecie_Klatka_zwierzecia"] == null)) {
+                    return new ZwierzecieRow[0];
                 }
                 else {
-                    return ((ZwierzeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Zwierze_Klatka_zwierzecia"])));
+                    return ((ZwierzecieRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Zwierzecie_Klatka_zwierzecia"])));
                 }
             }
         }
@@ -3155,12 +3112,12 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Ilość {
+            public int Ilosc {
                 get {
-                    return ((int)(this[this.tableMagazyn.IlośćColumn]));
+                    return ((int)(this[this.tableMagazyn.IloscColumn]));
                 }
                 set {
-                    this[this.tableMagazyn.IlośćColumn] = value;
+                    this[this.tableMagazyn.IloscColumn] = value;
                 }
             }
             
@@ -3214,30 +3171,31 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Czas_opieki {
+            public string Start_opieki {
                 get {
-                    try {
-                        return ((int)(this[this.tableOpieka.Czas_opiekiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Czas_opieki\' w tabeli \'Opieka\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableOpieka.Start_opiekiColumn]));
                 }
                 set {
-                    this[this.tableOpieka.Czas_opiekiColumn] = value;
+                    this[this.tableOpieka.Start_opiekiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Data {
+            public string Koniec_opieki {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableOpieka.DataColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Data\' w tabeli \'Opieka\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableOpieka.Koniec_opiekiColumn]));
+                }
+                set {
+                    this[this.tableOpieka.Koniec_opiekiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Data {
+                get {
+                    return ((string)(this[this.tableOpieka.DataColumn]));
                 }
                 set {
                     this[this.tableOpieka.DataColumn] = value;
@@ -3248,12 +3206,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Zwierze {
                 get {
-                    try {
-                        return ((int)(this[this.tableOpieka.ID_ZwierzeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ID_Zwierze\' w tabeli \'Opieka\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableOpieka.ID_ZwierzeColumn]));
                 }
                 set {
                     this[this.tableOpieka.ID_ZwierzeColumn] = value;
@@ -3264,12 +3217,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Opiekun {
                 get {
-                    try {
-                        return ((int)(this[this.tableOpieka.ID_OpiekunColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ID_Opiekun\' w tabeli \'Opieka\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableOpieka.ID_OpiekunColumn]));
                 }
                 set {
                     this[this.tableOpieka.ID_OpiekunColumn] = value;
@@ -3289,61 +3237,13 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow ZwierzeRow {
+            public ZwierzecieRow ZwierzecieRow {
                 get {
-                    return ((ZwierzeRow)(this.GetParentRow(this.Table.ParentRelations["FK_Opieka_Zwierze"])));
+                    return ((ZwierzecieRow)(this.GetParentRow(this.Table.ParentRelations["FK_Opieka_Zwierzecie"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Opieka_Zwierze"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Opieka_Zwierzecie"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCzas_opiekiNull() {
-                return this.IsNull(this.tableOpieka.Czas_opiekiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCzas_opiekiNull() {
-                this[this.tableOpieka.Czas_opiekiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDataNull() {
-                return this.IsNull(this.tableOpieka.DataColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDataNull() {
-                this[this.tableOpieka.DataColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsID_ZwierzeNull() {
-                return this.IsNull(this.tableOpieka.ID_ZwierzeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetID_ZwierzeNull() {
-                this[this.tableOpieka.ID_ZwierzeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsID_OpiekunNull() {
-                return this.IsNull(this.tableOpieka.ID_OpiekunColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetID_OpiekunNull() {
-                this[this.tableOpieka.ID_OpiekunColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3374,12 +3274,12 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Imię {
+            public string Imie {
                 get {
-                    return ((string)(this[this.tableOpiekun.ImięColumn]));
+                    return ((string)(this[this.tableOpiekun.ImieColumn]));
                 }
                 set {
-                    this[this.tableOpiekun.ImięColumn] = value;
+                    this[this.tableOpiekun.ImieColumn] = value;
                 }
             }
             
@@ -3407,12 +3307,12 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Płeć {
+            public string Plec {
                 get {
-                    return ((string)(this[this.tableOpiekun.PłećColumn]));
+                    return ((string)(this[this.tableOpiekun.PlecColumn]));
                 }
                 set {
-                    this[this.tableOpiekun.PłećColumn] = value;
+                    this[this.tableOpiekun.PlecColumn] = value;
                 }
             }
             
@@ -3496,12 +3396,7 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Nazwa {
                 get {
-                    try {
-                        return ((string)(this[this.tableSektor.NazwaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Nazwa\' w tabeli \'Sektor\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSektor.NazwaColumn]));
                 }
                 set {
                     this[this.tableSektor.NazwaColumn] = value;
@@ -3532,18 +3427,6 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNazwaNull() {
-                return this.IsNull(this.tableSektor.NazwaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNazwaNull() {
-                this[this.tableSektor.NazwaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Klatka_zwierzeciaRow[] GetKlatka_zwierzeciaRows() {
                 if ((this.Table.ChildRelations["FK_Klatka_zwierzecia_Sektor"] == null)) {
                     return new Klatka_zwierzeciaRow[0];
@@ -3557,25 +3440,25 @@ namespace Zoo {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ZwierzeRow : global::System.Data.DataRow {
+        public partial class ZwierzecieRow : global::System.Data.DataRow {
             
-            private ZwierzeDataTable tableZwierze;
+            private ZwierzecieDataTable tableZwierzecie;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ZwierzeRow(global::System.Data.DataRowBuilder rb) : 
+            internal ZwierzecieRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableZwierze = ((ZwierzeDataTable)(this.Table));
+                this.tableZwierzecie = ((ZwierzecieDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Zwierze {
                 get {
-                    return ((int)(this[this.tableZwierze.ID_ZwierzeColumn]));
+                    return ((int)(this[this.tableZwierzecie.ID_ZwierzeColumn]));
                 }
                 set {
-                    this[this.tableZwierze.ID_ZwierzeColumn] = value;
+                    this[this.tableZwierzecie.ID_ZwierzeColumn] = value;
                 }
             }
             
@@ -3583,10 +3466,10 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Nazwa {
                 get {
-                    return ((string)(this[this.tableZwierze.NazwaColumn]));
+                    return ((string)(this[this.tableZwierzecie.NazwaColumn]));
                 }
                 set {
-                    this[this.tableZwierze.NazwaColumn] = value;
+                    this[this.tableZwierzecie.NazwaColumn] = value;
                 }
             }
             
@@ -3594,10 +3477,10 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Wiek {
                 get {
-                    return ((int)(this[this.tableZwierze.WiekColumn]));
+                    return ((int)(this[this.tableZwierzecie.WiekColumn]));
                 }
                 set {
-                    this[this.tableZwierze.WiekColumn] = value;
+                    this[this.tableZwierzecie.WiekColumn] = value;
                 }
             }
             
@@ -3605,10 +3488,10 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Gatunek {
                 get {
-                    return ((string)(this[this.tableZwierze.GatunekColumn]));
+                    return ((string)(this[this.tableZwierzecie.GatunekColumn]));
                 }
                 set {
-                    this[this.tableZwierze.GatunekColumn] = value;
+                    this[this.tableZwierzecie.GatunekColumn] = value;
                 }
             }
             
@@ -3616,21 +3499,21 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Plec {
                 get {
-                    return ((string)(this[this.tableZwierze.PlecColumn]));
+                    return ((string)(this[this.tableZwierzecie.PlecColumn]));
                 }
                 set {
-                    this[this.tableZwierze.PlecColumn] = value;
+                    this[this.tableZwierzecie.PlecColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Data_przyjecia {
+            public string Data_przyjecia {
                 get {
-                    return ((global::System.DateTime)(this[this.tableZwierze.Data_przyjeciaColumn]));
+                    return ((string)(this[this.tableZwierzecie.Data_przyjeciaColumn]));
                 }
                 set {
-                    this[this.tableZwierze.Data_przyjeciaColumn] = value;
+                    this[this.tableZwierzecie.Data_przyjeciaColumn] = value;
                 }
             }
             
@@ -3638,15 +3521,10 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Klatka {
                 get {
-                    try {
-                        return ((int)(this[this.tableZwierze.ID_KlatkaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ID_Klatka\' w tabeli \'Zwierze\' to DBNull.", e);
-                    }
+                    return ((int)(this[this.tableZwierzecie.ID_KlatkaColumn]));
                 }
                 set {
-                    this[this.tableZwierze.ID_KlatkaColumn] = value;
+                    this[this.tableZwierzecie.ID_KlatkaColumn] = value;
                 }
             }
             
@@ -3654,33 +3532,21 @@ namespace Zoo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Klatka_zwierzeciaRow Klatka_zwierzeciaRow {
                 get {
-                    return ((Klatka_zwierzeciaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Zwierze_Klatka_zwierzecia"])));
+                    return ((Klatka_zwierzeciaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Zwierzecie_Klatka_zwierzecia"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Zwierze_Klatka_zwierzecia"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Zwierzecie_Klatka_zwierzecia"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsID_KlatkaNull() {
-                return this.IsNull(this.tableZwierze.ID_KlatkaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetID_KlatkaNull() {
-                this[this.tableZwierze.ID_KlatkaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public OpiekaRow[] GetOpiekaRows() {
-                if ((this.Table.ChildRelations["FK_Opieka_Zwierze"] == null)) {
+                if ((this.Table.ChildRelations["FK_Opieka_Zwierzecie"] == null)) {
                     return new OpiekaRow[0];
                 }
                 else {
-                    return ((OpiekaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Opieka_Zwierze"])));
+                    return ((OpiekaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Opieka_Zwierzecie"])));
                 }
             }
         }
@@ -3893,22 +3759,22 @@ namespace Zoo {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ZwierzeRowChangeEvent : global::System.EventArgs {
+        public class ZwierzecieRowChangeEvent : global::System.EventArgs {
             
-            private ZwierzeRow eventRow;
+            private ZwierzecieRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRowChangeEvent(ZwierzeRow row, global::System.Data.DataRowAction action) {
+            public ZwierzecieRowChangeEvent(ZwierzecieRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZwierzeRow Row {
+            public ZwierzecieRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4066,22 +3932,19 @@ namespace Zoo.ZooDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Jedzenie] ([ID_Jedzenie], [Nazwa], [Rodzaj], [Opis], [ID_Magaz" +
-                "yn]) VALUES (@ID_Jedzenie, @Nazwa, @Rodzaj, @Opis, @ID_Magazyn);\r\nSELECT ID_Jedz" +
-                "enie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedzenie = @ID_Jed" +
-                "zenie)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Jedzenie] ([Nazwa], [Rodzaj], [Opis], [ID_Magazyn]) VALUES (@N" +
+                "azwa, @Rodzaj, @Opis, @ID_Magazyn);\r\nSELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID" +
+                "_Magazyn FROM Jedzenie WHERE (ID_Jedzenie = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Jedzenie", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Jedzenie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rodzaj", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rodzaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opis", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Jedzenie] SET [ID_Jedzenie] = @ID_Jedzenie, [Nazwa] = @Nazwa, [Rodzaj] = @Rodzaj, [Opis] = @Opis, [ID_Magazyn] = @ID_Magazyn WHERE (([ID_Jedzenie] = @Original_ID_Jedzenie) AND ([Nazwa] = @Original_Nazwa) AND ([Rodzaj] = @Original_Rodzaj) AND ((@IsNull_Opis = 1 AND [Opis] IS NULL) OR ([Opis] = @Original_Opis)) AND ([ID_Magazyn] = @Original_ID_Magazyn));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Jedzenie] SET [Nazwa] = @Nazwa, [Rodzaj] = @Rodzaj, [Opis] = @Opis, [ID_Magazyn] = @ID_Magazyn WHERE (([ID_Jedzenie] = @Original_ID_Jedzenie) AND ([Nazwa] = @Original_Nazwa) AND ([Rodzaj] = @Original_Rodzaj) AND ((@IsNull_Opis = 1 AND [Opis] IS NULL) OR ([Opis] = @Original_Opis)) AND ([ID_Magazyn] = @Original_ID_Magazyn));
 SELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedzenie = @ID_Jedzenie)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Jedzenie", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Jedzenie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rodzaj", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rodzaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opis", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4092,6 +3955,7 @@ SELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedz
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Opis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Opis", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Jedzenie", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Jedzenie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4211,27 +4075,26 @@ SELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedz
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Jedzenie, string Nazwa, string Rodzaj, string Opis, int ID_Magazyn) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Jedzenie));
+        public virtual int Insert(string Nazwa, string Rodzaj, string Opis, int ID_Magazyn) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazwa));
             }
             if ((Rodzaj == null)) {
                 throw new global::System.ArgumentNullException("Rodzaj");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Rodzaj));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Rodzaj));
             }
             if ((Opis == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Opis));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Opis));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Magazyn));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ID_Magazyn));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4252,49 +4115,49 @@ SELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedz
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Jedzenie, string Nazwa, string Rodzaj, string Opis, int ID_Magazyn, int Original_ID_Jedzenie, string Original_Nazwa, string Original_Rodzaj, string Original_Opis, int Original_ID_Magazyn) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Jedzenie));
+        public virtual int Update(string Nazwa, string Rodzaj, string Opis, int ID_Magazyn, int Original_ID_Jedzenie, string Original_Nazwa, string Original_Rodzaj, string Original_Opis, int Original_ID_Magazyn, int ID_Jedzenie) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazwa));
             }
             if ((Rodzaj == null)) {
                 throw new global::System.ArgumentNullException("Rodzaj");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Rodzaj));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Rodzaj));
             }
             if ((Opis == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Opis));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Opis));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Magazyn));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Jedzenie));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_Jedzenie));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nazwa));
             }
             if ((Original_Rodzaj == null)) {
                 throw new global::System.ArgumentNullException("Original_Rodzaj");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Rodzaj));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Rodzaj));
             }
             if ((Original_Opis == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Opis));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Opis));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID_Jedzenie));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4316,7 +4179,7 @@ SELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedz
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Nazwa, string Rodzaj, string Opis, int ID_Magazyn, int Original_ID_Jedzenie, string Original_Nazwa, string Original_Rodzaj, string Original_Opis, int Original_ID_Magazyn) {
-            return this.Update(Original_ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn, Original_ID_Jedzenie, Original_Nazwa, Original_Rodzaj, Original_Opis, Original_ID_Magazyn);
+            return this.Update(Nazwa, Rodzaj, Opis, ID_Magazyn, Original_ID_Jedzenie, Original_Nazwa, Original_Rodzaj, Original_Opis, Original_ID_Magazyn, Original_ID_Jedzenie);
         }
     }
     
@@ -4445,64 +4308,51 @@ SELECT ID_Jedzenie, Nazwa, Rodzaj, Opis, ID_Magazyn FROM Jedzenie WHERE (ID_Jedz
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
             tableMapping.ColumnMappings.Add("Wysokosc", "Wysokosc");
             tableMapping.ColumnMappings.Add("Szerokosc", "Szerokosc");
-            tableMapping.ColumnMappings.Add("Głebokosc", "Głebokosc");
+            tableMapping.ColumnMappings.Add("Glebokosc", "Glebokosc");
             tableMapping.ColumnMappings.Add("ID_Sektor", "ID_Sektor");
             tableMapping.ColumnMappings.Add("ID_Opiekun", "ID_Opiekun");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Klatka_zwierzecia] WHERE (([ID_Klatka] = @Original_ID_Klatka) AND ((@IsNull_Nazwa = 1 AND [Nazwa] IS NULL) OR ([Nazwa] = @Original_Nazwa)) AND ((@IsNull_Wysokosc = 1 AND [Wysokosc] IS NULL) OR ([Wysokosc] = @Original_Wysokosc)) AND ((@IsNull_Szerokosc = 1 AND [Szerokosc] IS NULL) OR ([Szerokosc] = @Original_Szerokosc)) AND ((@IsNull_Głebokosc = 1 AND [Głebokosc] IS NULL) OR ([Głebokosc] = @Original_Głebokosc)) AND ((@IsNull_ID_Sektor = 1 AND [ID_Sektor] IS NULL) OR ([ID_Sektor] = @Original_ID_Sektor)) AND ((@IsNull_ID_Opiekun = 1 AND [ID_Opiekun] IS NULL) OR ([ID_Opiekun] = @Original_ID_Opiekun)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Klatka_zwierzecia] WHERE (([ID_Klatka] = @Original_ID_Klatka) AND ([Nazwa] = @Original_Nazwa) AND ([Wysokosc] = @Original_Wysokosc) AND ([Szerokosc] = @Original_Szerokosc) AND ([Glebokosc] = @Original_Glebokosc) AND ([ID_Sektor] = @Original_ID_Sektor) AND ([ID_Opiekun] = @Original_ID_Opiekun))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Wysokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wysokosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wysokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wysokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Szerokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Szerokosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Szerokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Szerokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Głebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Głebokosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Głebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Głebokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Glebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Glebokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Klatka_zwierzecia] ([ID_Klatka], [Nazwa], [Wysokosc], [Szerokosc], [Głebokosc], [ID_Sektor], [ID_Opiekun]) VALUES (@ID_Klatka, @Nazwa, @Wysokosc, @Szerokosc, @Głebokosc, @ID_Sektor, @ID_Opiekun);
-SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun FROM Klatka_zwierzecia WHERE (ID_Klatka = @ID_Klatka)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Klatka_zwierzecia] ([Nazwa], [Wysokosc], [Szerokosc], [Glebokosc], [ID_Sektor], [ID_Opiekun]) VALUES (@Nazwa, @Wysokosc, @Szerokosc, @Glebokosc, @ID_Sektor, @ID_Opiekun);
+SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun FROM Klatka_zwierzecia WHERE (ID_Klatka = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wysokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wysokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Szerokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Szerokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Głebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Głebokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Glebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Glebokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Klatka_zwierzecia] SET [ID_Klatka] = @ID_Klatka, [Nazwa] = @Nazwa, [Wysokosc] = @Wysokosc, [Szerokosc] = @Szerokosc, [Głebokosc] = @Głebokosc, [ID_Sektor] = @ID_Sektor, [ID_Opiekun] = @ID_Opiekun WHERE (([ID_Klatka] = @Original_ID_Klatka) AND ((@IsNull_Nazwa = 1 AND [Nazwa] IS NULL) OR ([Nazwa] = @Original_Nazwa)) AND ((@IsNull_Wysokosc = 1 AND [Wysokosc] IS NULL) OR ([Wysokosc] = @Original_Wysokosc)) AND ((@IsNull_Szerokosc = 1 AND [Szerokosc] IS NULL) OR ([Szerokosc] = @Original_Szerokosc)) AND ((@IsNull_Głebokosc = 1 AND [Głebokosc] IS NULL) OR ([Głebokosc] = @Original_Głebokosc)) AND ((@IsNull_ID_Sektor = 1 AND [ID_Sektor] IS NULL) OR ([ID_Sektor] = @Original_ID_Sektor)) AND ((@IsNull_ID_Opiekun = 1 AND [ID_Opiekun] IS NULL) OR ([ID_Opiekun] = @Original_ID_Opiekun)));
-SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun FROM Klatka_zwierzecia WHERE (ID_Klatka = @ID_Klatka)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Klatka_zwierzecia] SET [Nazwa] = @Nazwa, [Wysokosc] = @Wysokosc, [Szerokosc] = @Szerokosc, [Glebokosc] = @Glebokosc, [ID_Sektor] = @ID_Sektor, [ID_Opiekun] = @ID_Opiekun WHERE (([ID_Klatka] = @Original_ID_Klatka) AND ([Nazwa] = @Original_Nazwa) AND ([Wysokosc] = @Original_Wysokosc) AND ([Szerokosc] = @Original_Szerokosc) AND ([Glebokosc] = @Original_Glebokosc) AND ([ID_Sektor] = @Original_ID_Sektor) AND ([ID_Opiekun] = @Original_ID_Opiekun));
+SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun FROM Klatka_zwierzecia WHERE (ID_Klatka = @ID_Klatka)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wysokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wysokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Szerokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Szerokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Głebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Głebokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Glebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Glebokosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Wysokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wysokosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wysokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wysokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Szerokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Szerokosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Szerokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Szerokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Głebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Głebokosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Głebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Głebokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Glebokosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Glebokosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Klatka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4518,7 +4368,7 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun FR" +
+            this._commandCollection[0].CommandText = "SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun FR" +
                 "OM dbo.Klatka_zwierzecia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -4580,56 +4430,19 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Klatka, string Original_Nazwa, global::System.Nullable<int> Original_Wysokosc, global::System.Nullable<int> Original_Szerokosc, global::System.Nullable<int> Original_Głebokosc, global::System.Nullable<int> Original_ID_Sektor, global::System.Nullable<int> Original_ID_Opiekun) {
+        public virtual int Delete(int Original_ID_Klatka, string Original_Nazwa, int Original_Wysokosc, int Original_Szerokosc, int Original_Glebokosc, int Original_ID_Sektor, int Original_ID_Opiekun) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Klatka));
             if ((Original_Nazwa == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nazwa));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nazwa));
             }
-            if ((Original_Wysokosc.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Wysokosc.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Szerokosc.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Szerokosc.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Głebokosc.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Głebokosc.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_Sektor.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_ID_Sektor.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_Opiekun.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_ID_Opiekun.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Wysokosc));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Szerokosc));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Glebokosc));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_ID_Sektor));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ID_Opiekun));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4650,44 +4463,18 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Klatka, string Nazwa, global::System.Nullable<int> Wysokosc, global::System.Nullable<int> Szerokosc, global::System.Nullable<int> Głebokosc, global::System.Nullable<int> ID_Sektor, global::System.Nullable<int> ID_Opiekun) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Klatka));
+        public virtual int Insert(string Nazwa, int Wysokosc, int Szerokosc, int Glebokosc, int ID_Sektor, int ID_Opiekun) {
             if ((Nazwa == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            if ((Wysokosc.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Wysokosc.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Szerokosc.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Szerokosc.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Głebokosc.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Głebokosc.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Sektor.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID_Sektor.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Opiekun.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(ID_Opiekun.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Wysokosc));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Szerokosc));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Glebokosc));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Sektor));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID_Opiekun));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4708,93 +4495,31 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Klatka, string Nazwa, global::System.Nullable<int> Wysokosc, global::System.Nullable<int> Szerokosc, global::System.Nullable<int> Głebokosc, global::System.Nullable<int> ID_Sektor, global::System.Nullable<int> ID_Opiekun, int Original_ID_Klatka, string Original_Nazwa, global::System.Nullable<int> Original_Wysokosc, global::System.Nullable<int> Original_Szerokosc, global::System.Nullable<int> Original_Głebokosc, global::System.Nullable<int> Original_ID_Sektor, global::System.Nullable<int> Original_ID_Opiekun) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Klatka));
+        public virtual int Update(string Nazwa, int Wysokosc, int Szerokosc, int Glebokosc, int ID_Sektor, int ID_Opiekun, int Original_ID_Klatka, string Original_Nazwa, int Original_Wysokosc, int Original_Szerokosc, int Original_Glebokosc, int Original_ID_Sektor, int Original_ID_Opiekun, int ID_Klatka) {
             if ((Nazwa == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            if ((Wysokosc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Wysokosc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Szerokosc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Szerokosc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Głebokosc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Głebokosc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Sektor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Sektor.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Opiekun.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ID_Opiekun.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID_Klatka));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Wysokosc));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Szerokosc));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Glebokosc));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Sektor));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Opiekun));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Klatka));
             if ((Original_Nazwa == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Nazwa));
             }
-            if ((Original_Wysokosc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Wysokosc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Szerokosc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Szerokosc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Głebokosc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Głebokosc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_Sektor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_ID_Sektor.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_Opiekun.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_ID_Opiekun.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Wysokosc));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Szerokosc));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Glebokosc));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID_Sektor));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ID_Opiekun));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID_Klatka));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4815,8 +4540,8 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazwa, global::System.Nullable<int> Wysokosc, global::System.Nullable<int> Szerokosc, global::System.Nullable<int> Głebokosc, global::System.Nullable<int> ID_Sektor, global::System.Nullable<int> ID_Opiekun, int Original_ID_Klatka, string Original_Nazwa, global::System.Nullable<int> Original_Wysokosc, global::System.Nullable<int> Original_Szerokosc, global::System.Nullable<int> Original_Głebokosc, global::System.Nullable<int> Original_ID_Sektor, global::System.Nullable<int> Original_ID_Opiekun) {
-            return this.Update(Original_ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun, Original_ID_Klatka, Original_Nazwa, Original_Wysokosc, Original_Szerokosc, Original_Głebokosc, Original_ID_Sektor, Original_ID_Opiekun);
+        public virtual int Update(string Nazwa, int Wysokosc, int Szerokosc, int Glebokosc, int ID_Sektor, int ID_Opiekun, int Original_ID_Klatka, string Original_Nazwa, int Original_Wysokosc, int Original_Szerokosc, int Original_Glebokosc, int Original_ID_Sektor, int Original_ID_Opiekun) {
+            return this.Update(Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun, Original_ID_Klatka, Original_Nazwa, Original_Wysokosc, Original_Szerokosc, Original_Glebokosc, Original_ID_Sektor, Original_ID_Opiekun, Original_ID_Klatka);
         }
     }
     
@@ -4943,36 +4668,36 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Głebokosc, ID_Sektor, ID_Opiekun 
             tableMapping.DataSetTable = "Magazyn";
             tableMapping.ColumnMappings.Add("ID_Magazyn", "ID_Magazyn");
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
-            tableMapping.ColumnMappings.Add("Ilość", "Ilość");
+            tableMapping.ColumnMappings.Add("Ilosc", "Ilosc");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Magazyn] WHERE (([ID_Magazyn] = @Original_ID_Magazyn) AND ([Na" +
-                "zwa] = @Original_Nazwa) AND ([Ilość] = @Original_Ilość))";
+                "zwa] = @Original_Nazwa) AND ([Ilosc] = @Original_Ilosc))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ilość", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilość", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Magazyn] ([ID_Magazyn], [Nazwa], [Ilość]) VALUES (@ID_Magazyn," +
-                " @Nazwa, @Ilość);\r\nSELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazy" +
-                "n = @ID_Magazyn)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Magazyn] ([Nazwa], [Ilosc]) VALUES (@Nazwa, @Ilosc);\r\nSELECT I" +
+                "D_Magazyn, Nazwa, Ilosc FROM Magazyn WHERE (ID_Magazyn = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ilość", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilość", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Magazyn] SET [ID_Magazyn] = @ID_Magazyn, [Nazwa] = @Nazwa, [Ilość] = @Ilość WHERE (([ID_Magazyn] = @Original_ID_Magazyn) AND ([Nazwa] = @Original_Nazwa) AND ([Ilość] = @Original_Ilość));
-SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Magazyn] SET [Nazwa] = @Nazwa, [Ilosc] = @Ilosc WHERE (([ID_Magazyn" +
+                "] = @Original_ID_Magazyn) AND ([Nazwa] = @Original_Nazwa) AND ([Ilosc] = @Origin" +
+                "al_Ilosc));\r\nSELECT ID_Magazyn, Nazwa, Ilosc FROM Magazyn WHERE (ID_Magazyn = @I" +
+                "D_Magazyn)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ilość", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilość", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ilość", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilość", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4988,7 +4713,7 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Magazyn, Nazwa, Ilość FROM dbo.Magazyn";
+            this._commandCollection[0].CommandText = "SELECT ID_Magazyn, Nazwa, Ilosc FROM dbo.Magazyn";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5049,7 +4774,7 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilość) {
+        public virtual int Delete(int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilosc) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Magazyn));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
@@ -5057,7 +4782,7 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Ilość));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Ilosc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5078,15 +4803,14 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Magazyn, string Nazwa, int Ilość) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Magazyn));
+        public virtual int Insert(string Nazwa, int Ilosc) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Ilość));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Ilosc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5107,23 +4831,23 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Magazyn, string Nazwa, int Ilość, int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilość) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Magazyn));
+        public virtual int Update(string Nazwa, int Ilosc, int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilosc, int ID_Magazyn) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Ilość));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Ilosc));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID_Magazyn));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Ilość));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Ilosc));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Magazyn));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5144,8 +4868,8 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazwa, int Ilość, int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilość) {
-            return this.Update(Original_ID_Magazyn, Nazwa, Ilość, Original_ID_Magazyn, Original_Nazwa, Original_Ilość);
+        public virtual int Update(string Nazwa, int Ilosc, int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilosc) {
+            return this.Update(Nazwa, Ilosc, Original_ID_Magazyn, Original_Nazwa, Original_Ilosc, Original_ID_Magazyn);
         }
     }
     
@@ -5271,53 +4995,49 @@ SELECT ID_Magazyn, Nazwa, Ilość FROM Magazyn WHERE (ID_Magazyn = @ID_Magazyn)"
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Opieka";
             tableMapping.ColumnMappings.Add("ID_Opieka", "ID_Opieka");
-            tableMapping.ColumnMappings.Add("Czas_opieki", "Czas_opieki");
+            tableMapping.ColumnMappings.Add("Start_opieki", "Start_opieki");
+            tableMapping.ColumnMappings.Add("Koniec_opieki", "Koniec_opieki");
             tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("ID_Zwierze", "ID_Zwierze");
             tableMapping.ColumnMappings.Add("ID_Opiekun", "ID_Opiekun");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Opieka] WHERE (([ID_Opieka] = @Original_ID_Opieka) AND ((@IsNull_Czas_opieki = 1 AND [Czas_opieki] IS NULL) OR ([Czas_opieki] = @Original_Czas_opieki)) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_ID_Zwierze = 1 AND [ID_Zwierze] IS NULL) OR ([ID_Zwierze] = @Original_ID_Zwierze)) AND ((@IsNull_ID_Opiekun = 1 AND [ID_Opiekun] IS NULL) OR ([ID_Opiekun] = @Original_ID_Opiekun)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Opieka] WHERE (([ID_Opieka] = @Original_ID_Opieka) AND ([Start_opieki] = @Original_Start_opieki) AND ([Koniec_opieki] = @Original_Koniec_opieki) AND ([Data] = @Original_Data) AND ([ID_Zwierze] = @Original_ID_Zwierze) AND ([ID_Opiekun] = @Original_ID_Opiekun))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opieka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opieka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Czas_opieki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Czas_opieki", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Czas_opieki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Czas_opieki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_opieki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Koniec_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Koniec_opieki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Opieka] ([ID_Opieka], [Czas_opieki], [Data], [ID_Zwierze], [ID_Opiekun]) VALUES (@ID_Opieka, @Czas_opieki, @Data, @ID_Zwierze, @ID_Opiekun);
-SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (ID_Opieka = @ID_Opieka)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Opieka] ([Start_opieki], [Koniec_opieki], [Data], [ID_Zwierze], [ID_Opiekun]) VALUES (@Start_opieki, @Koniec_opieki, @Data, @ID_Zwierze, @ID_Opiekun);
+SELECT ID_Opieka, Start_opieki, Koniec_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (ID_Opieka = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opieka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opieka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Czas_opieki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Czas_opieki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_opieki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Koniec_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Koniec_opieki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Opieka] SET [ID_Opieka] = @ID_Opieka, [Czas_opieki] = @Czas_opieki, [Data] = @Data, [ID_Zwierze] = @ID_Zwierze, [ID_Opiekun] = @ID_Opiekun WHERE (([ID_Opieka] = @Original_ID_Opieka) AND ((@IsNull_Czas_opieki = 1 AND [Czas_opieki] IS NULL) OR ([Czas_opieki] = @Original_Czas_opieki)) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_ID_Zwierze = 1 AND [ID_Zwierze] IS NULL) OR ([ID_Zwierze] = @Original_ID_Zwierze)) AND ((@IsNull_ID_Opiekun = 1 AND [ID_Opiekun] IS NULL) OR ([ID_Opiekun] = @Original_ID_Opiekun)));
-SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (ID_Opieka = @ID_Opieka)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Opieka] SET [Start_opieki] = @Start_opieki, [Koniec_opieki] = @Koniec_opieki, [Data] = @Data, [ID_Zwierze] = @ID_Zwierze, [ID_Opiekun] = @ID_Opiekun WHERE (([ID_Opieka] = @Original_ID_Opieka) AND ([Start_opieki] = @Original_Start_opieki) AND ([Koniec_opieki] = @Original_Koniec_opieki) AND ([Data] = @Original_Data) AND ([ID_Zwierze] = @Original_ID_Zwierze) AND ([ID_Opiekun] = @Original_ID_Opiekun));
+SELECT ID_Opieka, Start_opieki, Koniec_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (ID_Opieka = @ID_Opieka)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opieka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opieka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Czas_opieki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Czas_opieki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_opieki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Koniec_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Koniec_opieki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opieka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opieka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Czas_opieki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Czas_opieki", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Czas_opieki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Czas_opieki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_opieki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Koniec_opieki", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Koniec_opieki", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opieka", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opieka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5333,7 +5053,8 @@ SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (I
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM dbo.Opieka";
+            this._commandCollection[0].CommandText = "SELECT ID_Opieka, Start_opieki, Koniec_opieki, Data, ID_Zwierze, ID_Opiekun FROM " +
+                "dbo.Opieka";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5394,40 +5115,28 @@ SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Opieka, global::System.Nullable<int> Original_Czas_opieki, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<int> Original_ID_Zwierze, global::System.Nullable<int> Original_ID_Opiekun) {
+        public virtual int Delete(int Original_ID_Opieka, string Original_Start_opieki, string Original_Koniec_opieki, string Original_Data, int Original_ID_Zwierze, int Original_ID_Opiekun) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Opieka));
-            if ((Original_Czas_opieki.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Czas_opieki.Value));
+            if ((Original_Start_opieki == null)) {
+                throw new global::System.ArgumentNullException("Original_Start_opieki");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Start_opieki));
             }
-            if ((Original_Data.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Data.Value));
+            if ((Original_Koniec_opieki == null)) {
+                throw new global::System.ArgumentNullException("Original_Koniec_opieki");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Koniec_opieki));
             }
-            if ((Original_ID_Zwierze.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ID_Zwierze.Value));
+            if ((Original_Data == null)) {
+                throw new global::System.ArgumentNullException("Original_Data");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Data));
             }
-            if ((Original_ID_Opiekun.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_ID_Opiekun.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ID_Zwierze));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_ID_Opiekun));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5448,32 +5157,27 @@ SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Opieka, global::System.Nullable<int> Czas_opieki, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<int> ID_Zwierze, global::System.Nullable<int> ID_Opiekun) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Opieka));
-            if ((Czas_opieki.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Czas_opieki.Value));
+        public virtual int Insert(string Start_opieki, string Koniec_opieki, string Data, int ID_Zwierze, int ID_Opiekun) {
+            if ((Start_opieki == null)) {
+                throw new global::System.ArgumentNullException("Start_opieki");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Start_opieki));
             }
-            if ((Data.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Data.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Zwierze.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ID_Zwierze.Value));
+            if ((Koniec_opieki == null)) {
+                throw new global::System.ArgumentNullException("Koniec_opieki");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Koniec_opieki));
             }
-            if ((ID_Opiekun.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Opiekun.Value));
+            if ((Data == null)) {
+                throw new global::System.ArgumentNullException("Data");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Data));
             }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ID_Zwierze));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Opiekun));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5494,65 +5198,49 @@ SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Opieka, global::System.Nullable<int> Czas_opieki, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<int> ID_Zwierze, global::System.Nullable<int> ID_Opiekun, int Original_ID_Opieka, global::System.Nullable<int> Original_Czas_opieki, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<int> Original_ID_Zwierze, global::System.Nullable<int> Original_ID_Opiekun) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Opieka));
-            if ((Czas_opieki.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Czas_opieki.Value));
+        public virtual int Update(string Start_opieki, string Koniec_opieki, string Data, int ID_Zwierze, int ID_Opiekun, int Original_ID_Opieka, string Original_Start_opieki, string Original_Koniec_opieki, string Original_Data, int Original_ID_Zwierze, int Original_ID_Opiekun, int ID_Opieka) {
+            if ((Start_opieki == null)) {
+                throw new global::System.ArgumentNullException("Start_opieki");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Start_opieki));
             }
-            if ((Data.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Data.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Zwierze.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_Zwierze.Value));
+            if ((Koniec_opieki == null)) {
+                throw new global::System.ArgumentNullException("Koniec_opieki");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Koniec_opieki));
             }
-            if ((ID_Opiekun.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Opiekun.Value));
+            if ((Data == null)) {
+                throw new global::System.ArgumentNullException("Data");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Data));
             }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_Zwierze));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Opiekun));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Opieka));
-            if ((Original_Czas_opieki.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Czas_opieki.Value));
+            if ((Original_Start_opieki == null)) {
+                throw new global::System.ArgumentNullException("Original_Start_opieki");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Start_opieki));
             }
-            if ((Original_Data.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Data.Value));
+            if ((Original_Koniec_opieki == null)) {
+                throw new global::System.ArgumentNullException("Original_Koniec_opieki");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Koniec_opieki));
             }
-            if ((Original_ID_Zwierze.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID_Zwierze.Value));
+            if ((Original_Data == null)) {
+                throw new global::System.ArgumentNullException("Original_Data");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Data));
             }
-            if ((Original_ID_Opiekun.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ID_Opiekun.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID_Zwierze));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_Opiekun));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(ID_Opieka));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5573,8 +5261,8 @@ SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Czas_opieki, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<int> ID_Zwierze, global::System.Nullable<int> ID_Opiekun, int Original_ID_Opieka, global::System.Nullable<int> Original_Czas_opieki, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<int> Original_ID_Zwierze, global::System.Nullable<int> Original_ID_Opiekun) {
-            return this.Update(Original_ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun, Original_ID_Opieka, Original_Czas_opieki, Original_Data, Original_ID_Zwierze, Original_ID_Opiekun);
+        public virtual int Update(string Start_opieki, string Koniec_opieki, string Data, int ID_Zwierze, int ID_Opiekun, int Original_ID_Opieka, string Original_Start_opieki, string Original_Koniec_opieki, string Original_Data, int Original_ID_Zwierze, int Original_ID_Opiekun) {
+            return this.Update(Start_opieki, Koniec_opieki, Data, ID_Zwierze, ID_Opiekun, Original_ID_Opieka, Original_Start_opieki, Original_Koniec_opieki, Original_Data, Original_ID_Zwierze, Original_ID_Opiekun, Original_ID_Opieka);
         }
     }
     
@@ -5700,52 +5388,53 @@ SELECT ID_Opieka, Czas_opieki, Data, ID_Zwierze, ID_Opiekun FROM Opieka WHERE (I
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Opiekun";
             tableMapping.ColumnMappings.Add("ID_Opiekun", "ID_Opiekun");
-            tableMapping.ColumnMappings.Add("Imię", "Imię");
+            tableMapping.ColumnMappings.Add("Imie", "Imie");
             tableMapping.ColumnMappings.Add("Nazwisko", "Nazwisko");
             tableMapping.ColumnMappings.Add("Wiek", "Wiek");
-            tableMapping.ColumnMappings.Add("Płeć", "Płeć");
+            tableMapping.ColumnMappings.Add("Plec", "Plec");
             tableMapping.ColumnMappings.Add("Nr_telefonu", "Nr_telefonu");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Opiekun] WHERE (([ID_Opiekun] = @Original_ID_Opiekun) AND ([Imię] = @Original_Imię) AND ([Nazwisko] = @Original_Nazwisko) AND ([Wiek] = @Original_Wiek) AND ([Płeć] = @Original_Płeć) AND ((@IsNull_Nr_telefonu = 1 AND [Nr_telefonu] IS NULL) OR ([Nr_telefonu] = @Original_Nr_telefonu)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Opiekun] WHERE (([ID_Opiekun] = @Original_ID_Opiekun) AND ([Imie] = @Original_Imie) AND ([Nazwisko] = @Original_Nazwisko) AND ([Wiek] = @Original_Wiek) AND ([Plec] = @Original_Plec) AND ((@IsNull_Nr_telefonu = 1 AND [Nr_telefonu] IS NULL) OR ([Nr_telefonu] = @Original_Nr_telefonu)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Imię", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imię", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Imie", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwisko", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Płeć", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Płeć", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nr_telefonu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nr_telefonu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nr_telefonu", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nr_telefonu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Opiekun] ([ID_Opiekun], [Imię], [Nazwisko], [Wiek], [Płeć], [Nr_telefonu]) VALUES (@ID_Opiekun, @Imię, @Nazwisko, @Wiek, @Płeć, @Nr_telefonu);
-SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE (ID_Opiekun = @ID_Opiekun)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Opiekun] ([Imie], [Nazwisko], [Wiek], [Plec], [Nr_telefonu]) V" +
+                "ALUES (@Imie, @Nazwisko, @Wiek, @Plec, @Nr_telefonu);\r\nSELECT ID_Opiekun, Imie, " +
+                "Nazwisko, Wiek, Plec, Nr_telefonu FROM Opiekun WHERE (ID_Opiekun = SCOPE_IDENTIT" +
+                "Y())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imię", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imię", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwisko", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Płeć", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Płeć", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nr_telefonu", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nr_telefonu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Opiekun] SET [ID_Opiekun] = @ID_Opiekun, [Imię] = @Imię, [Nazwisko] = @Nazwisko, [Wiek] = @Wiek, [Płeć] = @Płeć, [Nr_telefonu] = @Nr_telefonu WHERE (([ID_Opiekun] = @Original_ID_Opiekun) AND ([Imię] = @Original_Imię) AND ([Nazwisko] = @Original_Nazwisko) AND ([Wiek] = @Original_Wiek) AND ([Płeć] = @Original_Płeć) AND ((@IsNull_Nr_telefonu = 1 AND [Nr_telefonu] IS NULL) OR ([Nr_telefonu] = @Original_Nr_telefonu)));
-SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE (ID_Opiekun = @ID_Opiekun)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Opiekun] SET [Imie] = @Imie, [Nazwisko] = @Nazwisko, [Wiek] = @Wiek, [Plec] = @Plec, [Nr_telefonu] = @Nr_telefonu WHERE (([ID_Opiekun] = @Original_ID_Opiekun) AND ([Imie] = @Original_Imie) AND ([Nazwisko] = @Original_Nazwisko) AND ([Wiek] = @Original_Wiek) AND ([Plec] = @Original_Plec) AND ((@IsNull_Nr_telefonu = 1 AND [Nr_telefonu] IS NULL) OR ([Nr_telefonu] = @Original_Nr_telefonu)));
+SELECT ID_Opiekun, Imie, Nazwisko, Wiek, Plec, Nr_telefonu FROM Opiekun WHERE (ID_Opiekun = @ID_Opiekun)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imię", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imię", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwisko", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Płeć", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Płeć", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nr_telefonu", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nr_telefonu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Opiekun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Imię", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imię", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Imie", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwisko", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Płeć", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Płeć", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nr_telefonu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nr_telefonu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nr_telefonu", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nr_telefonu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Opiekun", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Opiekun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5761,7 +5450,7 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM dbo.Opiekun";
+            this._commandCollection[0].CommandText = "SELECT ID_Opiekun, Imie, Nazwisko, Wiek, Plec, Nr_telefonu FROM dbo.Opiekun";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5822,13 +5511,13 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Opiekun, string Original_Imię, string Original_Nazwisko, int Original_Wiek, string Original_Płeć, string Original_Nr_telefonu) {
+        public virtual int Delete(int Original_ID_Opiekun, string Original_Imie, string Original_Nazwisko, int Original_Wiek, string Original_Plec, string Original_Nr_telefonu) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Opiekun));
-            if ((Original_Imię == null)) {
-                throw new global::System.ArgumentNullException("Original_Imię");
+            if ((Original_Imie == null)) {
+                throw new global::System.ArgumentNullException("Original_Imie");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Imię));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Imie));
             }
             if ((Original_Nazwisko == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwisko");
@@ -5837,11 +5526,11 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nazwisko));
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Wiek));
-            if ((Original_Płeć == null)) {
-                throw new global::System.ArgumentNullException("Original_Płeć");
+            if ((Original_Plec == null)) {
+                throw new global::System.ArgumentNullException("Original_Plec");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Płeć));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Plec));
             }
             if ((Original_Nr_telefonu == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
@@ -5871,32 +5560,31 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Opiekun, string Imię, string Nazwisko, int Wiek, string Płeć, string Nr_telefonu) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Opiekun));
-            if ((Imię == null)) {
-                throw new global::System.ArgumentNullException("Imię");
+        public virtual int Insert(string Imie, string Nazwisko, int Wiek, string Plec, string Nr_telefonu) {
+            if ((Imie == null)) {
+                throw new global::System.ArgumentNullException("Imie");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Imię));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Imie));
             }
             if ((Nazwisko == null)) {
                 throw new global::System.ArgumentNullException("Nazwisko");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Nazwisko));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwisko));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Wiek));
-            if ((Płeć == null)) {
-                throw new global::System.ArgumentNullException("Płeć");
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Wiek));
+            if ((Plec == null)) {
+                throw new global::System.ArgumentNullException("Plec");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Płeć));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Plec));
             }
             if ((Nr_telefonu == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Nr_telefonu));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Nr_telefonu));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5918,61 +5606,61 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Opiekun, string Imię, string Nazwisko, int Wiek, string Płeć, string Nr_telefonu, int Original_ID_Opiekun, string Original_Imię, string Original_Nazwisko, int Original_Wiek, string Original_Płeć, string Original_Nr_telefonu) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Opiekun));
-            if ((Imię == null)) {
-                throw new global::System.ArgumentNullException("Imię");
+        public virtual int Update(string Imie, string Nazwisko, int Wiek, string Plec, string Nr_telefonu, int Original_ID_Opiekun, string Original_Imie, string Original_Nazwisko, int Original_Wiek, string Original_Plec, string Original_Nr_telefonu, int ID_Opiekun) {
+            if ((Imie == null)) {
+                throw new global::System.ArgumentNullException("Imie");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Imię));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Imie));
             }
             if ((Nazwisko == null)) {
                 throw new global::System.ArgumentNullException("Nazwisko");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Nazwisko));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwisko));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Wiek));
-            if ((Płeć == null)) {
-                throw new global::System.ArgumentNullException("Płeć");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Wiek));
+            if ((Plec == null)) {
+                throw new global::System.ArgumentNullException("Plec");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Płeć));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Plec));
             }
             if ((Nr_telefonu == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Nr_telefonu));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Nr_telefonu));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Opiekun));
-            if ((Original_Imię == null)) {
-                throw new global::System.ArgumentNullException("Original_Imię");
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Opiekun));
+            if ((Original_Imie == null)) {
+                throw new global::System.ArgumentNullException("Original_Imie");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Imię));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Imie));
             }
             if ((Original_Nazwisko == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwisko");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Nazwisko));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Nazwisko));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Wiek));
-            if ((Original_Płeć == null)) {
-                throw new global::System.ArgumentNullException("Original_Płeć");
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Wiek));
+            if ((Original_Plec == null)) {
+                throw new global::System.ArgumentNullException("Original_Plec");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Płeć));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Plec));
             }
             if ((Original_Nr_telefonu == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Nr_telefonu));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Nr_telefonu));
             }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(ID_Opiekun));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5993,8 +5681,8 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Imię, string Nazwisko, int Wiek, string Płeć, string Nr_telefonu, int Original_ID_Opiekun, string Original_Imię, string Original_Nazwisko, int Original_Wiek, string Original_Płeć, string Original_Nr_telefonu) {
-            return this.Update(Original_ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu, Original_ID_Opiekun, Original_Imię, Original_Nazwisko, Original_Wiek, Original_Płeć, Original_Nr_telefonu);
+        public virtual int Update(string Imie, string Nazwisko, int Wiek, string Plec, string Nr_telefonu, int Original_ID_Opiekun, string Original_Imie, string Original_Nazwisko, int Original_Wiek, string Original_Plec, string Original_Nr_telefonu) {
+            return this.Update(Imie, Nazwisko, Wiek, Plec, Nr_telefonu, Original_ID_Opiekun, Original_Imie, Original_Nazwisko, Original_Wiek, Original_Plec, Original_Nr_telefonu, Original_ID_Opiekun);
         }
     }
     
@@ -6125,35 +5813,31 @@ SELECT ID_Opiekun, Imię, Nazwisko, Wiek, Płeć, Nr_telefonu FROM Opiekun WHERE
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Sektor] WHERE (([ID_Sektor] = @Original_ID_Sektor) AND ((@IsNu" +
-                "ll_Nazwa = 1 AND [Nazwa] IS NULL) OR ([Nazwa] = @Original_Nazwa)) AND ([ID_Magaz" +
-                "yn] = @Original_ID_Magazyn))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Sektor] WHERE (([ID_Sektor] = @Original_ID_Sektor) AND ([Nazwa" +
+                "] = @Original_Nazwa) AND ([ID_Magazyn] = @Original_ID_Magazyn))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Sektor] ([ID_Sektor], [Nazwa], [ID_Magazyn]) VALUES (@ID_Sekto" +
-                "r, @Nazwa, @ID_Magazyn);\r\nSELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE " +
-                "(ID_Sektor = @ID_Sektor)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Sektor] ([Nazwa], [ID_Magazyn]) VALUES (@Nazwa, @ID_Magazyn);\r" +
+                "\nSELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = SCOPE_IDENTI" +
+                "TY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Sektor] SET [ID_Sektor] = @ID_Sektor, [Nazwa] = @Nazwa, [ID_Magazyn] = @ID_Magazyn WHERE (([ID_Sektor] = @Original_ID_Sektor) AND ((@IsNull_Nazwa = 1 AND [Nazwa] IS NULL) OR ([Nazwa] = @Original_Nazwa)) AND ([ID_Magazyn] = @Original_ID_Magazyn));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Sektor] SET [Nazwa] = @Nazwa, [ID_Magazyn] = @ID_Magazyn WHERE (([ID_Sektor] = @Original_ID_Sektor) AND ([Nazwa] = @Original_Nazwa) AND ([ID_Magazyn] = @Original_ID_Magazyn));
 SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Sektor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nazwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sektor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sektor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6233,14 +5917,12 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
         public virtual int Delete(int Original_ID_Sektor, string Original_Nazwa, int Original_ID_Magazyn) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Sektor));
             if ((Original_Nazwa == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nazwa));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ID_Magazyn));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6261,15 +5943,14 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Sektor, string Nazwa, int ID_Magazyn) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Sektor));
+        public virtual int Insert(string Nazwa, int ID_Magazyn) {
             if ((Nazwa == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ID_Magazyn));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID_Magazyn));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6290,25 +5971,23 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Sektor, string Nazwa, int ID_Magazyn, int Original_ID_Sektor, string Original_Nazwa, int Original_ID_Magazyn) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Sektor));
+        public virtual int Update(string Nazwa, int ID_Magazyn, int Original_ID_Sektor, string Original_Nazwa, int Original_ID_Magazyn, int ID_Sektor) {
             if ((Nazwa == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ID_Magazyn));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_Sektor));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID_Sektor));
             if ((Original_Nazwa == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Sektor));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6330,7 +6009,7 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Nazwa, int ID_Magazyn, int Original_ID_Sektor, string Original_Nazwa, int Original_ID_Magazyn) {
-            return this.Update(Original_ID_Sektor, Nazwa, ID_Magazyn, Original_ID_Sektor, Original_Nazwa, Original_ID_Magazyn);
+            return this.Update(Nazwa, ID_Magazyn, Original_ID_Sektor, Original_Nazwa, Original_ID_Magazyn, Original_ID_Sektor);
         }
     }
     
@@ -6343,7 +6022,7 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ZwierzeTableAdapter : global::System.ComponentModel.Component {
+    public partial class ZwierzecieTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -6357,7 +6036,7 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ZwierzeTableAdapter() {
+        public ZwierzecieTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -6454,7 +6133,7 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Zwierze";
+            tableMapping.DataSetTable = "Zwierzecie";
             tableMapping.ColumnMappings.Add("ID_Zwierze", "ID_Zwierze");
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
             tableMapping.ColumnMappings.Add("Wiek", "Wiek");
@@ -6465,48 +6144,45 @@ SELECT ID_Sektor, Nazwa, ID_Magazyn FROM Sektor WHERE (ID_Sektor = @ID_Sektor)";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Zwierze] WHERE (([ID_Zwierze] = @Original_ID_Zwierze) AND ([Nazwa] = @Original_Nazwa) AND ([Wiek] = @Original_Wiek) AND ([Gatunek] = @Original_Gatunek) AND ([Plec] = @Original_Plec) AND ([Data_przyjecia] = @Original_Data_przyjecia) AND ((@IsNull_ID_Klatka = 1 AND [ID_Klatka] IS NULL) OR ([ID_Klatka] = @Original_ID_Klatka)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Zwierzecie] WHERE (([ID_Zwierze] = @Original_ID_Zwierze) AND ([Nazwa] = @Original_Nazwa) AND ([Wiek] = @Original_Wiek) AND ([Gatunek] = @Original_Gatunek) AND ([Plec] = @Original_Plec) AND ([Data_przyjecia] = @Original_Data_przyjecia) AND ([ID_Klatka] = @Original_ID_Klatka))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gatunek", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gatunek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_przyjecia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_przyjecia", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Zwierze] ([ID_Zwierze], [Nazwa], [Wiek], [Gatunek], [Plec], [Data_przyjecia], [ID_Klatka]) VALUES (@ID_Zwierze, @Nazwa, @Wiek, @Gatunek, @Plec, @Data_przyjecia, @ID_Klatka);
-SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zwierze WHERE (ID_Zwierze = @ID_Zwierze)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Zwierzecie] ([Nazwa], [Wiek], [Gatunek], [Plec], [Data_przyjecia], [ID_Klatka]) VALUES (@Nazwa, @Wiek, @Gatunek, @Plec, @Data_przyjecia, @ID_Klatka);
+SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zwierzecie WHERE (ID_Zwierze = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gatunek", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gatunek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_przyjecia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_przyjecia", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Zwierze] SET [ID_Zwierze] = @ID_Zwierze, [Nazwa] = @Nazwa, [Wiek] = @Wiek, [Gatunek] = @Gatunek, [Plec] = @Plec, [Data_przyjecia] = @Data_przyjecia, [ID_Klatka] = @ID_Klatka WHERE (([ID_Zwierze] = @Original_ID_Zwierze) AND ([Nazwa] = @Original_Nazwa) AND ([Wiek] = @Original_Wiek) AND ([Gatunek] = @Original_Gatunek) AND ([Plec] = @Original_Plec) AND ([Data_przyjecia] = @Original_Data_przyjecia) AND ((@IsNull_ID_Klatka = 1 AND [ID_Klatka] IS NULL) OR ([ID_Klatka] = @Original_ID_Klatka)));
-SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zwierze WHERE (ID_Zwierze = @ID_Zwierze)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Zwierzecie] SET [Nazwa] = @Nazwa, [Wiek] = @Wiek, [Gatunek] = @Gatunek, [Plec] = @Plec, [Data_przyjecia] = @Data_przyjecia, [ID_Klatka] = @ID_Klatka WHERE (([ID_Zwierze] = @Original_ID_Zwierze) AND ([Nazwa] = @Original_Nazwa) AND ([Wiek] = @Original_Wiek) AND ([Gatunek] = @Original_Gatunek) AND ([Plec] = @Original_Plec) AND ([Data_przyjecia] = @Original_Data_przyjecia) AND ([ID_Klatka] = @Original_ID_Klatka));
+SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zwierzecie WHERE (ID_Zwierze = @ID_Zwierze)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gatunek", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gatunek", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_przyjecia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_przyjecia", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Zwierze", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wiek", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wiek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gatunek", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gatunek", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plec", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_przyjecia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_przyjecia", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_przyjecia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Klatka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Klatka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Zwierze", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Zwierze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6523,7 +6199,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM dbo" +
-                ".Zwierze";
+                ".Zwierzecie";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6531,7 +6207,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZooDataSet.ZwierzeDataTable dataTable) {
+        public virtual int Fill(ZooDataSet.ZwierzecieDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6544,9 +6220,9 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZooDataSet.ZwierzeDataTable GetData() {
+        public virtual ZooDataSet.ZwierzecieDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZooDataSet.ZwierzeDataTable dataTable = new ZooDataSet.ZwierzeDataTable();
+            ZooDataSet.ZwierzecieDataTable dataTable = new ZooDataSet.ZwierzecieDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6554,7 +6230,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZooDataSet.ZwierzeDataTable dataTable) {
+        public virtual int Update(ZooDataSet.ZwierzecieDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -6562,7 +6238,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(ZooDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Zwierze");
+            return this.Adapter.Update(dataSet, "Zwierzecie");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6584,7 +6260,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Zwierze, string Original_Nazwa, int Original_Wiek, string Original_Gatunek, string Original_Plec, System.DateTime Original_Data_przyjecia, global::System.Nullable<int> Original_ID_Klatka) {
+        public virtual int Delete(int Original_ID_Zwierze, string Original_Nazwa, int Original_Wiek, string Original_Gatunek, string Original_Plec, string Original_Data_przyjecia, int Original_ID_Klatka) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Zwierze));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
@@ -6605,15 +6281,13 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Plec));
             }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Data_przyjecia));
-            if ((Original_ID_Klatka.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_ID_Klatka.Value));
+            if ((Original_Data_przyjecia == null)) {
+                throw new global::System.ArgumentNullException("Original_Data_przyjecia");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Data_przyjecia));
             }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ID_Klatka));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6634,34 +6308,33 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Zwierze, string Nazwa, int Wiek, string Gatunek, string Plec, System.DateTime Data_przyjecia, global::System.Nullable<int> ID_Klatka) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Zwierze));
+        public virtual int Insert(string Nazwa, int Wiek, string Gatunek, string Plec, string Data_przyjecia, int ID_Klatka) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Wiek));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Wiek));
             if ((Gatunek == null)) {
                 throw new global::System.ArgumentNullException("Gatunek");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Gatunek));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Gatunek));
             }
             if ((Plec == null)) {
                 throw new global::System.ArgumentNullException("Plec");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Plec));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Plec));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Data_przyjecia));
-            if ((ID_Klatka.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(ID_Klatka.Value));
+            if ((Data_przyjecia == null)) {
+                throw new global::System.ArgumentNullException("Data_przyjecia");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Data_przyjecia));
             }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID_Klatka));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6682,63 +6355,61 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Zwierze, string Nazwa, int Wiek, string Gatunek, string Plec, System.DateTime Data_przyjecia, global::System.Nullable<int> ID_Klatka, int Original_ID_Zwierze, string Original_Nazwa, int Original_Wiek, string Original_Gatunek, string Original_Plec, System.DateTime Original_Data_przyjecia, global::System.Nullable<int> Original_ID_Klatka) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Zwierze));
+        public virtual int Update(string Nazwa, int Wiek, string Gatunek, string Plec, string Data_przyjecia, int ID_Klatka, int Original_ID_Zwierze, string Original_Nazwa, int Original_Wiek, string Original_Gatunek, string Original_Plec, string Original_Data_przyjecia, int Original_ID_Klatka, int ID_Zwierze) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwa));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Wiek));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Wiek));
             if ((Gatunek == null)) {
                 throw new global::System.ArgumentNullException("Gatunek");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Gatunek));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Gatunek));
             }
             if ((Plec == null)) {
                 throw new global::System.ArgumentNullException("Plec");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Plec));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Plec));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Data_przyjecia));
-            if ((ID_Klatka.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ID_Klatka.Value));
+            if ((Data_przyjecia == null)) {
+                throw new global::System.ArgumentNullException("Data_przyjecia");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Data_przyjecia));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID_Zwierze));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Klatka));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Zwierze));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Wiek));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Wiek));
             if ((Original_Gatunek == null)) {
                 throw new global::System.ArgumentNullException("Original_Gatunek");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Gatunek));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Gatunek));
             }
             if ((Original_Plec == null)) {
                 throw new global::System.ArgumentNullException("Original_Plec");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Plec));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Plec));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Data_przyjecia));
-            if ((Original_ID_Klatka.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ID_Klatka.Value));
+            if ((Original_Data_przyjecia == null)) {
+                throw new global::System.ArgumentNullException("Original_Data_przyjecia");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Data_przyjecia));
             }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ID_Klatka));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID_Zwierze));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6759,8 +6430,8 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazwa, int Wiek, string Gatunek, string Plec, System.DateTime Data_przyjecia, global::System.Nullable<int> ID_Klatka, int Original_ID_Zwierze, string Original_Nazwa, int Original_Wiek, string Original_Gatunek, string Original_Plec, System.DateTime Original_Data_przyjecia, global::System.Nullable<int> Original_ID_Klatka) {
-            return this.Update(Original_ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka, Original_ID_Zwierze, Original_Nazwa, Original_Wiek, Original_Gatunek, Original_Plec, Original_Data_przyjecia, Original_ID_Klatka);
+        public virtual int Update(string Nazwa, int Wiek, string Gatunek, string Plec, string Data_przyjecia, int ID_Klatka, int Original_ID_Zwierze, string Original_Nazwa, int Original_Wiek, string Original_Gatunek, string Original_Plec, string Original_Data_przyjecia, int Original_ID_Klatka) {
+            return this.Update(Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka, Original_ID_Zwierze, Original_Nazwa, Original_Wiek, Original_Gatunek, Original_Plec, Original_Data_przyjecia, Original_ID_Klatka, Original_ID_Zwierze);
         }
     }
     
@@ -6788,7 +6459,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         
         private SektorTableAdapter _sektorTableAdapter;
         
-        private ZwierzeTableAdapter _zwierzeTableAdapter;
+        private ZwierzecieTableAdapter _zwierzecieTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6894,12 +6565,12 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ZwierzeTableAdapter ZwierzeTableAdapter {
+        public ZwierzecieTableAdapter ZwierzecieTableAdapter {
             get {
-                return this._zwierzeTableAdapter;
+                return this._zwierzecieTableAdapter;
             }
             set {
-                this._zwierzeTableAdapter = value;
+                this._zwierzecieTableAdapter = value;
             }
         }
         
@@ -6946,9 +6617,9 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                             && (this._sektorTableAdapter.Connection != null))) {
                     return this._sektorTableAdapter.Connection;
                 }
-                if (((this._zwierzeTableAdapter != null) 
-                            && (this._zwierzeTableAdapter.Connection != null))) {
-                    return this._zwierzeTableAdapter.Connection;
+                if (((this._zwierzecieTableAdapter != null) 
+                            && (this._zwierzecieTableAdapter.Connection != null))) {
+                    return this._zwierzecieTableAdapter.Connection;
                 }
                 return null;
             }
@@ -6981,7 +6652,7 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                 if ((this._sektorTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._zwierzeTableAdapter != null)) {
+                if ((this._zwierzecieTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -7031,12 +6702,12 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._zwierzeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Zwierze.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._zwierzecieTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Zwierzecie.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._zwierzeTableAdapter.Update(updatedRows));
+                    result = (result + this._zwierzecieTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -7100,11 +6771,11 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._zwierzeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Zwierze.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._zwierzecieTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Zwierzecie.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._zwierzeTableAdapter.Update(addedRows));
+                    result = (result + this._zwierzecieTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7150,11 +6821,11 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._zwierzeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Zwierze.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._zwierzecieTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zwierzecie.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._zwierzeTableAdapter.Update(deletedRows));
+                    result = (result + this._zwierzecieTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -7259,8 +6930,8 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
                         ", muszą być używane te same parametry połączenia.");
             }
-            if (((this._zwierzeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._zwierzeTableAdapter.Connection) == false))) {
+            if (((this._zwierzecieTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._zwierzecieTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
                         ", muszą być używane te same parametry połączenia.");
             }
@@ -7351,13 +7022,13 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                         adaptersWithAcceptChangesDuringUpdate.Add(this._sektorTableAdapter.Adapter);
                     }
                 }
-                if ((this._zwierzeTableAdapter != null)) {
-                    revertConnections.Add(this._zwierzeTableAdapter, this._zwierzeTableAdapter.Connection);
-                    this._zwierzeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._zwierzeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._zwierzeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._zwierzeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._zwierzeTableAdapter.Adapter);
+                if ((this._zwierzecieTableAdapter != null)) {
+                    revertConnections.Add(this._zwierzecieTableAdapter, this._zwierzecieTableAdapter.Connection);
+                    this._zwierzecieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._zwierzecieTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._zwierzecieTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._zwierzecieTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._zwierzecieTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -7442,9 +7113,9 @@ SELECT ID_Zwierze, Nazwa, Wiek, Gatunek, Plec, Data_przyjecia, ID_Klatka FROM Zw
                     this._sektorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sektorTableAdapter]));
                     this._sektorTableAdapter.Transaction = null;
                 }
-                if ((this._zwierzeTableAdapter != null)) {
-                    this._zwierzeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zwierzeTableAdapter]));
-                    this._zwierzeTableAdapter.Transaction = null;
+                if ((this._zwierzecieTableAdapter != null)) {
+                    this._zwierzecieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zwierzecieTableAdapter]));
+                    this._zwierzecieTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
