@@ -75,18 +75,18 @@
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
             this.mainDataSet = new Zoo.ZooDataSet();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtOpiekunImie = new System.Windows.Forms.TextBox();
+            this.txtOpiekunNazwisko = new System.Windows.Forms.TextBox();
+            this.txtOpiekunWiek = new System.Windows.Forms.TextBox();
+            this.txtOpiekunNrTel = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opiekunTA = new Zoo.ZooDataSetTableAdapters.OpiekunTableAdapter();
+            this.comboBoxPlec = new System.Windows.Forms.ComboBox();
+            this.btnOpiekunZapisz = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabJedzenie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -350,16 +350,17 @@
             // 
             // tabOpiekun
             // 
+            this.tabOpiekun.Controls.Add(this.btnOpiekunZapisz);
+            this.tabOpiekun.Controls.Add(this.comboBoxPlec);
             this.tabOpiekun.Controls.Add(this.label16);
             this.tabOpiekun.Controls.Add(this.label15);
             this.tabOpiekun.Controls.Add(this.label14);
             this.tabOpiekun.Controls.Add(this.label13);
             this.tabOpiekun.Controls.Add(this.label12);
-            this.tabOpiekun.Controls.Add(this.textBox6);
-            this.tabOpiekun.Controls.Add(this.textBox5);
-            this.tabOpiekun.Controls.Add(this.textBox4);
-            this.tabOpiekun.Controls.Add(this.textBox3);
-            this.tabOpiekun.Controls.Add(this.textBox2);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunNrTel);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunWiek);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunNazwisko);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunImie);
             this.tabOpiekun.Controls.Add(this.btnOpiekunEdytuj);
             this.tabOpiekun.Controls.Add(this.btnOpiekunDodaj);
             this.tabOpiekun.Controls.Add(this.label4);
@@ -373,12 +374,13 @@
             // 
             // btnOpiekunEdytuj
             // 
-            this.btnOpiekunEdytuj.Location = new System.Drawing.Point(253, 141);
+            this.btnOpiekunEdytuj.Location = new System.Drawing.Point(253, 142);
             this.btnOpiekunEdytuj.Name = "btnOpiekunEdytuj";
             this.btnOpiekunEdytuj.Size = new System.Drawing.Size(75, 23);
             this.btnOpiekunEdytuj.TabIndex = 12;
             this.btnOpiekunEdytuj.Text = "Edytuj";
             this.btnOpiekunEdytuj.UseVisualStyleBackColor = true;
+            this.btnOpiekunEdytuj.Click += new System.EventHandler(this.btnOpiekunEdytuj_Click);
             // 
             // btnOpiekunDodaj
             // 
@@ -404,11 +406,12 @@
             this.dgvOpiekunowie.AllowUserToAddRows = false;
             this.dgvOpiekunowie.AllowUserToDeleteRows = false;
             this.dgvOpiekunowie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOpiekunowie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nazwa});
             this.dgvOpiekunowie.Location = new System.Drawing.Point(524, 48);
+            this.dgvOpiekunowie.MultiSelect = false;
             this.dgvOpiekunowie.Name = "dgvOpiekunowie";
             this.dgvOpiekunowie.ReadOnly = true;
+            this.dgvOpiekunowie.RowHeadersVisible = false;
+            this.dgvOpiekunowie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOpiekunowie.Size = new System.Drawing.Size(457, 554);
             this.dgvOpiekunowie.TabIndex = 9;
             // 
@@ -569,40 +572,33 @@
             this.mainDataSet.DataSetName = "ZooDataSet";
             this.mainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox2
+            // txtOpiekunImie
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtOpiekunImie.Location = new System.Drawing.Point(92, 66);
+            this.txtOpiekunImie.Name = "txtOpiekunImie";
+            this.txtOpiekunImie.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunImie.TabIndex = 13;
             // 
-            // textBox3
+            // txtOpiekunNazwisko
             // 
-            this.textBox3.Location = new System.Drawing.Point(92, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 20);
-            this.textBox3.TabIndex = 14;
+            this.txtOpiekunNazwisko.Location = new System.Drawing.Point(92, 105);
+            this.txtOpiekunNazwisko.Name = "txtOpiekunNazwisko";
+            this.txtOpiekunNazwisko.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunNazwisko.TabIndex = 14;
             // 
-            // textBox4
+            // txtOpiekunWiek
             // 
-            this.textBox4.Location = new System.Drawing.Point(92, 144);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(122, 20);
-            this.textBox4.TabIndex = 15;
+            this.txtOpiekunWiek.Location = new System.Drawing.Point(92, 144);
+            this.txtOpiekunWiek.Name = "txtOpiekunWiek";
+            this.txtOpiekunWiek.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunWiek.TabIndex = 15;
             // 
-            // textBox5
+            // txtOpiekunNrTel
             // 
-            this.textBox5.Location = new System.Drawing.Point(92, 183);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(122, 20);
-            this.textBox5.TabIndex = 16;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(92, 222);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 20);
-            this.textBox6.TabIndex = 17;
+            this.txtOpiekunNrTel.Location = new System.Drawing.Point(92, 222);
+            this.txtOpiekunNrTel.Name = "txtOpiekunNrTel";
+            this.txtOpiekunNrTel.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunNrTel.TabIndex = 17;
             // 
             // label12
             // 
@@ -649,16 +645,30 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Numer telefonu";
             // 
-            // Nazwa
-            // 
-            this.Nazwa.DataPropertyName = "nazwa";
-            this.Nazwa.HeaderText = "Nazwa";
-            this.Nazwa.Name = "Nazwa";
-            this.Nazwa.ReadOnly = true;
-            // 
             // opiekunTA
             // 
             this.opiekunTA.ClearBeforeFill = true;
+            // 
+            // comboBoxPlec
+            // 
+            this.comboBoxPlec.FormattingEnabled = true;
+            this.comboBoxPlec.Items.AddRange(new object[] {
+            "K",
+            "M"});
+            this.comboBoxPlec.Location = new System.Drawing.Point(92, 183);
+            this.comboBoxPlec.Name = "comboBoxPlec";
+            this.comboBoxPlec.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPlec.TabIndex = 23;
+            // 
+            // btnOpiekunZapisz
+            // 
+            this.btnOpiekunZapisz.Location = new System.Drawing.Point(253, 220);
+            this.btnOpiekunZapisz.Name = "btnOpiekunZapisz";
+            this.btnOpiekunZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunZapisz.TabIndex = 24;
+            this.btnOpiekunZapisz.Text = "Zapisz";
+            this.btnOpiekunZapisz.UseVisualStyleBackColor = true;
+            this.btnOpiekunZapisz.Click += new System.EventHandler(this.btnOpiekunZapisz_Click);
             // 
             // Form1
             // 
@@ -752,13 +762,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
+        private System.Windows.Forms.TextBox txtOpiekunNrTel;
+        private System.Windows.Forms.TextBox txtOpiekunWiek;
+        private System.Windows.Forms.TextBox txtOpiekunNazwisko;
+        private System.Windows.Forms.TextBox txtOpiekunImie;
         private ZooDataSetTableAdapters.OpiekunTableAdapter opiekunTA;
+        private System.Windows.Forms.ComboBox comboBoxPlec;
+        private System.Windows.Forms.Button btnOpiekunZapisz;
     }
 }
 

@@ -13,22 +13,144 @@ namespace Zoo
 {
     public partial class Form1 : Form
     {
+        private void ResetData()
+        {
+            txtOpiekunImie.Text = "";
+            txtOpiekunNazwisko.Text = "";
+            txtOpiekunWiek.Text = "";
+            comboBoxPlec.SelectedIndex = -1;
+            txtOpiekunNrTel.Text = "";
+            this.dbAction = DBActions.None;
+            txtOpiekunImie.Focus();
+        }
+
+        private DBActions dbAction = DBActions.None;
+        ZooDataSet.OpiekunRow _selectedRow = null;
+
+        private bool ValidateInput()
+        {
+            //Validations
+            return true;
+        }
         public Form1()
         {
             InitializeComponent();
             //LOADING
-            //1. fill data set
-            opiekunTA.Fill(mainDataSet.Opiekun);
-            //2. add datasource to binding source
-            opiekunBS.DataSource = mainDataSet.Opiekun;
-            //3. set datagridview source
-            dgvOpiekunowie.DataSource = opiekunBS;
+            try
+            {
+                //1. fill data set
+                opiekunTA.Fill(mainDataSet.Opiekun);
+                //2. add datasource to binding source
+                opiekunBS.DataSource = mainDataSet.Opiekun;
+                //3. set datagridview source
+                dgvOpiekunowie.DataSource = opiekunBS;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
 
+        }
+
+        
+
+        public enum DBActions
+        {
+            None,
+            Add,
+            Edit,
+            Delete
         }
 
         private void btnOpiekunDodaj_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                _selectedRow = mainDataSet.Opiekun.NewOpiekunRow();
+                ResetData();
+                this.dbAction = DBActions.Add;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
         }
+
+        
+
+        private void btnOpiekunEdytuj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var row = ((DataRowView)opiekunBS.Current).Row as ZooDataSet.OpiekunRow;
+
+                if (row == null)
+                    return;
+                
+                _selectedRow = row;
+                dbAction = DBActions.Edit;
+
+                txtOpiekunImie.Text = _selectedRow.Imię;
+                txtOpiekunNazwisko.Text = _selectedRow.Nazwisko;
+                txtOpiekunWiek.Text = _selectedRow.Wiek.ToString();
+                comboBoxPlec.Text = _selectedRow.Płeć;
+                txtOpiekunNrTel.Text = _selectedRow.Nr_telefonu;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnOpiekunZapisz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(!ValidateInput())
+                    return;
+
+                if (_selectedRow == null)
+                    return;
+
+                switch (dbAction)
+                {
+                    case DBActions.Edit:
+                        {
+                            _selectedRow.Imię = txtOpiekunImie.Text;
+                            _selectedRow.Nazwisko = txtOpiekunNazwisko.Text;
+                            _selectedRow.Wiek = Int32.Parse(txtOpiekunWiek.Text);
+                            _selectedRow.Płeć = comboBoxPlec.Text;
+                            _selectedRow.Nr_telefonu = txtOpiekunNrTel.Text;
+
+                            opiekunTA.Update(_selectedRow);
+                            mainDataSet.Opiekun.AcceptChanges();
+
+                            break;
+                        }
+                    case DBActions.Add:
+                        {
+                            _selectedRow.Imię = txtOpiekunImie.Text;
+                            _selectedRow.Nazwisko = txtOpiekunNazwisko.Text;
+                            _selectedRow.Wiek = Int32.Parse(txtOpiekunWiek.Text);
+                            _selectedRow.Płeć = comboBoxPlec.Text;
+                            _selectedRow.Nr_telefonu = txtOpiekunNrTel.Text;
+
+                            mainDataSet.Opiekun.AddOpiekunRow(_selectedRow);
+                            opiekunTA.Update(_selectedRow);
+                            mainDataSet.AcceptChanges();
+
+                            break;
+                        }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        
     }
 }
