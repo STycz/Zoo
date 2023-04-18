@@ -30,34 +30,53 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabJedzenie = new System.Windows.Forms.TabPage();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabMagazyn = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.dgvMagazyny = new System.Windows.Forms.DataGridView();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabOpiekun = new System.Windows.Forms.TabPage();
+            this.btnOpiekunZapisz = new System.Windows.Forms.Button();
+            this.comboBoxPlec = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtOpiekunNrTel = new System.Windows.Forms.TextBox();
+            this.txtOpiekunWiek = new System.Windows.Forms.TextBox();
+            this.txtOpiekunNazwisko = new System.Windows.Forms.TextBox();
+            this.txtOpiekunImie = new System.Windows.Forms.TextBox();
+            this.btnOpiekunEdytuj = new System.Windows.Forms.Button();
+            this.btnOpiekunDodaj = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvOpiekunowie = new System.Windows.Forms.DataGridView();
+            this.tabJedzenie = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBoxJedzenieMagID = new System.Windows.Forms.ComboBox();
+            this.comboBoxJedzenieRodzaj = new System.Windows.Forms.ComboBox();
+            this.txtJedzenieOpis = new System.Windows.Forms.TextBox();
+            this.txtJedzenieNazwa = new System.Windows.Forms.TextBox();
+            this.btnJedzenieZapisz = new System.Windows.Forms.Button();
+            this.btnJedzenieUsun = new System.Windows.Forms.Button();
+            this.btnJedzenieEdytuj = new System.Windows.Forms.Button();
+            this.btnJedzenieDodaj = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvJedzenie = new System.Windows.Forms.DataGridView();
             this.tabSektor = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.tabOpiekun = new System.Windows.Forms.TabPage();
-            this.btnOpiekunEdytuj = new System.Windows.Forms.Button();
-            this.btnOpiekunDodaj = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvOpiekunowie = new System.Windows.Forms.DataGridView();
             this.tabKlatka = new System.Windows.Forms.TabPage();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -73,32 +92,25 @@
             this.button21 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.txtOpiekunImie = new System.Windows.Forms.TextBox();
-            this.txtOpiekunNazwisko = new System.Windows.Forms.TextBox();
-            this.txtOpiekunWiek = new System.Windows.Forms.TextBox();
-            this.txtOpiekunNrTel = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBoxPlec = new System.Windows.Forms.ComboBox();
-            this.btnOpiekunZapisz = new System.Windows.Forms.Button();
             this.mainDataSet = new Zoo.ZooDataSet();
             this.opiekunTA = new Zoo.ZooDataSetTableAdapters.OpiekunTableAdapter();
             this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
+            this.jedzenieTA = new Zoo.ZooDataSetTableAdapters.JedzenieTableAdapter();
+            this.jedzenieBS = new System.Windows.Forms.BindingSource(this.components);
+            this.magazynTA = new Zoo.ZooDataSetTableAdapters.MagazynTableAdapter();
+            this.magazynBS = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
-            this.tabJedzenie.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabMagazyn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabOpiekun.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
+            this.tabJedzenie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJedzenie)).BeginInit();
             this.tabSektor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabOpiekun.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
             this.tabKlatka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabZwierze.SuspendLayout();
@@ -107,13 +119,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabMagazyn);
             this.tabControl1.Controls.Add(this.tabOpiekun);
             this.tabControl1.Controls.Add(this.tabJedzenie);
-            this.tabControl1.Controls.Add(this.tabMagazyn);
             this.tabControl1.Controls.Add(this.tabSektor);
             this.tabControl1.Controls.Add(this.tabKlatka);
             this.tabControl1.Controls.Add(this.tabZwierze);
@@ -124,82 +138,13 @@
             this.tabControl1.Size = new System.Drawing.Size(1092, 693);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabJedzenie
-            // 
-            this.tabJedzenie.Controls.Add(this.button22);
-            this.tabJedzenie.Controls.Add(this.button4);
-            this.tabJedzenie.Controls.Add(this.button5);
-            this.tabJedzenie.Controls.Add(this.button6);
-            this.tabJedzenie.Controls.Add(this.label2);
-            this.tabJedzenie.Controls.Add(this.dataGridView2);
-            this.tabJedzenie.Location = new System.Drawing.Point(4, 22);
-            this.tabJedzenie.Name = "tabJedzenie";
-            this.tabJedzenie.Size = new System.Drawing.Size(1084, 667);
-            this.tabJedzenie.TabIndex = 6;
-            this.tabJedzenie.Text = "Jedzenie";
-            this.tabJedzenie.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(334, 278);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(79, 34);
-            this.button22.TabIndex = 12;
-            this.button22.Text = "Info";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(334, 204);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 34);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Usuń";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(334, 130);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 34);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Edytuj";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(334, 56);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(79, 34);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Dodaj";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(446, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Jedzenie";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(449, 56);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(466, 565);
-            this.dataGridView2.TabIndex = 0;
-            // 
             // tabMagazyn
             // 
             this.tabMagazyn.Controls.Add(this.label11);
             this.tabMagazyn.Controls.Add(this.textBox1);
             this.tabMagazyn.Controls.Add(this.label10);
             this.tabMagazyn.Controls.Add(this.label8);
-            this.tabMagazyn.Controls.Add(this.dataGridView10);
+            this.tabMagazyn.Controls.Add(this.dgvMagazyny);
             this.tabMagazyn.Controls.Add(this.dataGridView8);
             this.tabMagazyn.Controls.Add(this.button2);
             this.tabMagazyn.Controls.Add(this.button1);
@@ -247,13 +192,13 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Magazyny";
             // 
-            // dataGridView10
+            // dgvMagazyny
             // 
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(210, 437);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.Size = new System.Drawing.Size(349, 170);
-            this.dataGridView10.TabIndex = 9;
+            this.dgvMagazyny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazyny.Location = new System.Drawing.Point(210, 437);
+            this.dgvMagazyny.Name = "dgvMagazyny";
+            this.dgvMagazyny.Size = new System.Drawing.Size(349, 170);
+            this.dgvMagazyny.TabIndex = 9;
             // 
             // dataGridView8
             // 
@@ -298,6 +243,327 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(457, 554);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // tabOpiekun
+            // 
+            this.tabOpiekun.Controls.Add(this.btnOpiekunZapisz);
+            this.tabOpiekun.Controls.Add(this.comboBoxPlec);
+            this.tabOpiekun.Controls.Add(this.label16);
+            this.tabOpiekun.Controls.Add(this.label15);
+            this.tabOpiekun.Controls.Add(this.label14);
+            this.tabOpiekun.Controls.Add(this.label13);
+            this.tabOpiekun.Controls.Add(this.label12);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunNrTel);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunWiek);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunNazwisko);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunImie);
+            this.tabOpiekun.Controls.Add(this.btnOpiekunEdytuj);
+            this.tabOpiekun.Controls.Add(this.btnOpiekunDodaj);
+            this.tabOpiekun.Controls.Add(this.label4);
+            this.tabOpiekun.Controls.Add(this.dgvOpiekunowie);
+            this.tabOpiekun.Location = new System.Drawing.Point(4, 22);
+            this.tabOpiekun.Name = "tabOpiekun";
+            this.tabOpiekun.Size = new System.Drawing.Size(1084, 667);
+            this.tabOpiekun.TabIndex = 2;
+            this.tabOpiekun.Text = "Opiekun";
+            this.tabOpiekun.UseVisualStyleBackColor = true;
+            // 
+            // btnOpiekunZapisz
+            // 
+            this.btnOpiekunZapisz.Location = new System.Drawing.Point(253, 220);
+            this.btnOpiekunZapisz.Name = "btnOpiekunZapisz";
+            this.btnOpiekunZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunZapisz.TabIndex = 24;
+            this.btnOpiekunZapisz.Text = "Zapisz";
+            this.btnOpiekunZapisz.UseVisualStyleBackColor = true;
+            this.btnOpiekunZapisz.Click += new System.EventHandler(this.btnOpiekunZapisz_Click);
+            // 
+            // comboBoxPlec
+            // 
+            this.comboBoxPlec.FormattingEnabled = true;
+            this.comboBoxPlec.Items.AddRange(new object[] {
+            "K",
+            "M"});
+            this.comboBoxPlec.Location = new System.Drawing.Point(92, 183);
+            this.comboBoxPlec.Name = "comboBoxPlec";
+            this.comboBoxPlec.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPlec.TabIndex = 23;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 225);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Numer telefonu";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(54, 186);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Płeć";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(54, 147);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Wiek";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(33, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Nazwisko";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(60, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Imię";
+            // 
+            // txtOpiekunNrTel
+            // 
+            this.txtOpiekunNrTel.Location = new System.Drawing.Point(92, 222);
+            this.txtOpiekunNrTel.Name = "txtOpiekunNrTel";
+            this.txtOpiekunNrTel.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunNrTel.TabIndex = 17;
+            // 
+            // txtOpiekunWiek
+            // 
+            this.txtOpiekunWiek.Location = new System.Drawing.Point(92, 144);
+            this.txtOpiekunWiek.Name = "txtOpiekunWiek";
+            this.txtOpiekunWiek.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunWiek.TabIndex = 15;
+            // 
+            // txtOpiekunNazwisko
+            // 
+            this.txtOpiekunNazwisko.Location = new System.Drawing.Point(92, 105);
+            this.txtOpiekunNazwisko.Name = "txtOpiekunNazwisko";
+            this.txtOpiekunNazwisko.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunNazwisko.TabIndex = 14;
+            // 
+            // txtOpiekunImie
+            // 
+            this.txtOpiekunImie.Location = new System.Drawing.Point(92, 66);
+            this.txtOpiekunImie.Name = "txtOpiekunImie";
+            this.txtOpiekunImie.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunImie.TabIndex = 13;
+            // 
+            // btnOpiekunEdytuj
+            // 
+            this.btnOpiekunEdytuj.Location = new System.Drawing.Point(253, 142);
+            this.btnOpiekunEdytuj.Name = "btnOpiekunEdytuj";
+            this.btnOpiekunEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunEdytuj.TabIndex = 12;
+            this.btnOpiekunEdytuj.Text = "Edytuj";
+            this.btnOpiekunEdytuj.UseVisualStyleBackColor = true;
+            this.btnOpiekunEdytuj.Click += new System.EventHandler(this.btnOpiekunEdytuj_Click);
+            // 
+            // btnOpiekunDodaj
+            // 
+            this.btnOpiekunDodaj.Location = new System.Drawing.Point(253, 64);
+            this.btnOpiekunDodaj.Name = "btnOpiekunDodaj";
+            this.btnOpiekunDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunDodaj.TabIndex = 11;
+            this.btnOpiekunDodaj.Text = "Dodaj";
+            this.btnOpiekunDodaj.UseVisualStyleBackColor = true;
+            this.btnOpiekunDodaj.Click += new System.EventHandler(this.btnOpiekunDodaj_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(521, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Opiekunowie";
+            // 
+            // dgvOpiekunowie
+            // 
+            this.dgvOpiekunowie.AllowUserToAddRows = false;
+            this.dgvOpiekunowie.AllowUserToDeleteRows = false;
+            this.dgvOpiekunowie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOpiekunowie.Location = new System.Drawing.Point(524, 48);
+            this.dgvOpiekunowie.MultiSelect = false;
+            this.dgvOpiekunowie.Name = "dgvOpiekunowie";
+            this.dgvOpiekunowie.ReadOnly = true;
+            this.dgvOpiekunowie.RowHeadersVisible = false;
+            this.dgvOpiekunowie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOpiekunowie.Size = new System.Drawing.Size(457, 554);
+            this.dgvOpiekunowie.TabIndex = 9;
+            this.dgvOpiekunowie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOpiekunowie_CellContentClick);
+            // 
+            // tabJedzenie
+            // 
+            this.tabJedzenie.Controls.Add(this.label20);
+            this.tabJedzenie.Controls.Add(this.label19);
+            this.tabJedzenie.Controls.Add(this.label18);
+            this.tabJedzenie.Controls.Add(this.label17);
+            this.tabJedzenie.Controls.Add(this.comboBoxJedzenieMagID);
+            this.tabJedzenie.Controls.Add(this.comboBoxJedzenieRodzaj);
+            this.tabJedzenie.Controls.Add(this.txtJedzenieOpis);
+            this.tabJedzenie.Controls.Add(this.txtJedzenieNazwa);
+            this.tabJedzenie.Controls.Add(this.btnJedzenieZapisz);
+            this.tabJedzenie.Controls.Add(this.btnJedzenieUsun);
+            this.tabJedzenie.Controls.Add(this.btnJedzenieEdytuj);
+            this.tabJedzenie.Controls.Add(this.btnJedzenieDodaj);
+            this.tabJedzenie.Controls.Add(this.label2);
+            this.tabJedzenie.Controls.Add(this.dgvJedzenie);
+            this.tabJedzenie.Location = new System.Drawing.Point(4, 22);
+            this.tabJedzenie.Name = "tabJedzenie";
+            this.tabJedzenie.Size = new System.Drawing.Size(1084, 667);
+            this.tabJedzenie.TabIndex = 6;
+            this.tabJedzenie.Text = "Jedzenie";
+            this.tabJedzenie.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(48, 289);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 13);
+            this.label20.TabIndex = 20;
+            this.label20.Text = "Magazyn";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(58, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(40, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Rodzaj";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(69, 117);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(28, 13);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Opis";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(58, 67);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Nazwa";
+            // 
+            // comboBoxJedzenieMagID
+            // 
+            this.comboBoxJedzenieMagID.FormattingEnabled = true;
+            this.comboBoxJedzenieMagID.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBoxJedzenieMagID.Location = new System.Drawing.Point(104, 285);
+            this.comboBoxJedzenieMagID.Name = "comboBoxJedzenieMagID";
+            this.comboBoxJedzenieMagID.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxJedzenieMagID.TabIndex = 16;
+            // 
+            // comboBoxJedzenieRodzaj
+            // 
+            this.comboBoxJedzenieRodzaj.FormattingEnabled = true;
+            this.comboBoxJedzenieRodzaj.Items.AddRange(new object[] {
+            "Mięso",
+            "Rośliny",
+            "Mieszanka"});
+            this.comboBoxJedzenieRodzaj.Location = new System.Drawing.Point(104, 234);
+            this.comboBoxJedzenieRodzaj.Name = "comboBoxJedzenieRodzaj";
+            this.comboBoxJedzenieRodzaj.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxJedzenieRodzaj.TabIndex = 15;
+            // 
+            // txtJedzenieOpis
+            // 
+            this.txtJedzenieOpis.Location = new System.Drawing.Point(104, 114);
+            this.txtJedzenieOpis.Multiline = true;
+            this.txtJedzenieOpis.Name = "txtJedzenieOpis";
+            this.txtJedzenieOpis.Size = new System.Drawing.Size(206, 90);
+            this.txtJedzenieOpis.TabIndex = 14;
+            // 
+            // txtJedzenieNazwa
+            // 
+            this.txtJedzenieNazwa.Location = new System.Drawing.Point(104, 64);
+            this.txtJedzenieNazwa.Name = "txtJedzenieNazwa";
+            this.txtJedzenieNazwa.Size = new System.Drawing.Size(206, 20);
+            this.txtJedzenieNazwa.TabIndex = 13;
+            // 
+            // btnJedzenieZapisz
+            // 
+            this.btnJedzenieZapisz.Location = new System.Drawing.Point(334, 200);
+            this.btnJedzenieZapisz.Name = "btnJedzenieZapisz";
+            this.btnJedzenieZapisz.Size = new System.Drawing.Size(79, 34);
+            this.btnJedzenieZapisz.TabIndex = 12;
+            this.btnJedzenieZapisz.Text = "Zapisz";
+            this.btnJedzenieZapisz.UseVisualStyleBackColor = true;
+            this.btnJedzenieZapisz.Click += new System.EventHandler(this.btnJedzenieZapisz_Click);
+            // 
+            // btnJedzenieUsun
+            // 
+            this.btnJedzenieUsun.Location = new System.Drawing.Point(334, 272);
+            this.btnJedzenieUsun.Name = "btnJedzenieUsun";
+            this.btnJedzenieUsun.Size = new System.Drawing.Size(79, 34);
+            this.btnJedzenieUsun.TabIndex = 11;
+            this.btnJedzenieUsun.Text = "Usuń";
+            this.btnJedzenieUsun.UseVisualStyleBackColor = true;
+            this.btnJedzenieUsun.Click += new System.EventHandler(this.btnJedzenieUsun_Click);
+            // 
+            // btnJedzenieEdytuj
+            // 
+            this.btnJedzenieEdytuj.Location = new System.Drawing.Point(334, 128);
+            this.btnJedzenieEdytuj.Name = "btnJedzenieEdytuj";
+            this.btnJedzenieEdytuj.Size = new System.Drawing.Size(79, 34);
+            this.btnJedzenieEdytuj.TabIndex = 10;
+            this.btnJedzenieEdytuj.Text = "Edytuj";
+            this.btnJedzenieEdytuj.UseVisualStyleBackColor = true;
+            this.btnJedzenieEdytuj.Click += new System.EventHandler(this.btnJedzenieEdytuj_Click);
+            // 
+            // btnJedzenieDodaj
+            // 
+            this.btnJedzenieDodaj.Location = new System.Drawing.Point(334, 56);
+            this.btnJedzenieDodaj.Name = "btnJedzenieDodaj";
+            this.btnJedzenieDodaj.Size = new System.Drawing.Size(79, 34);
+            this.btnJedzenieDodaj.TabIndex = 9;
+            this.btnJedzenieDodaj.Text = "Dodaj";
+            this.btnJedzenieDodaj.UseVisualStyleBackColor = true;
+            this.btnJedzenieDodaj.Click += new System.EventHandler(this.btnJedzenieDodaj_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(446, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Jedzenie";
+            // 
+            // dgvJedzenie
+            // 
+            this.dgvJedzenie.AllowUserToAddRows = false;
+            this.dgvJedzenie.AllowUserToDeleteRows = false;
+            this.dgvJedzenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJedzenie.Location = new System.Drawing.Point(449, 56);
+            this.dgvJedzenie.Name = "dgvJedzenie";
+            this.dgvJedzenie.ReadOnly = true;
+            this.dgvJedzenie.RowHeadersVisible = false;
+            this.dgvJedzenie.Size = new System.Drawing.Size(466, 565);
+            this.dgvJedzenie.TabIndex = 0;
             // 
             // tabSektor
             // 
@@ -347,73 +613,6 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(457, 554);
             this.dataGridView3.TabIndex = 9;
-            // 
-            // tabOpiekun
-            // 
-            this.tabOpiekun.Controls.Add(this.btnOpiekunZapisz);
-            this.tabOpiekun.Controls.Add(this.comboBoxPlec);
-            this.tabOpiekun.Controls.Add(this.label16);
-            this.tabOpiekun.Controls.Add(this.label15);
-            this.tabOpiekun.Controls.Add(this.label14);
-            this.tabOpiekun.Controls.Add(this.label13);
-            this.tabOpiekun.Controls.Add(this.label12);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunNrTel);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunWiek);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunNazwisko);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunImie);
-            this.tabOpiekun.Controls.Add(this.btnOpiekunEdytuj);
-            this.tabOpiekun.Controls.Add(this.btnOpiekunDodaj);
-            this.tabOpiekun.Controls.Add(this.label4);
-            this.tabOpiekun.Controls.Add(this.dgvOpiekunowie);
-            this.tabOpiekun.Location = new System.Drawing.Point(4, 22);
-            this.tabOpiekun.Name = "tabOpiekun";
-            this.tabOpiekun.Size = new System.Drawing.Size(1084, 667);
-            this.tabOpiekun.TabIndex = 2;
-            this.tabOpiekun.Text = "Opiekun";
-            this.tabOpiekun.UseVisualStyleBackColor = true;
-            // 
-            // btnOpiekunEdytuj
-            // 
-            this.btnOpiekunEdytuj.Location = new System.Drawing.Point(253, 142);
-            this.btnOpiekunEdytuj.Name = "btnOpiekunEdytuj";
-            this.btnOpiekunEdytuj.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekunEdytuj.TabIndex = 12;
-            this.btnOpiekunEdytuj.Text = "Edytuj";
-            this.btnOpiekunEdytuj.UseVisualStyleBackColor = true;
-            this.btnOpiekunEdytuj.Click += new System.EventHandler(this.btnOpiekunEdytuj_Click);
-            // 
-            // btnOpiekunDodaj
-            // 
-            this.btnOpiekunDodaj.Location = new System.Drawing.Point(253, 64);
-            this.btnOpiekunDodaj.Name = "btnOpiekunDodaj";
-            this.btnOpiekunDodaj.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekunDodaj.TabIndex = 11;
-            this.btnOpiekunDodaj.Text = "Dodaj";
-            this.btnOpiekunDodaj.UseVisualStyleBackColor = true;
-            this.btnOpiekunDodaj.Click += new System.EventHandler(this.btnOpiekunDodaj_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(521, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Opiekunowie";
-            // 
-            // dgvOpiekunowie
-            // 
-            this.dgvOpiekunowie.AllowUserToAddRows = false;
-            this.dgvOpiekunowie.AllowUserToDeleteRows = false;
-            this.dgvOpiekunowie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOpiekunowie.Location = new System.Drawing.Point(524, 48);
-            this.dgvOpiekunowie.MultiSelect = false;
-            this.dgvOpiekunowie.Name = "dgvOpiekunowie";
-            this.dgvOpiekunowie.ReadOnly = true;
-            this.dgvOpiekunowie.RowHeadersVisible = false;
-            this.dgvOpiekunowie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOpiekunowie.Size = new System.Drawing.Size(457, 554);
-            this.dgvOpiekunowie.TabIndex = 9;
             // 
             // tabKlatka
             // 
@@ -562,100 +761,6 @@
             this.dataGridView7.Size = new System.Drawing.Size(457, 554);
             this.dataGridView7.TabIndex = 9;
             // 
-            // txtOpiekunImie
-            // 
-            this.txtOpiekunImie.Location = new System.Drawing.Point(92, 66);
-            this.txtOpiekunImie.Name = "txtOpiekunImie";
-            this.txtOpiekunImie.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunImie.TabIndex = 13;
-            // 
-            // txtOpiekunNazwisko
-            // 
-            this.txtOpiekunNazwisko.Location = new System.Drawing.Point(92, 105);
-            this.txtOpiekunNazwisko.Name = "txtOpiekunNazwisko";
-            this.txtOpiekunNazwisko.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunNazwisko.TabIndex = 14;
-            // 
-            // txtOpiekunWiek
-            // 
-            this.txtOpiekunWiek.Location = new System.Drawing.Point(92, 144);
-            this.txtOpiekunWiek.Name = "txtOpiekunWiek";
-            this.txtOpiekunWiek.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunWiek.TabIndex = 15;
-            // 
-            // txtOpiekunNrTel
-            // 
-            this.txtOpiekunNrTel.Location = new System.Drawing.Point(92, 222);
-            this.txtOpiekunNrTel.Name = "txtOpiekunNrTel";
-            this.txtOpiekunNrTel.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunNrTel.TabIndex = 17;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(60, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Imię";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(33, 108);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Nazwisko";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(54, 147);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Wiek";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(54, 186);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(30, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Płeć";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 225);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Numer telefonu";
-            // 
-            // comboBoxPlec
-            // 
-            this.comboBoxPlec.FormattingEnabled = true;
-            this.comboBoxPlec.Items.AddRange(new object[] {
-            "K",
-            "M"});
-            this.comboBoxPlec.Location = new System.Drawing.Point(92, 183);
-            this.comboBoxPlec.Name = "comboBoxPlec";
-            this.comboBoxPlec.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPlec.TabIndex = 23;
-            // 
-            // btnOpiekunZapisz
-            // 
-            this.btnOpiekunZapisz.Location = new System.Drawing.Point(253, 220);
-            this.btnOpiekunZapisz.Name = "btnOpiekunZapisz";
-            this.btnOpiekunZapisz.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekunZapisz.TabIndex = 24;
-            this.btnOpiekunZapisz.Text = "Zapisz";
-            this.btnOpiekunZapisz.UseVisualStyleBackColor = true;
-            this.btnOpiekunZapisz.Click += new System.EventHandler(this.btnOpiekunZapisz_Click);
-            // 
             // mainDataSet
             // 
             this.mainDataSet.DataSetName = "ZooDataSet";
@@ -664,6 +769,14 @@
             // opiekunTA
             // 
             this.opiekunTA.ClearBeforeFill = true;
+            // 
+            // jedzenieTA
+            // 
+            this.jedzenieTA.ClearBeforeFill = true;
+            // 
+            // magazynTA
+            // 
+            this.magazynTA.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -674,21 +787,21 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
-            this.tabJedzenie.ResumeLayout(false);
-            this.tabJedzenie.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabMagazyn.ResumeLayout(false);
             this.tabMagazyn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabOpiekun.ResumeLayout(false);
+            this.tabOpiekun.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).EndInit();
+            this.tabJedzenie.ResumeLayout(false);
+            this.tabJedzenie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJedzenie)).EndInit();
             this.tabSektor.ResumeLayout(false);
             this.tabSektor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabOpiekun.ResumeLayout(false);
-            this.tabOpiekun.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).EndInit();
             this.tabKlatka.ResumeLayout(false);
             this.tabKlatka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
@@ -700,6 +813,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -708,18 +823,18 @@
 
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabJedzenie;
-		private System.Windows.Forms.Button button22;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Button btnJedzenieZapisz;
+		private System.Windows.Forms.Button btnJedzenieUsun;
+		private System.Windows.Forms.Button btnJedzenieEdytuj;
+		private System.Windows.Forms.Button btnJedzenieDodaj;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.DataGridView dgvJedzenie;
 		private System.Windows.Forms.TabPage tabMagazyn;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.DataGridView dataGridView10;
+		private System.Windows.Forms.DataGridView dgvMagazyny;
 		private System.Windows.Forms.DataGridView dataGridView8;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
@@ -764,6 +879,18 @@
         private ZooDataSet mainDataSet;
         private ZooDataSetTableAdapters.OpiekunTableAdapter opiekunTA;
         private System.Windows.Forms.BindingSource opiekunBS;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox comboBoxJedzenieMagID;
+        private System.Windows.Forms.ComboBox comboBoxJedzenieRodzaj;
+        private System.Windows.Forms.TextBox txtJedzenieOpis;
+        private System.Windows.Forms.TextBox txtJedzenieNazwa;
+        private ZooDataSetTableAdapters.JedzenieTableAdapter jedzenieTA;
+        private System.Windows.Forms.BindingSource jedzenieBS;
+        private ZooDataSetTableAdapters.MagazynTableAdapter magazynTA;
+        private System.Windows.Forms.BindingSource magazynBS;
     }
 }
 

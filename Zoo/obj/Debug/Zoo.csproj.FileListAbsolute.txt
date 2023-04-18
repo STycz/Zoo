@@ -7,3 +7,4 @@ C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.csproj.GenerateResource.cache
 C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.csproj.CoreCompileInputs.cache
 C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.exe
 C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.pdb
+C:\Users\tomas\source\repos\Zoo\Zoo\obj\Debug\Zoo.csproj.AssemblyReference.cache
