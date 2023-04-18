@@ -1228,8 +1228,6 @@ namespace Zoo {
             
             private global::System.Data.DataColumn columnNazwa;
             
-            private global::System.Data.DataColumn columnIlosc;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MagazynDataTable() {
@@ -1281,14 +1279,6 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IloscColumn {
-                get {
-                    return this.columnIlosc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1324,12 +1314,11 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MagazynRow AddMagazynRow(string Nazwa, int Ilosc) {
+            public MagazynRow AddMagazynRow(string Nazwa) {
                 MagazynRow rowMagazynRow = ((MagazynRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nazwa,
-                        Ilosc};
+                        Nazwa};
                 rowMagazynRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMagazynRow);
                 return rowMagazynRow;
@@ -1361,7 +1350,6 @@ namespace Zoo {
             internal void InitVars() {
                 this.columnID_Magazyn = base.Columns["ID_Magazyn"];
                 this.columnNazwa = base.Columns["Nazwa"];
-                this.columnIlosc = base.Columns["Ilosc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1371,8 +1359,6 @@ namespace Zoo {
                 base.Columns.Add(this.columnID_Magazyn);
                 this.columnNazwa = new global::System.Data.DataColumn("Nazwa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwa);
-                this.columnIlosc = new global::System.Data.DataColumn("Ilosc", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIlosc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Magazyn}, true));
                 this.columnID_Magazyn.AutoIncrement = true;
@@ -1383,7 +1369,6 @@ namespace Zoo {
                 this.columnID_Magazyn.Unique = true;
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 20;
-                this.columnIlosc.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3112,17 +3097,6 @@ namespace Zoo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Ilosc {
-                get {
-                    return ((int)(this[this.tableMagazyn.IloscColumn]));
-                }
-                set {
-                    this[this.tableMagazyn.IloscColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public JedzenieRow[] GetJedzenieRows() {
                 if ((this.Table.ChildRelations["FK_Jedzenie_Magazyn"] == null)) {
                     return new JedzenieRow[0];
@@ -4668,35 +4642,29 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
             tableMapping.DataSetTable = "Magazyn";
             tableMapping.ColumnMappings.Add("ID_Magazyn", "ID_Magazyn");
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
-            tableMapping.ColumnMappings.Add("Ilosc", "Ilosc");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Magazyn] WHERE (([ID_Magazyn] = @Original_ID_Magazyn) AND ([Na" +
-                "zwa] = @Original_Nazwa) AND ([Ilosc] = @Original_Ilosc))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Magazyn] WHERE (([ID_Magazyn] = @Original_ID_Magazyn) AND ([Nazwa] =" +
+                " @Original_Nazwa))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Magazyn] ([Nazwa], [Ilosc]) VALUES (@Nazwa, @Ilosc);\r\nSELECT I" +
-                "D_Magazyn, Nazwa, Ilosc FROM Magazyn WHERE (ID_Magazyn = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Magazyn] ([Nazwa]) VALUES (@Nazwa);\r\nSELECT ID_Magazyn, Nazwa FROM M" +
+                "agazyn WHERE (ID_Magazyn = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Magazyn] SET [Nazwa] = @Nazwa, [Ilosc] = @Ilosc WHERE (([ID_Magazyn" +
-                "] = @Original_ID_Magazyn) AND ([Nazwa] = @Original_Nazwa) AND ([Ilosc] = @Origin" +
-                "al_Ilosc));\r\nSELECT ID_Magazyn, Nazwa, Ilosc FROM Magazyn WHERE (ID_Magazyn = @I" +
-                "D_Magazyn)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Magazyn] SET [Nazwa] = @Nazwa WHERE (([ID_Magazyn] = @Original_ID_Magazyn" +
+                ") AND ([Nazwa] = @Original_Nazwa));\r\nSELECT ID_Magazyn, Nazwa FROM Magazyn WHERE" +
+                " (ID_Magazyn = @ID_Magazyn)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Magazyn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Magazyn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Magazyn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4713,7 +4681,7 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Magazyn, Nazwa, Ilosc FROM dbo.Magazyn";
+            this._commandCollection[0].CommandText = "SELECT ID_Magazyn, Nazwa FROM Magazyn";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4774,7 +4742,7 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilosc) {
+        public virtual int Delete(int Original_ID_Magazyn, string Original_Nazwa) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Magazyn));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
@@ -4782,7 +4750,6 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Ilosc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4803,14 +4770,13 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nazwa, int Ilosc) {
+        public virtual int Insert(string Nazwa) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Ilosc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4831,23 +4797,21 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazwa, int Ilosc, int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilosc, int ID_Magazyn) {
+        public virtual int Update(string Nazwa, int Original_ID_Magazyn, string Original_Nazwa, int ID_Magazyn) {
             if ((Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Nazwa");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Ilosc));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_ID_Magazyn));
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Nazwa));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Ilosc));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Magazyn));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_Magazyn));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4868,8 +4832,8 @@ SELECT ID_Klatka, Nazwa, Wysokosc, Szerokosc, Glebokosc, ID_Sektor, ID_Opiekun F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nazwa, int Ilosc, int Original_ID_Magazyn, string Original_Nazwa, int Original_Ilosc) {
-            return this.Update(Nazwa, Ilosc, Original_ID_Magazyn, Original_Nazwa, Original_Ilosc, Original_ID_Magazyn);
+        public virtual int Update(string Nazwa, int Original_ID_Magazyn, string Original_Nazwa) {
+            return this.Update(Nazwa, Original_ID_Magazyn, Original_Nazwa, Original_ID_Magazyn);
         }
     }
     

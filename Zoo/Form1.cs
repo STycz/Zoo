@@ -32,6 +32,7 @@ namespace Zoo
         private DBActions dbAction = DBActions.None;
         ZooDataSet.OpiekunRow _selectedRow = null;
         ZooDataSet.JedzenieRow _selectedRowJedzenie = null;
+        int id_rekordu;
 
         private bool ValidateInput()
         {
@@ -58,13 +59,16 @@ namespace Zoo
                 dgvJedzenie.Columns[0].Visible = false;
                 dgvJedzenie.Columns[4].HeaderText = "Magazyn";
 
+
                 magazynTA.Fill(mainDataSet.Magazyn);
                 magazynBS.DataSource = mainDataSet.Magazyn;
                 dgvMagazyny.DataSource = magazynBS;
-                dgvMagazyny.Columns[0].Visible = false;
+                dgvMagazyny.Columns[0].Visible = true;
+
+                dgvMagazynZawartosc.DataSource = jedzenieBS;
 
                 comboBoxJedzenieMagID.DataSource = magazynBS;
-                comboBoxJedzenieMagID.DisplayMember = "Nazwa";
+                comboBoxJedzenieMagID.DisplayMember = "ID_Magazyn";
                 comboBoxJedzenieMagID.ValueMember = "ID_Magazyn";
 
             }
@@ -287,6 +291,40 @@ namespace Zoo
             catch (Exception ex)
             {
                 MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvMagazyny_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+            if (e.RowIndex >= 0)
+            {
+                int id_rekordu = Convert.ToInt32(dgvMagazyny.Rows[e.RowIndex].Cells[0].Value);
+                string selectedValue = dgvMagazyny.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                DataTable originalTable = (DataTable)jedzenieBS.DataSource;
+
+                DataTable filteredTable = new DataTable();
+                foreach (DataColumn column in originalTable.Columns)
+                {
+                    filteredTable.Columns.Add(column.ColumnName, column.DataType);
+                }
+
+                foreach (DataRow row in originalTable.Rows)
+                {
+                    if (row[4].ToString() == selectedValue)
+                    {
+                        filteredTable.Rows.Add(row.ItemArray);
+                    }
+                }
+
+                dgvMagazynZawartosc.DataSource = filteredTable;
             }
         }
     }

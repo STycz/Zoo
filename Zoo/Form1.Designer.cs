@@ -31,16 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMagazyn = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvMagazyny = new System.Windows.Forms.DataGridView();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabOpiekun = new System.Windows.Forms.TabPage();
             this.btnOpiekunZapisz = new System.Windows.Forms.Button();
             this.comboBoxPlec = new System.Windows.Forms.ComboBox();
@@ -92,18 +85,17 @@
             this.button21 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
+            this.jedzenieBS = new System.Windows.Forms.BindingSource(this.components);
+            this.magazynBS = new System.Windows.Forms.BindingSource(this.components);
             this.mainDataSet = new Zoo.ZooDataSet();
             this.opiekunTA = new Zoo.ZooDataSetTableAdapters.OpiekunTableAdapter();
-            this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
             this.jedzenieTA = new Zoo.ZooDataSetTableAdapters.JedzenieTableAdapter();
-            this.jedzenieBS = new System.Windows.Forms.BindingSource(this.components);
             this.magazynTA = new Zoo.ZooDataSetTableAdapters.MagazynTableAdapter();
-            this.magazynBS = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvMagazynZawartosc = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabMagazyn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabOpiekun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
             this.tabJedzenie.SuspendLayout();
@@ -117,10 +109,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabOpieka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -140,16 +133,10 @@
             // 
             // tabMagazyn
             // 
-            this.tabMagazyn.Controls.Add(this.label11);
-            this.tabMagazyn.Controls.Add(this.textBox1);
-            this.tabMagazyn.Controls.Add(this.label10);
+            this.tabMagazyn.Controls.Add(this.dgvMagazynZawartosc);
             this.tabMagazyn.Controls.Add(this.label8);
             this.tabMagazyn.Controls.Add(this.dgvMagazyny);
-            this.tabMagazyn.Controls.Add(this.dataGridView8);
-            this.tabMagazyn.Controls.Add(this.button2);
-            this.tabMagazyn.Controls.Add(this.button1);
             this.tabMagazyn.Controls.Add(this.label1);
-            this.tabMagazyn.Controls.Add(this.dataGridView1);
             this.tabMagazyn.Location = new System.Drawing.Point(4, 22);
             this.tabMagazyn.Name = "tabMagazyn";
             this.tabMagazyn.Padding = new System.Windows.Forms.Padding(3);
@@ -158,35 +145,10 @@
             this.tabMagazyn.Text = "Magazyn";
             this.tabMagazyn.UseVisualStyleBackColor = true;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(146, 362);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Ilość";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(210, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(207, 167);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Jedzenie";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(207, 421);
+            this.label8.Location = new System.Drawing.Point(24, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 10;
@@ -194,55 +156,26 @@
             // 
             // dgvMagazyny
             // 
+            this.dgvMagazyny.AllowUserToAddRows = false;
+            this.dgvMagazyny.AllowUserToDeleteRows = false;
             this.dgvMagazyny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazyny.Location = new System.Drawing.Point(210, 437);
+            this.dgvMagazyny.ColumnHeadersVisible = false;
+            this.dgvMagazyny.Location = new System.Drawing.Point(27, 54);
             this.dgvMagazyny.Name = "dgvMagazyny";
-            this.dgvMagazyny.Size = new System.Drawing.Size(349, 170);
+            this.dgvMagazyny.ReadOnly = true;
+            this.dgvMagazyny.RowHeadersVisible = false;
+            this.dgvMagazyny.Size = new System.Drawing.Size(263, 163);
             this.dgvMagazyny.TabIndex = 9;
-            // 
-            // dataGridView8
-            // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(210, 183);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(349, 170);
-            this.dataGridView8.TabIndex = 8;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(43, 319);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Edytuj";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(43, 242);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvMagazyny.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMagazyny_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(606, 37);
+            this.label1.Location = new System.Drawing.Point(576, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Zawartość magazynu";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(609, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(457, 554);
-            this.dataGridView1.TabIndex = 0;
             // 
             // tabOpiekun
             // 
@@ -778,6 +711,19 @@
             // 
             this.magazynTA.ClearBeforeFill = true;
             // 
+            // dgvMagazynZawartosc
+            // 
+            this.dgvMagazynZawartosc.AllowUserToAddRows = false;
+            this.dgvMagazynZawartosc.AllowUserToDeleteRows = false;
+            this.dgvMagazynZawartosc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazynZawartosc.Location = new System.Drawing.Point(579, 54);
+            this.dgvMagazynZawartosc.Name = "dgvMagazynZawartosc";
+            this.dgvMagazynZawartosc.ReadOnly = true;
+            this.dgvMagazynZawartosc.RowHeadersVisible = false;
+            this.dgvMagazynZawartosc.Size = new System.Drawing.Size(474, 536);
+            this.dgvMagazynZawartosc.TabIndex = 11;
+            this.dgvMagazynZawartosc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,8 +736,6 @@
             this.tabMagazyn.ResumeLayout(false);
             this.tabMagazyn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabOpiekun.ResumeLayout(false);
             this.tabOpiekun.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).EndInit();
@@ -811,10 +755,11 @@
             this.tabOpieka.ResumeLayout(false);
             this.tabOpieka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -830,16 +775,9 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataGridView dgvJedzenie;
 		private System.Windows.Forms.TabPage tabMagazyn;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.DataGridView dgvMagazyny;
-		private System.Windows.Forms.DataGridView dataGridView8;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.TabPage tabSektor;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.DataGridView dataGridView9;
@@ -891,6 +829,7 @@
         private System.Windows.Forms.BindingSource jedzenieBS;
         private ZooDataSetTableAdapters.MagazynTableAdapter magazynTA;
         private System.Windows.Forms.BindingSource magazynBS;
+        private System.Windows.Forms.DataGridView dgvMagazynZawartosc;
     }
 }
 
