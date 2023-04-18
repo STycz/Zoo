@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMagazyn = new System.Windows.Forms.TabPage();
+            this.dgvMagazynZawartosc = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvMagazyny = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,14 +68,27 @@
             this.dgvJedzenie = new System.Windows.Forms.DataGridView();
             this.tabSektor = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dgvSektorKlatki = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvSektory = new System.Windows.Forms.DataGridView();
             this.tabKlatka = new System.Windows.Forms.TabPage();
+            this.btnKlatkaZapisz = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxKlatkaOpiekun = new System.Windows.Forms.ComboBox();
+            this.comboBoxKlatkaSektor = new System.Windows.Forms.ComboBox();
+            this.txtKlatkaGlebokosc = new System.Windows.Forms.TextBox();
+            this.txtKlatkaSzerokosc = new System.Windows.Forms.TextBox();
+            this.txtKlatkaWysokosc = new System.Windows.Forms.TextBox();
+            this.txtKlatkaNazwa = new System.Windows.Forms.TextBox();
             this.btnKlatkaEdytuj = new System.Windows.Forms.Button();
             this.btnKlatkaDodaj = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dgvKlatki = new System.Windows.Forms.DataGridView();
             this.tabZwierze = new System.Windows.Forms.TabPage();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -92,36 +106,23 @@
             this.opiekunTA = new Zoo.ZooDataSetTableAdapters.OpiekunTableAdapter();
             this.jedzenieTA = new Zoo.ZooDataSetTableAdapters.JedzenieTableAdapter();
             this.magazynTA = new Zoo.ZooDataSetTableAdapters.MagazynTableAdapter();
-            this.dgvMagazynZawartosc = new System.Windows.Forms.DataGridView();
             this.sektorTA = new Zoo.ZooDataSetTableAdapters.SektorTableAdapter();
             this.sektorBS = new System.Windows.Forms.BindingSource(this.components);
-            this.txtKlatkaNazwa = new System.Windows.Forms.TextBox();
-            this.txtKlatkaWysokosc = new System.Windows.Forms.TextBox();
-            this.txtKlatkaSzerokosc = new System.Windows.Forms.TextBox();
-            this.txtKlatkaGlebokosc = new System.Windows.Forms.TextBox();
-            this.comboBoxKlatkaSektor = new System.Windows.Forms.ComboBox();
-            this.comboBoxKlatkaOpiekun = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.btnKlatkaZapisz = new System.Windows.Forms.Button();
             this.klatkaTA = new Zoo.ZooDataSetTableAdapters.Klatka_zwierzeciaTableAdapter();
             this.klatkaBS = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabMagazyn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).BeginInit();
             this.tabOpiekun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
             this.tabJedzenie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJedzenie)).BeginInit();
             this.tabSektor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSektorKlatki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSektory)).BeginInit();
             this.tabKlatka.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKlatki)).BeginInit();
             this.tabZwierze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabOpieka.SuspendLayout();
@@ -130,7 +131,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sektorBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klatkaBS)).BeginInit();
             this.SuspendLayout();
@@ -163,6 +163,19 @@
             this.tabMagazyn.TabIndex = 0;
             this.tabMagazyn.Text = "Magazyn";
             this.tabMagazyn.UseVisualStyleBackColor = true;
+            // 
+            // dgvMagazynZawartosc
+            // 
+            this.dgvMagazynZawartosc.AllowUserToAddRows = false;
+            this.dgvMagazynZawartosc.AllowUserToDeleteRows = false;
+            this.dgvMagazynZawartosc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMagazynZawartosc.Location = new System.Drawing.Point(579, 54);
+            this.dgvMagazynZawartosc.Name = "dgvMagazynZawartosc";
+            this.dgvMagazynZawartosc.ReadOnly = true;
+            this.dgvMagazynZawartosc.RowHeadersVisible = false;
+            this.dgvMagazynZawartosc.Size = new System.Drawing.Size(474, 536);
+            this.dgvMagazynZawartosc.TabIndex = 11;
+            this.dgvMagazynZawartosc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label8
             // 
@@ -520,7 +533,7 @@
             // tabSektor
             // 
             this.tabSektor.Controls.Add(this.label9);
-            this.tabSektor.Controls.Add(this.dataGridView9);
+            this.tabSektor.Controls.Add(this.dgvSektorKlatki);
             this.tabSektor.Controls.Add(this.label3);
             this.tabSektor.Controls.Add(this.dgvSektory);
             this.tabSektor.Location = new System.Drawing.Point(4, 22);
@@ -540,13 +553,14 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Klatki";
             // 
-            // dataGridView9
+            // dgvSektorKlatki
             // 
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(525, 62);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.Size = new System.Drawing.Size(521, 554);
-            this.dataGridView9.TabIndex = 11;
+            this.dgvSektorKlatki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSektorKlatki.Location = new System.Drawing.Point(525, 62);
+            this.dgvSektorKlatki.Name = "dgvSektorKlatki";
+            this.dgvSektorKlatki.Size = new System.Drawing.Size(521, 554);
+            this.dgvSektorKlatki.TabIndex = 11;
+            this.dgvSektorKlatki.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSektorKlatki_CellClick);
             // 
             // label3
             // 
@@ -566,6 +580,7 @@
             this.dgvSektory.RowHeadersVisible = false;
             this.dgvSektory.Size = new System.Drawing.Size(457, 554);
             this.dgvSektory.TabIndex = 9;
+            this.dgvSektory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSektory_CellClick);
             // 
             // tabKlatka
             // 
@@ -585,13 +600,128 @@
             this.tabKlatka.Controls.Add(this.btnKlatkaEdytuj);
             this.tabKlatka.Controls.Add(this.btnKlatkaDodaj);
             this.tabKlatka.Controls.Add(this.label5);
-            this.tabKlatka.Controls.Add(this.dataGridView5);
+            this.tabKlatka.Controls.Add(this.dgvKlatki);
             this.tabKlatka.Location = new System.Drawing.Point(4, 22);
             this.tabKlatka.Name = "tabKlatka";
             this.tabKlatka.Size = new System.Drawing.Size(1084, 667);
             this.tabKlatka.TabIndex = 3;
             this.tabKlatka.Text = "Klatka";
             this.tabKlatka.UseVisualStyleBackColor = true;
+            // 
+            // btnKlatkaZapisz
+            // 
+            this.btnKlatkaZapisz.Location = new System.Drawing.Point(253, 196);
+            this.btnKlatkaZapisz.Name = "btnKlatkaZapisz";
+            this.btnKlatkaZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnKlatkaZapisz.TabIndex = 25;
+            this.btnKlatkaZapisz.Text = "Zapisz";
+            this.btnKlatkaZapisz.UseVisualStyleBackColor = true;
+            this.btnKlatkaZapisz.Click += new System.EventHandler(this.btnKlatkaZapisz_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(46, 201);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(47, 13);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "Opiekun";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(55, 174);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(38, 13);
+            this.label23.TabIndex = 23;
+            this.label23.Text = "Sektor";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(33, 146);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(60, 13);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "Głębokość";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(36, 121);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(57, 13);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "Szerokość";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 95);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Wysokość";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(53, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Nazwa";
+            // 
+            // comboBoxKlatkaOpiekun
+            // 
+            this.comboBoxKlatkaOpiekun.FormattingEnabled = true;
+            this.comboBoxKlatkaOpiekun.Location = new System.Drawing.Point(96, 198);
+            this.comboBoxKlatkaOpiekun.Name = "comboBoxKlatkaOpiekun";
+            this.comboBoxKlatkaOpiekun.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxKlatkaOpiekun.TabIndex = 18;
+            // 
+            // comboBoxKlatkaSektor
+            // 
+            this.comboBoxKlatkaSektor.FormattingEnabled = true;
+            this.comboBoxKlatkaSektor.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.comboBoxKlatkaSektor.Location = new System.Drawing.Point(96, 171);
+            this.comboBoxKlatkaSektor.Name = "comboBoxKlatkaSektor";
+            this.comboBoxKlatkaSektor.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxKlatkaSektor.TabIndex = 17;
+            // 
+            // txtKlatkaGlebokosc
+            // 
+            this.txtKlatkaGlebokosc.Location = new System.Drawing.Point(96, 144);
+            this.txtKlatkaGlebokosc.Name = "txtKlatkaGlebokosc";
+            this.txtKlatkaGlebokosc.Size = new System.Drawing.Size(100, 20);
+            this.txtKlatkaGlebokosc.TabIndex = 16;
+            // 
+            // txtKlatkaSzerokosc
+            // 
+            this.txtKlatkaSzerokosc.Location = new System.Drawing.Point(96, 118);
+            this.txtKlatkaSzerokosc.Name = "txtKlatkaSzerokosc";
+            this.txtKlatkaSzerokosc.Size = new System.Drawing.Size(100, 20);
+            this.txtKlatkaSzerokosc.TabIndex = 15;
+            // 
+            // txtKlatkaWysokosc
+            // 
+            this.txtKlatkaWysokosc.Location = new System.Drawing.Point(96, 92);
+            this.txtKlatkaWysokosc.Name = "txtKlatkaWysokosc";
+            this.txtKlatkaWysokosc.Size = new System.Drawing.Size(100, 20);
+            this.txtKlatkaWysokosc.TabIndex = 14;
+            // 
+            // txtKlatkaNazwa
+            // 
+            this.txtKlatkaNazwa.Location = new System.Drawing.Point(96, 66);
+            this.txtKlatkaNazwa.Name = "txtKlatkaNazwa";
+            this.txtKlatkaNazwa.Size = new System.Drawing.Size(100, 20);
+            this.txtKlatkaNazwa.TabIndex = 13;
             // 
             // btnKlatkaEdytuj
             // 
@@ -622,14 +752,15 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Klatki";
             // 
-            // dataGridView5
+            // dgvKlatki
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(375, 64);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(457, 554);
-            this.dataGridView5.TabIndex = 9;
+            this.dgvKlatki.AllowUserToAddRows = false;
+            this.dgvKlatki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKlatki.Location = new System.Drawing.Point(375, 64);
+            this.dgvKlatki.Name = "dgvKlatki";
+            this.dgvKlatki.RowHeadersVisible = false;
+            this.dgvKlatki.Size = new System.Drawing.Size(457, 554);
+            this.dgvKlatki.TabIndex = 9;
             // 
             // tabZwierze
             // 
@@ -746,129 +877,9 @@
             // 
             this.magazynTA.ClearBeforeFill = true;
             // 
-            // dgvMagazynZawartosc
-            // 
-            this.dgvMagazynZawartosc.AllowUserToAddRows = false;
-            this.dgvMagazynZawartosc.AllowUserToDeleteRows = false;
-            this.dgvMagazynZawartosc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazynZawartosc.Location = new System.Drawing.Point(579, 54);
-            this.dgvMagazynZawartosc.Name = "dgvMagazynZawartosc";
-            this.dgvMagazynZawartosc.ReadOnly = true;
-            this.dgvMagazynZawartosc.RowHeadersVisible = false;
-            this.dgvMagazynZawartosc.Size = new System.Drawing.Size(474, 536);
-            this.dgvMagazynZawartosc.TabIndex = 11;
-            this.dgvMagazynZawartosc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // sektorTA
             // 
             this.sektorTA.ClearBeforeFill = true;
-            // 
-            // txtKlatkaNazwa
-            // 
-            this.txtKlatkaNazwa.Location = new System.Drawing.Point(96, 66);
-            this.txtKlatkaNazwa.Name = "txtKlatkaNazwa";
-            this.txtKlatkaNazwa.Size = new System.Drawing.Size(100, 20);
-            this.txtKlatkaNazwa.TabIndex = 13;
-            // 
-            // txtKlatkaWysokosc
-            // 
-            this.txtKlatkaWysokosc.Location = new System.Drawing.Point(96, 92);
-            this.txtKlatkaWysokosc.Name = "txtKlatkaWysokosc";
-            this.txtKlatkaWysokosc.Size = new System.Drawing.Size(100, 20);
-            this.txtKlatkaWysokosc.TabIndex = 14;
-            // 
-            // txtKlatkaSzerokosc
-            // 
-            this.txtKlatkaSzerokosc.Location = new System.Drawing.Point(96, 118);
-            this.txtKlatkaSzerokosc.Name = "txtKlatkaSzerokosc";
-            this.txtKlatkaSzerokosc.Size = new System.Drawing.Size(100, 20);
-            this.txtKlatkaSzerokosc.TabIndex = 15;
-            // 
-            // txtKlatkaGlebokosc
-            // 
-            this.txtKlatkaGlebokosc.Location = new System.Drawing.Point(96, 144);
-            this.txtKlatkaGlebokosc.Name = "txtKlatkaGlebokosc";
-            this.txtKlatkaGlebokosc.Size = new System.Drawing.Size(100, 20);
-            this.txtKlatkaGlebokosc.TabIndex = 16;
-            // 
-            // comboBoxKlatkaSektor
-            // 
-            this.comboBoxKlatkaSektor.FormattingEnabled = true;
-            this.comboBoxKlatkaSektor.Location = new System.Drawing.Point(96, 171);
-            this.comboBoxKlatkaSektor.Name = "comboBoxKlatkaSektor";
-            this.comboBoxKlatkaSektor.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxKlatkaSektor.TabIndex = 17;
-            // 
-            // comboBoxKlatkaOpiekun
-            // 
-            this.comboBoxKlatkaOpiekun.FormattingEnabled = true;
-            this.comboBoxKlatkaOpiekun.Location = new System.Drawing.Point(96, 198);
-            this.comboBoxKlatkaOpiekun.Name = "comboBoxKlatkaOpiekun";
-            this.comboBoxKlatkaOpiekun.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxKlatkaOpiekun.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(53, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Nazwa";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 95);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 13);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Wysokość";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(36, 121);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 13);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "Szerokość";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(33, 146);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(60, 13);
-            this.label22.TabIndex = 22;
-            this.label22.Text = "Głębokość";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(55, 174);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(38, 13);
-            this.label23.TabIndex = 23;
-            this.label23.Text = "Sektor";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(46, 201);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(47, 13);
-            this.label24.TabIndex = 24;
-            this.label24.Text = "Opiekun";
-            // 
-            // btnKlatkaZapisz
-            // 
-            this.btnKlatkaZapisz.Location = new System.Drawing.Point(253, 196);
-            this.btnKlatkaZapisz.Name = "btnKlatkaZapisz";
-            this.btnKlatkaZapisz.Size = new System.Drawing.Size(75, 23);
-            this.btnKlatkaZapisz.TabIndex = 25;
-            this.btnKlatkaZapisz.Text = "Zapisz";
-            this.btnKlatkaZapisz.UseVisualStyleBackColor = true;
             // 
             // klatkaTA
             // 
@@ -885,6 +896,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabMagazyn.ResumeLayout(false);
             this.tabMagazyn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).EndInit();
             this.tabOpiekun.ResumeLayout(false);
             this.tabOpiekun.PerformLayout();
@@ -894,11 +906,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvJedzenie)).EndInit();
             this.tabSektor.ResumeLayout(false);
             this.tabSektor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSektorKlatki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSektory)).EndInit();
             this.tabKlatka.ResumeLayout(false);
             this.tabKlatka.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKlatki)).EndInit();
             this.tabZwierze.ResumeLayout(false);
             this.tabZwierze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
@@ -909,7 +921,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sektorBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klatkaBS)).EndInit();
             this.ResumeLayout(false);
@@ -932,7 +943,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TabPage tabSektor;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.DataGridView dataGridView9;
+		private System.Windows.Forms.DataGridView dgvSektorKlatki;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DataGridView dgvSektory;
 		private System.Windows.Forms.TabPage tabOpiekun;
@@ -944,7 +955,7 @@
 		private System.Windows.Forms.Button btnKlatkaEdytuj;
 		private System.Windows.Forms.Button btnKlatkaDodaj;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.DataGridView dataGridView5;
+		private System.Windows.Forms.DataGridView dgvKlatki;
 		private System.Windows.Forms.TabPage tabZwierze;
 		private System.Windows.Forms.Button button17;
 		private System.Windows.Forms.Button button18;

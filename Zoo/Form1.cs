@@ -40,7 +40,6 @@ namespace Zoo
         ZooDataSet.OpiekunRow _selectedRow = null;
         ZooDataSet.JedzenieRow _selectedRowJedzenie = null;
         ZooDataSet.Klatka_zwierzeciaRow _selectedRowKlatka = null;
-        int id_rekordu;
 
         private bool ValidateInput()
         {
@@ -81,7 +80,10 @@ namespace Zoo
                 
                 klatkaTA.Fill(mainDataSet.Klatka_zwierzecia);
                 klatkaBS.DataSource = mainDataSet.Klatka_zwierzecia;
-                dgvJedzenie.DataSource = jedzenieBS;
+                dgvKlatki.DataSource = klatkaBS;
+                comboBoxKlatkaOpiekun.DataSource = opiekunBS;
+                comboBoxKlatkaOpiekun.DisplayMember = "ID_Opiekun";
+                comboBoxKlatkaOpiekun.ValueMember = "ID_Opiekun";
 
                 comboBoxJedzenieMagID.DataSource = magazynBS;
                 comboBoxJedzenieMagID.DisplayMember = "ID_Magazyn";
@@ -321,7 +323,6 @@ namespace Zoo
 
             if (e.RowIndex >= 0)
             {
-                int id_rekordu = Convert.ToInt32(dgvMagazyny.Rows[e.RowIndex].Cells[0].Value);
                 string selectedValue = dgvMagazyny.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                 DataTable originalTable = (DataTable)jedzenieBS.DataSource;
@@ -363,12 +364,12 @@ namespace Zoo
         {
             try
             {
-                var row = ((DataRowView)jedzenieBS.Current).Row as ZooDataSet.JedzenieRow;
+                var row = ((DataRowView)klatkaBS.Current).Row as ZooDataSet.Klatka_zwierzeciaRow;
 
                 if (row == null)
                     return;
 
-                _selectedRowJedzenie = row;
+                _selectedRowKlatka = row;
                 dbAction = DBActions.Edit;
 
                 txtKlatkaNazwa.Text = _selectedRowKlatka.Nazwa;
@@ -381,6 +382,88 @@ namespace Zoo
             catch (Exception ex)
             {
                 MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnKlatkaZapisz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateInput())
+                    return;
+
+                if (_selectedRowKlatka == null)
+                    return;
+
+                switch (dbAction)
+                {
+                    case DBActions.Edit:
+                        {
+                            _selectedRowKlatka.Nazwa = txtKlatkaNazwa.Text;
+                            _selectedRowKlatka.Wysokosc = Int32.Parse(txtKlatkaWysokosc.Text);
+                            _selectedRowKlatka.Szerokosc = Int32.Parse(txtKlatkaSzerokosc.Text);
+                            _selectedRowKlatka.Glebokosc = Int32.Parse(txtKlatkaGlebokosc.Text);
+                            _selectedRowKlatka.ID_Sektor = Int32.Parse(comboBoxKlatkaSektor.Text);
+                            _selectedRowKlatka.ID_Opiekun = Int32.Parse(comboBoxKlatkaOpiekun.Text);
+
+
+                            klatkaTA.Update(_selectedRowKlatka);
+                            mainDataSet.AcceptChanges();
+
+                            break;
+                        }
+                    case DBActions.Add:
+                        {
+                            _selectedRowKlatka.Nazwa = txtKlatkaNazwa.Text;
+                            _selectedRowKlatka.Wysokosc = Int32.Parse(txtKlatkaWysokosc.Text);
+                            _selectedRowKlatka.Szerokosc = Int32.Parse(txtKlatkaSzerokosc.Text);
+                            _selectedRowKlatka.Glebokosc = Int32.Parse(txtKlatkaGlebokosc.Text);
+                            _selectedRowKlatka.ID_Sektor = Int32.Parse(comboBoxKlatkaSektor.Text);
+                            _selectedRowKlatka.ID_Opiekun = Int32.Parse(comboBoxKlatkaOpiekun.Text);
+
+                            mainDataSet.Klatka_zwierzecia.AddKlatka_zwierzeciaRow(_selectedRowKlatka);
+                            klatkaTA.Update(_selectedRowKlatka);
+                            mainDataSet.Klatka_zwierzecia.AcceptChanges();
+
+                            break;
+                        }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void dgvSektorKlatki_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvSektory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string selectedValue = dgvSektory.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                DataTable originalTable = (DataTable)klatkaBS.DataSource;
+
+                DataTable filteredTable = new DataTable();
+                foreach (DataColumn column in originalTable.Columns)
+                {
+                    filteredTable.Columns.Add(column.ColumnName, column.DataType);
+                }
+
+                foreach (DataRow row in originalTable.Rows)
+                {
+                    if (row[5].ToString() == selectedValue)
+                    {
+                        filteredTable.Rows.Add(row.ItemArray);
+                    }
+                }
+
+                dgvSektorKlatki.DataSource = filteredTable;
             }
         }
     }
