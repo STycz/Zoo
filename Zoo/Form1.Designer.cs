@@ -167,8 +167,8 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabMagazyn);
             this.tabControl1.Controls.Add(this.tabOpiekun);
+            this.tabControl1.Controls.Add(this.tabMagazyn);
             this.tabControl1.Controls.Add(this.tabJedzenie);
             this.tabControl1.Controls.Add(this.tabSektor);
             this.tabControl1.Controls.Add(this.tabKlatka);
