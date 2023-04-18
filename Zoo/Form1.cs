@@ -33,6 +33,19 @@ namespace Zoo
             comboBoxKlatkaSektor.Text = "";
             comboBoxKlatkaOpiekun.Text = "";
 
+            txtZwierzeNazwa.Text = "";
+            txtZwierzeWiek.Text = "";
+            txtZwierzeGatunek.Text = "";
+            comboBoxZwierzePlec.Text = "";
+            txtZwierzeDataPrzyjecia.Text = "";
+            comboBoxZwierzeKlatka.Text = "";
+
+            txtOpiekaRozpOpieki.Text = "";
+            txtOpiekaKonOpieki.Text = "";
+            txtOpiekaData.Text = "";
+            comboBoxOpiekaZwierze.Text = "";
+            comboBoxOpiekaOpiekun.Text = "";
+
             this.dbAction = DBActions.None;
         }
 
@@ -40,6 +53,8 @@ namespace Zoo
         ZooDataSet.OpiekunRow _selectedRow = null;
         ZooDataSet.JedzenieRow _selectedRowJedzenie = null;
         ZooDataSet.Klatka_zwierzeciaRow _selectedRowKlatka = null;
+        ZooDataSet.ZwierzecieRow _selectedRowZwierze = null;
+        ZooDataSet.OpiekaRow _selectedRowOpieka = null;
 
         private bool ValidateInput()
         {
@@ -84,6 +99,23 @@ namespace Zoo
                 comboBoxKlatkaOpiekun.DataSource = opiekunBS;
                 comboBoxKlatkaOpiekun.DisplayMember = "ID_Opiekun";
                 comboBoxKlatkaOpiekun.ValueMember = "ID_Opiekun";
+
+                zwierzeTA.Fill(mainDataSet.Zwierzecie);
+                zwierzeBS.DataSource = mainDataSet.Zwierzecie;
+                dgvZwierzeta.DataSource = zwierzeBS;
+                comboBoxZwierzeKlatka.DataSource = klatkaBS;
+                comboBoxZwierzeKlatka.DisplayMember = "ID_Klatka";
+                comboBoxZwierzeKlatka.ValueMember = "ID_Klatka";
+
+                opiekaTA.Fill(mainDataSet.Opieka);
+                opiekaBS.DataSource = mainDataSet.Opieka;
+                dgvOpieki.DataSource = opiekaBS;
+                comboBoxOpiekaZwierze.DataSource = zwierzeBS;
+                comboBoxOpiekaZwierze.DisplayMember = "ID_Zwierze";
+                comboBoxOpiekaZwierze.ValueMember = "ID_Zwierze";
+                comboBoxOpiekaOpiekun.DataSource = opiekunBS;
+                comboBoxOpiekaOpiekun.DisplayMember = "ID_Opiekun";
+                comboBoxOpiekaOpiekun.ValueMember = "ID_Opiekun";
 
                 comboBoxJedzenieMagID.DataSource = magazynBS;
                 comboBoxJedzenieMagID.DisplayMember = "ID_Magazyn";
@@ -464,6 +496,189 @@ namespace Zoo
                 }
 
                 dgvSektorKlatki.DataSource = filteredTable;
+            }
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnZwierzeDodaj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _selectedRowZwierze = mainDataSet.Zwierzecie.NewZwierzecieRow();
+                ResetData();
+                txtZwierzeNazwa.Focus();
+                this.dbAction = DBActions.Add;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnZwierzeEdytuj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var row = ((DataRowView)zwierzeBS.Current).Row as ZooDataSet.ZwierzecieRow;
+
+                if (row == null)
+                    return;
+
+                _selectedRowZwierze = row;
+                dbAction = DBActions.Edit;
+
+                txtZwierzeNazwa.Text = _selectedRowZwierze.Nazwa;
+                txtZwierzeWiek.Text = _selectedRowZwierze.Wiek.ToString();
+                txtZwierzeGatunek.Text = _selectedRowZwierze.Gatunek;
+                comboBoxZwierzePlec.Text = _selectedRowZwierze.Plec;
+                txtZwierzeDataPrzyjecia.Text = _selectedRowZwierze.Data_przyjecia;
+                comboBoxZwierzeKlatka.Text = _selectedRowZwierze.ID_Klatka.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnZwierzeZapisz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateInput())
+                    return;
+
+                if (_selectedRowZwierze == null)
+                    return;
+
+                switch (dbAction)
+                {
+                    case DBActions.Edit:
+                        {
+                            _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
+                            _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
+                            _selectedRowZwierze.Gatunek = txtZwierzeGatunek.Text;
+                            _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
+                            _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
+                            _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
+
+
+                            zwierzeTA.Update(_selectedRowZwierze);
+                            mainDataSet.AcceptChanges();
+
+                            break;
+                        }
+                    case DBActions.Add:
+                        {
+                            _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
+                            _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
+                            _selectedRowZwierze.Gatunek = txtZwierzeGatunek.Text;
+                            _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
+                            _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
+                            _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
+
+                            mainDataSet.Zwierzecie.AddZwierzecieRow(_selectedRowZwierze);
+                            zwierzeTA.Update(_selectedRowZwierze);
+                            mainDataSet.Zwierzecie.AcceptChanges();
+
+                            break;
+                        }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnOpiekaDodaj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _selectedRowOpieka = mainDataSet.Opieka.NewOpiekaRow();
+                ResetData();
+                txtOpiekaRozpOpieki.Focus();
+                this.dbAction = DBActions.Add;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnOpiekaEdytuj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var row = ((DataRowView)opiekaBS.Current).Row as ZooDataSet.OpiekaRow;
+
+                if (row == null)
+                    return;
+
+                _selectedRowOpieka = row;
+                dbAction = DBActions.Edit;
+
+                txtOpiekaRozpOpieki.Text = _selectedRowOpieka.Start_opieki;
+                txtOpiekaKonOpieki.Text = _selectedRowOpieka.Koniec_opieki;
+                txtOpiekaData.Text = _selectedRowOpieka.Data;
+                comboBoxOpiekaZwierze.Text = _selectedRowOpieka.ID_Zwierze.ToString();
+                comboBoxOpiekaOpiekun.Text = _selectedRowOpieka.ID_Opiekun.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnOpiekaZapisz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateInput())
+                    return;
+
+                if (_selectedRowOpieka == null)
+                    return;
+
+                switch (dbAction)
+                {
+                    case DBActions.Edit:
+                        {
+                            _selectedRowOpieka.Start_opieki = txtOpiekaRozpOpieki.Text;
+                            _selectedRowOpieka.Koniec_opieki = txtOpiekaKonOpieki.Text;
+                            _selectedRowOpieka.Data = txtOpiekaData.Text;
+                            _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
+                            _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
+
+                            opiekaTA.Update(_selectedRowOpieka);
+                            mainDataSet.AcceptChanges();
+
+                            break;
+                        }
+                    case DBActions.Add:
+                        {
+                            _selectedRowOpieka.Start_opieki = txtOpiekaRozpOpieki.Text;
+                            _selectedRowOpieka.Koniec_opieki = txtOpiekaKonOpieki.Text;
+                            _selectedRowOpieka.Data = txtOpiekaData.Text;
+                            _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
+                            _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
+
+                            mainDataSet.Opieka.AddOpiekaRow(_selectedRowOpieka);
+                            opiekaTA.Update(_selectedRowOpieka);
+                            mainDataSet.Opieka.AcceptChanges();
+
+                            break;
+                        }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
             }
         }
     }

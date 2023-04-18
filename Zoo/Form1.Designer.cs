@@ -90,15 +90,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvKlatki = new System.Windows.Forms.DataGridView();
             this.tabZwierze = new System.Windows.Forms.TabPage();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnZwierzeEdytuj = new System.Windows.Forms.Button();
+            this.btnZwierzeDodaj = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dgvZwierzeta = new System.Windows.Forms.DataGridView();
             this.tabOpieka = new System.Windows.Forms.TabPage();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
+            this.btnOpiekaEdytuj = new System.Windows.Forms.Button();
+            this.btnOpiekaDodaj = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.dgvOpieki = new System.Windows.Forms.DataGridView();
             this.opiekunBS = new System.Windows.Forms.BindingSource(this.components);
             this.jedzenieBS = new System.Windows.Forms.BindingSource(this.components);
             this.magazynBS = new System.Windows.Forms.BindingSource(this.components);
@@ -110,6 +110,34 @@
             this.sektorBS = new System.Windows.Forms.BindingSource(this.components);
             this.klatkaTA = new Zoo.ZooDataSetTableAdapters.Klatka_zwierzeciaTableAdapter();
             this.klatkaBS = new System.Windows.Forms.BindingSource(this.components);
+            this.btnZwierzeZapisz = new System.Windows.Forms.Button();
+            this.txtZwierzeNazwa = new System.Windows.Forms.TextBox();
+            this.txtZwierzeWiek = new System.Windows.Forms.TextBox();
+            this.txtZwierzeGatunek = new System.Windows.Forms.TextBox();
+            this.txtZwierzeDataPrzyjecia = new System.Windows.Forms.TextBox();
+            this.comboBoxZwierzePlec = new System.Windows.Forms.ComboBox();
+            this.comboBoxZwierzeKlatka = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.zwierzeTA = new Zoo.ZooDataSetTableAdapters.ZwierzecieTableAdapter();
+            this.zwierzeBS = new System.Windows.Forms.BindingSource(this.components);
+            this.txtOpiekaRozpOpieki = new System.Windows.Forms.TextBox();
+            this.txtOpiekaKonOpieki = new System.Windows.Forms.TextBox();
+            this.txtOpiekaData = new System.Windows.Forms.TextBox();
+            this.comboBoxOpiekaZwierze = new System.Windows.Forms.ComboBox();
+            this.comboBoxOpiekaOpiekun = new System.Windows.Forms.ComboBox();
+            this.btnOpiekaZapisz = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.opiekaTA = new Zoo.ZooDataSetTableAdapters.OpiekaTableAdapter();
+            this.opiekaBS = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabMagazyn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).BeginInit();
@@ -124,15 +152,17 @@
             this.tabKlatka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlatki)).BeginInit();
             this.tabZwierze.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZwierzeta)).BeginInit();
             this.tabOpieka.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpieki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sektorBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klatkaBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zwierzeBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opiekaBS)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -169,11 +199,11 @@
             this.dgvMagazynZawartosc.AllowUserToAddRows = false;
             this.dgvMagazynZawartosc.AllowUserToDeleteRows = false;
             this.dgvMagazynZawartosc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMagazynZawartosc.Location = new System.Drawing.Point(579, 54);
+            this.dgvMagazynZawartosc.Location = new System.Drawing.Point(323, 54);
             this.dgvMagazynZawartosc.Name = "dgvMagazynZawartosc";
             this.dgvMagazynZawartosc.ReadOnly = true;
             this.dgvMagazynZawartosc.RowHeadersVisible = false;
-            this.dgvMagazynZawartosc.Size = new System.Drawing.Size(474, 536);
+            this.dgvMagazynZawartosc.Size = new System.Drawing.Size(730, 536);
             this.dgvMagazynZawartosc.TabIndex = 11;
             this.dgvMagazynZawartosc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -203,7 +233,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(576, 38);
+            this.label1.Location = new System.Drawing.Point(320, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 3;
@@ -350,7 +380,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(521, 32);
+            this.label4.Location = new System.Drawing.Point(348, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 10;
@@ -361,13 +391,13 @@
             this.dgvOpiekunowie.AllowUserToAddRows = false;
             this.dgvOpiekunowie.AllowUserToDeleteRows = false;
             this.dgvOpiekunowie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOpiekunowie.Location = new System.Drawing.Point(524, 48);
+            this.dgvOpiekunowie.Location = new System.Drawing.Point(351, 48);
             this.dgvOpiekunowie.MultiSelect = false;
             this.dgvOpiekunowie.Name = "dgvOpiekunowie";
             this.dgvOpiekunowie.ReadOnly = true;
             this.dgvOpiekunowie.RowHeadersVisible = false;
             this.dgvOpiekunowie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOpiekunowie.Size = new System.Drawing.Size(457, 554);
+            this.dgvOpiekunowie.Size = new System.Drawing.Size(694, 554);
             this.dgvOpiekunowie.TabIndex = 9;
             this.dgvOpiekunowie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOpiekunowie_CellContentClick);
             // 
@@ -527,7 +557,7 @@
             this.dgvJedzenie.Name = "dgvJedzenie";
             this.dgvJedzenie.ReadOnly = true;
             this.dgvJedzenie.RowHeadersVisible = false;
-            this.dgvJedzenie.Size = new System.Drawing.Size(466, 565);
+            this.dgvJedzenie.Size = new System.Drawing.Size(600, 565);
             this.dgvJedzenie.TabIndex = 0;
             // 
             // tabSektor
@@ -547,7 +577,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(522, 46);
+            this.label9.Location = new System.Drawing.Point(343, 46);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 13);
             this.label9.TabIndex = 12;
@@ -556,16 +586,17 @@
             // dgvSektorKlatki
             // 
             this.dgvSektorKlatki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSektorKlatki.Location = new System.Drawing.Point(525, 62);
+            this.dgvSektorKlatki.Location = new System.Drawing.Point(346, 62);
             this.dgvSektorKlatki.Name = "dgvSektorKlatki";
-            this.dgvSektorKlatki.Size = new System.Drawing.Size(521, 554);
+            this.dgvSektorKlatki.RowHeadersVisible = false;
+            this.dgvSektorKlatki.Size = new System.Drawing.Size(719, 554);
             this.dgvSektorKlatki.TabIndex = 11;
             this.dgvSektorKlatki.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSektorKlatki_CellClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 46);
+            this.label3.Location = new System.Drawing.Point(15, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 10;
@@ -575,10 +606,10 @@
             // 
             this.dgvSektory.AllowUserToAddRows = false;
             this.dgvSektory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSektory.Location = new System.Drawing.Point(31, 62);
+            this.dgvSektory.Location = new System.Drawing.Point(18, 62);
             this.dgvSektory.Name = "dgvSektory";
             this.dgvSektory.RowHeadersVisible = false;
-            this.dgvSektory.Size = new System.Drawing.Size(457, 554);
+            this.dgvSektory.Size = new System.Drawing.Size(312, 554);
             this.dgvSektory.TabIndex = 9;
             this.dgvSektory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSektory_CellClick);
             // 
@@ -610,7 +641,7 @@
             // 
             // btnKlatkaZapisz
             // 
-            this.btnKlatkaZapisz.Location = new System.Drawing.Point(253, 196);
+            this.btnKlatkaZapisz.Location = new System.Drawing.Point(227, 198);
             this.btnKlatkaZapisz.Name = "btnKlatkaZapisz";
             this.btnKlatkaZapisz.Size = new System.Drawing.Size(75, 23);
             this.btnKlatkaZapisz.TabIndex = 25;
@@ -725,7 +756,7 @@
             // 
             // btnKlatkaEdytuj
             // 
-            this.btnKlatkaEdytuj.Location = new System.Drawing.Point(253, 130);
+            this.btnKlatkaEdytuj.Location = new System.Drawing.Point(227, 132);
             this.btnKlatkaEdytuj.Name = "btnKlatkaEdytuj";
             this.btnKlatkaEdytuj.Size = new System.Drawing.Size(75, 23);
             this.btnKlatkaEdytuj.TabIndex = 12;
@@ -735,7 +766,7 @@
             // 
             // btnKlatkaDodaj
             // 
-            this.btnKlatkaDodaj.Location = new System.Drawing.Point(253, 64);
+            this.btnKlatkaDodaj.Location = new System.Drawing.Point(227, 66);
             this.btnKlatkaDodaj.Name = "btnKlatkaDodaj";
             this.btnKlatkaDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnKlatkaDodaj.TabIndex = 11;
@@ -746,7 +777,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(372, 48);
+            this.label5.Location = new System.Drawing.Point(331, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 10;
@@ -756,18 +787,31 @@
             // 
             this.dgvKlatki.AllowUserToAddRows = false;
             this.dgvKlatki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKlatki.Location = new System.Drawing.Point(375, 64);
+            this.dgvKlatki.Location = new System.Drawing.Point(334, 64);
             this.dgvKlatki.Name = "dgvKlatki";
             this.dgvKlatki.RowHeadersVisible = false;
-            this.dgvKlatki.Size = new System.Drawing.Size(457, 554);
+            this.dgvKlatki.Size = new System.Drawing.Size(718, 554);
             this.dgvKlatki.TabIndex = 9;
             // 
             // tabZwierze
             // 
-            this.tabZwierze.Controls.Add(this.button17);
-            this.tabZwierze.Controls.Add(this.button18);
+            this.tabZwierze.Controls.Add(this.label30);
+            this.tabZwierze.Controls.Add(this.label29);
+            this.tabZwierze.Controls.Add(this.label28);
+            this.tabZwierze.Controls.Add(this.label27);
+            this.tabZwierze.Controls.Add(this.label26);
+            this.tabZwierze.Controls.Add(this.label25);
+            this.tabZwierze.Controls.Add(this.comboBoxZwierzeKlatka);
+            this.tabZwierze.Controls.Add(this.comboBoxZwierzePlec);
+            this.tabZwierze.Controls.Add(this.txtZwierzeDataPrzyjecia);
+            this.tabZwierze.Controls.Add(this.txtZwierzeGatunek);
+            this.tabZwierze.Controls.Add(this.txtZwierzeWiek);
+            this.tabZwierze.Controls.Add(this.txtZwierzeNazwa);
+            this.tabZwierze.Controls.Add(this.btnZwierzeZapisz);
+            this.tabZwierze.Controls.Add(this.btnZwierzeEdytuj);
+            this.tabZwierze.Controls.Add(this.btnZwierzeDodaj);
             this.tabZwierze.Controls.Add(this.label6);
-            this.tabZwierze.Controls.Add(this.dataGridView6);
+            this.tabZwierze.Controls.Add(this.dgvZwierzeta);
             this.tabZwierze.Location = new System.Drawing.Point(4, 22);
             this.tabZwierze.Name = "tabZwierze";
             this.tabZwierze.Size = new System.Drawing.Size(1084, 667);
@@ -775,48 +819,62 @@
             this.tabZwierze.Text = "Zwierzę";
             this.tabZwierze.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnZwierzeEdytuj
             // 
-            this.button17.Location = new System.Drawing.Point(3, 132);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 12;
-            this.button17.Text = "Edytuj";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnZwierzeEdytuj.Location = new System.Drawing.Point(265, 119);
+            this.btnZwierzeEdytuj.Name = "btnZwierzeEdytuj";
+            this.btnZwierzeEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnZwierzeEdytuj.TabIndex = 12;
+            this.btnZwierzeEdytuj.Text = "Edytuj";
+            this.btnZwierzeEdytuj.UseVisualStyleBackColor = true;
+            this.btnZwierzeEdytuj.Click += new System.EventHandler(this.btnZwierzeEdytuj_Click);
             // 
-            // button18
+            // btnZwierzeDodaj
             // 
-            this.button18.Location = new System.Drawing.Point(3, 55);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 11;
-            this.button18.Text = "Dodaj";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnZwierzeDodaj.Location = new System.Drawing.Point(265, 55);
+            this.btnZwierzeDodaj.Name = "btnZwierzeDodaj";
+            this.btnZwierzeDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnZwierzeDodaj.TabIndex = 11;
+            this.btnZwierzeDodaj.Text = "Dodaj";
+            this.btnZwierzeDodaj.UseVisualStyleBackColor = true;
+            this.btnZwierzeDodaj.Click += new System.EventHandler(this.btnZwierzeDodaj_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(81, 39);
+            this.label6.Location = new System.Drawing.Point(354, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Zwierzęcia";
+            this.label6.Text = "Zwierzęta";
             // 
-            // dataGridView6
+            // dgvZwierzeta
             // 
-            this.dataGridView6.AllowUserToAddRows = false;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(84, 55);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(457, 554);
-            this.dataGridView6.TabIndex = 9;
+            this.dgvZwierzeta.AllowUserToAddRows = false;
+            this.dgvZwierzeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvZwierzeta.Location = new System.Drawing.Point(357, 55);
+            this.dgvZwierzeta.Name = "dgvZwierzeta";
+            this.dgvZwierzeta.RowHeadersVisible = false;
+            this.dgvZwierzeta.Size = new System.Drawing.Size(714, 554);
+            this.dgvZwierzeta.TabIndex = 9;
             // 
             // tabOpieka
             // 
-            this.tabOpieka.Controls.Add(this.button20);
-            this.tabOpieka.Controls.Add(this.button21);
+            this.tabOpieka.Controls.Add(this.label35);
+            this.tabOpieka.Controls.Add(this.label34);
+            this.tabOpieka.Controls.Add(this.label33);
+            this.tabOpieka.Controls.Add(this.label32);
+            this.tabOpieka.Controls.Add(this.label31);
+            this.tabOpieka.Controls.Add(this.btnOpiekaZapisz);
+            this.tabOpieka.Controls.Add(this.comboBoxOpiekaOpiekun);
+            this.tabOpieka.Controls.Add(this.comboBoxOpiekaZwierze);
+            this.tabOpieka.Controls.Add(this.txtOpiekaData);
+            this.tabOpieka.Controls.Add(this.txtOpiekaKonOpieki);
+            this.tabOpieka.Controls.Add(this.txtOpiekaRozpOpieki);
+            this.tabOpieka.Controls.Add(this.btnOpiekaEdytuj);
+            this.tabOpieka.Controls.Add(this.btnOpiekaDodaj);
             this.tabOpieka.Controls.Add(this.label7);
-            this.tabOpieka.Controls.Add(this.dataGridView7);
+            this.tabOpieka.Controls.Add(this.dgvOpieki);
             this.tabOpieka.Location = new System.Drawing.Point(4, 22);
             this.tabOpieka.Name = "tabOpieka";
             this.tabOpieka.Size = new System.Drawing.Size(1084, 667);
@@ -824,23 +882,25 @@
             this.tabOpieka.Text = "Opieka";
             this.tabOpieka.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // btnOpiekaEdytuj
             // 
-            this.button20.Location = new System.Drawing.Point(253, 141);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 12;
-            this.button20.Text = "Edytuj";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnOpiekaEdytuj.Location = new System.Drawing.Point(253, 139);
+            this.btnOpiekaEdytuj.Name = "btnOpiekaEdytuj";
+            this.btnOpiekaEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekaEdytuj.TabIndex = 12;
+            this.btnOpiekaEdytuj.Text = "Edytuj";
+            this.btnOpiekaEdytuj.UseVisualStyleBackColor = true;
+            this.btnOpiekaEdytuj.Click += new System.EventHandler(this.btnOpiekaEdytuj_Click);
             // 
-            // button21
+            // btnOpiekaDodaj
             // 
-            this.button21.Location = new System.Drawing.Point(253, 64);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 11;
-            this.button21.Text = "Dodaj";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnOpiekaDodaj.Location = new System.Drawing.Point(253, 64);
+            this.btnOpiekaDodaj.Name = "btnOpiekaDodaj";
+            this.btnOpiekaDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekaDodaj.TabIndex = 11;
+            this.btnOpiekaDodaj.Text = "Dodaj";
+            this.btnOpiekaDodaj.UseVisualStyleBackColor = true;
+            this.btnOpiekaDodaj.Click += new System.EventHandler(this.btnOpiekaDodaj_Click);
             // 
             // label7
             // 
@@ -851,14 +911,15 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Odbyte opieki";
             // 
-            // dataGridView7
+            // dgvOpieki
             // 
-            this.dataGridView7.AllowUserToAddRows = false;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(375, 64);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(457, 554);
-            this.dataGridView7.TabIndex = 9;
+            this.dgvOpieki.AllowUserToAddRows = false;
+            this.dgvOpieki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOpieki.Location = new System.Drawing.Point(375, 64);
+            this.dgvOpieki.Name = "dgvOpieki";
+            this.dgvOpieki.RowHeadersVisible = false;
+            this.dgvOpieki.Size = new System.Drawing.Size(690, 554);
+            this.dgvOpieki.TabIndex = 9;
             // 
             // mainDataSet
             // 
@@ -884,6 +945,218 @@
             // klatkaTA
             // 
             this.klatkaTA.ClearBeforeFill = true;
+            // 
+            // btnZwierzeZapisz
+            // 
+            this.btnZwierzeZapisz.Location = new System.Drawing.Point(265, 183);
+            this.btnZwierzeZapisz.Name = "btnZwierzeZapisz";
+            this.btnZwierzeZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnZwierzeZapisz.TabIndex = 13;
+            this.btnZwierzeZapisz.Text = "Zapisz";
+            this.btnZwierzeZapisz.UseVisualStyleBackColor = true;
+            this.btnZwierzeZapisz.Click += new System.EventHandler(this.btnZwierzeZapisz_Click);
+            // 
+            // txtZwierzeNazwa
+            // 
+            this.txtZwierzeNazwa.Location = new System.Drawing.Point(84, 55);
+            this.txtZwierzeNazwa.Name = "txtZwierzeNazwa";
+            this.txtZwierzeNazwa.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeNazwa.TabIndex = 14;
+            // 
+            // txtZwierzeWiek
+            // 
+            this.txtZwierzeWiek.Location = new System.Drawing.Point(84, 81);
+            this.txtZwierzeWiek.Name = "txtZwierzeWiek";
+            this.txtZwierzeWiek.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeWiek.TabIndex = 15;
+            // 
+            // txtZwierzeGatunek
+            // 
+            this.txtZwierzeGatunek.Location = new System.Drawing.Point(84, 107);
+            this.txtZwierzeGatunek.Name = "txtZwierzeGatunek";
+            this.txtZwierzeGatunek.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeGatunek.TabIndex = 16;
+            // 
+            // txtZwierzeDataPrzyjecia
+            // 
+            this.txtZwierzeDataPrzyjecia.Location = new System.Drawing.Point(84, 160);
+            this.txtZwierzeDataPrzyjecia.Name = "txtZwierzeDataPrzyjecia";
+            this.txtZwierzeDataPrzyjecia.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeDataPrzyjecia.TabIndex = 17;
+            // 
+            // comboBoxZwierzePlec
+            // 
+            this.comboBoxZwierzePlec.FormattingEnabled = true;
+            this.comboBoxZwierzePlec.Items.AddRange(new object[] {
+            "K",
+            "M"});
+            this.comboBoxZwierzePlec.Location = new System.Drawing.Point(84, 133);
+            this.comboBoxZwierzePlec.Name = "comboBoxZwierzePlec";
+            this.comboBoxZwierzePlec.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxZwierzePlec.TabIndex = 18;
+            // 
+            // comboBoxZwierzeKlatka
+            // 
+            this.comboBoxZwierzeKlatka.FormattingEnabled = true;
+            this.comboBoxZwierzeKlatka.Location = new System.Drawing.Point(84, 186);
+            this.comboBoxZwierzeKlatka.Name = "comboBoxZwierzeKlatka";
+            this.comboBoxZwierzeKlatka.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxZwierzeKlatka.TabIndex = 19;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(38, 60);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(40, 13);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "Nazwa";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(46, 84);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(32, 13);
+            this.label26.TabIndex = 21;
+            this.label26.Text = "Wiek";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(30, 110);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(48, 13);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Gatunek";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(48, 136);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(30, 13);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Płeć";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(4, 163);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(74, 13);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "Data przyjęcia";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(41, 189);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(37, 13);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Klatka";
+            // 
+            // zwierzeTA
+            // 
+            this.zwierzeTA.ClearBeforeFill = true;
+            // 
+            // txtOpiekaRozpOpieki
+            // 
+            this.txtOpiekaRozpOpieki.Location = new System.Drawing.Point(115, 67);
+            this.txtOpiekaRozpOpieki.Name = "txtOpiekaRozpOpieki";
+            this.txtOpiekaRozpOpieki.Size = new System.Drawing.Size(100, 20);
+            this.txtOpiekaRozpOpieki.TabIndex = 13;
+            // 
+            // txtOpiekaKonOpieki
+            // 
+            this.txtOpiekaKonOpieki.Location = new System.Drawing.Point(115, 104);
+            this.txtOpiekaKonOpieki.Name = "txtOpiekaKonOpieki";
+            this.txtOpiekaKonOpieki.Size = new System.Drawing.Size(100, 20);
+            this.txtOpiekaKonOpieki.TabIndex = 14;
+            // 
+            // txtOpiekaData
+            // 
+            this.txtOpiekaData.Location = new System.Drawing.Point(115, 141);
+            this.txtOpiekaData.Name = "txtOpiekaData";
+            this.txtOpiekaData.Size = new System.Drawing.Size(100, 20);
+            this.txtOpiekaData.TabIndex = 15;
+            // 
+            // comboBoxOpiekaZwierze
+            // 
+            this.comboBoxOpiekaZwierze.FormattingEnabled = true;
+            this.comboBoxOpiekaZwierze.Location = new System.Drawing.Point(115, 178);
+            this.comboBoxOpiekaZwierze.Name = "comboBoxOpiekaZwierze";
+            this.comboBoxOpiekaZwierze.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxOpiekaZwierze.TabIndex = 16;
+            // 
+            // comboBoxOpiekaOpiekun
+            // 
+            this.comboBoxOpiekaOpiekun.FormattingEnabled = true;
+            this.comboBoxOpiekaOpiekun.Location = new System.Drawing.Point(115, 216);
+            this.comboBoxOpiekaOpiekun.Name = "comboBoxOpiekaOpiekun";
+            this.comboBoxOpiekaOpiekun.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxOpiekaOpiekun.TabIndex = 17;
+            // 
+            // btnOpiekaZapisz
+            // 
+            this.btnOpiekaZapisz.Location = new System.Drawing.Point(253, 214);
+            this.btnOpiekaZapisz.Name = "btnOpiekaZapisz";
+            this.btnOpiekaZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekaZapisz.TabIndex = 18;
+            this.btnOpiekaZapisz.Text = "Zapisz";
+            this.btnOpiekaZapisz.UseVisualStyleBackColor = true;
+            this.btnOpiekaZapisz.Click += new System.EventHandler(this.btnOpiekaZapisz_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(9, 69);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(100, 13);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "Rozpoczęcie opieki";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(38, 107);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(71, 13);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "Koniec opieki";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(79, 144);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(30, 13);
+            this.label33.TabIndex = 21;
+            this.label33.Text = "Data";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(65, 181);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(44, 13);
+            this.label34.TabIndex = 22;
+            this.label34.Text = "Zwierzę";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(62, 219);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(47, 13);
+            this.label35.TabIndex = 23;
+            this.label35.Text = "Opiekun";
+            // 
+            // opiekaTA
+            // 
+            this.opiekaTA.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -913,16 +1186,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlatki)).EndInit();
             this.tabZwierze.ResumeLayout(false);
             this.tabZwierze.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZwierzeta)).EndInit();
             this.tabOpieka.ResumeLayout(false);
             this.tabOpieka.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpieki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opiekunBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedzenieBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sektorBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klatkaBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zwierzeBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opiekaBS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -957,15 +1232,15 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.DataGridView dgvKlatki;
 		private System.Windows.Forms.TabPage tabZwierze;
-		private System.Windows.Forms.Button button17;
-		private System.Windows.Forms.Button button18;
+		private System.Windows.Forms.Button btnZwierzeEdytuj;
+		private System.Windows.Forms.Button btnZwierzeDodaj;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DataGridView dataGridView6;
+		private System.Windows.Forms.DataGridView dgvZwierzeta;
 		private System.Windows.Forms.TabPage tabOpieka;
-		private System.Windows.Forms.Button button20;
-		private System.Windows.Forms.Button button21;
+		private System.Windows.Forms.Button btnOpiekaEdytuj;
+		private System.Windows.Forms.Button btnOpiekaDodaj;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.DataGridView dataGridView7;
+		private System.Windows.Forms.DataGridView dgvOpieki;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -1010,6 +1285,34 @@
         private System.Windows.Forms.Button btnKlatkaZapisz;
         private ZooDataSetTableAdapters.Klatka_zwierzeciaTableAdapter klatkaTA;
         private System.Windows.Forms.BindingSource klatkaBS;
+        private System.Windows.Forms.Button btnZwierzeZapisz;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox comboBoxZwierzeKlatka;
+        private System.Windows.Forms.ComboBox comboBoxZwierzePlec;
+        private System.Windows.Forms.TextBox txtZwierzeDataPrzyjecia;
+        private System.Windows.Forms.TextBox txtZwierzeGatunek;
+        private System.Windows.Forms.TextBox txtZwierzeWiek;
+        private System.Windows.Forms.TextBox txtZwierzeNazwa;
+        private ZooDataSetTableAdapters.ZwierzecieTableAdapter zwierzeTA;
+        private System.Windows.Forms.BindingSource zwierzeBS;
+        private System.Windows.Forms.Button btnOpiekaZapisz;
+        private System.Windows.Forms.ComboBox comboBoxOpiekaOpiekun;
+        private System.Windows.Forms.ComboBox comboBoxOpiekaZwierze;
+        private System.Windows.Forms.TextBox txtOpiekaData;
+        private System.Windows.Forms.TextBox txtOpiekaKonOpieki;
+        private System.Windows.Forms.TextBox txtOpiekaRozpOpieki;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private ZooDataSetTableAdapters.OpiekaTableAdapter opiekaTA;
+        private System.Windows.Forms.BindingSource opiekaBS;
     }
 }
 
