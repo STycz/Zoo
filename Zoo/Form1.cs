@@ -26,12 +26,20 @@ namespace Zoo
             comboBoxJedzenieRodzaj.Text = "";
             comboBoxJedzenieMagID.Text = "";
 
+            txtKlatkaNazwa.Text = "";
+            txtKlatkaWysokosc.Text = "";
+            txtKlatkaSzerokosc.Text = "";
+            txtKlatkaGlebokosc.Text = "";
+            comboBoxKlatkaSektor.Text = "";
+            comboBoxKlatkaOpiekun.Text = "";
+
             this.dbAction = DBActions.None;
         }
 
         private DBActions dbAction = DBActions.None;
         ZooDataSet.OpiekunRow _selectedRow = null;
         ZooDataSet.JedzenieRow _selectedRowJedzenie = null;
+        ZooDataSet.Klatka_zwierzeciaRow _selectedRowKlatka = null;
         int id_rekordu;
 
         private bool ValidateInput()
@@ -51,7 +59,7 @@ namespace Zoo
                 opiekunBS.DataSource = mainDataSet.Opiekun;
                 //3. set datagridview source
                 dgvOpiekunowie.DataSource = opiekunBS;
-                dgvOpiekunowie.Columns[0].Visible = false;
+                
 
                 jedzenieTA.Fill(mainDataSet.Jedzenie);
                 jedzenieBS.DataSource = mainDataSet.Jedzenie;
@@ -66,6 +74,14 @@ namespace Zoo
                 dgvMagazyny.Columns[0].Visible = true;
 
                 dgvMagazynZawartosc.DataSource = jedzenieBS;
+
+                sektorTA.Fill(mainDataSet.Sektor);
+                sektorBS.DataSource = mainDataSet.Sektor;
+                dgvSektory.DataSource = sektorBS;
+                
+                klatkaTA.Fill(mainDataSet.Klatka_zwierzecia);
+                klatkaBS.DataSource = mainDataSet.Klatka_zwierzecia;
+                dgvJedzenie.DataSource = jedzenieBS;
 
                 comboBoxJedzenieMagID.DataSource = magazynBS;
                 comboBoxJedzenieMagID.DisplayMember = "ID_Magazyn";
@@ -325,6 +341,46 @@ namespace Zoo
                 }
 
                 dgvMagazynZawartosc.DataSource = filteredTable;
+            }
+        }
+
+        private void btnKlatkaDodaj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _selectedRowKlatka = mainDataSet.Klatka_zwierzecia.NewKlatka_zwierzeciaRow();
+                ResetData();
+                txtKlatkaNazwa.Focus();
+                this.dbAction = DBActions.Add;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void btnKlatkaEdytuj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var row = ((DataRowView)jedzenieBS.Current).Row as ZooDataSet.JedzenieRow;
+
+                if (row == null)
+                    return;
+
+                _selectedRowJedzenie = row;
+                dbAction = DBActions.Edit;
+
+                txtKlatkaNazwa.Text = _selectedRowKlatka.Nazwa;
+                txtKlatkaWysokosc.Text = _selectedRowKlatka.Wysokosc.ToString();
+                txtKlatkaSzerokosc.Text = _selectedRowKlatka.Szerokosc.ToString();
+                txtKlatkaGlebokosc.Text = _selectedRowKlatka.Glebokosc.ToString();
+                comboBoxKlatkaSektor.Text = _selectedRowKlatka.ID_Sektor.ToString();
+                comboBoxKlatkaOpiekun.Text = _selectedRowKlatka.ID_Opiekun.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
             }
         }
     }
