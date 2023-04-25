@@ -23,28 +23,28 @@ namespace Zoo
 
             txtJedzenieNazwa.Text = "";
             txtJedzenieOpis.Text = "";
-            comboBoxJedzenieRodzaj.Text = "";
-            comboBoxJedzenieMagID.Text = "";
+            comboBoxJedzenieRodzaj.SelectedIndex = -1;
+            comboBoxJedzenieMagID.SelectedIndex = -1;
 
             txtKlatkaNazwa.Text = "";
             txtKlatkaWysokosc.Text = "";
             txtKlatkaSzerokosc.Text = "";
             txtKlatkaGlebokosc.Text = "";
-            comboBoxKlatkaSektor.Text = "";
-            comboBoxKlatkaOpiekun.Text = "";
+            comboBoxKlatkaSektor.SelectedIndex = -1;
+            comboBoxKlatkaOpiekun.SelectedIndex = -1;
 
             txtZwierzeNazwa.Text = "";
             txtZwierzeWiek.Text = "";
-            comboBoxZwierzeGromada.Text = "";
-            comboBoxZwierzePlec.Text = "";
+            comboBoxZwierzeGromada.SelectedIndex = -1;
+            comboBoxZwierzePlec.SelectedIndex = -1;
             txtZwierzeDataPrzyjecia.Text = "";
-            comboBoxZwierzeKlatka.Text = "";
+            comboBoxZwierzeKlatka.SelectedIndex = -1;
 
-            txtOpiekaRozpOpieki.Text = "";
-            txtOpiekaKonOpieki.Text = "";
+            maskedTxtOpiekaRozpOpieki.Text = "";
+            maskedTxtOpiekaKonOpieki.Text = "";
             txtOpiekaData.Text = "";
-            comboBoxOpiekaZwierze.Text = "";
-            comboBoxOpiekaOpiekun.Text = "";
+            comboBoxOpiekaZwierze.SelectedIndex = -1;
+            comboBoxOpiekaOpiekun.SelectedIndex = -1;
 
             this.dbAction = DBActions.None;
         }
@@ -603,7 +603,7 @@ namespace Zoo
             {
                 _selectedRowOpieka = mainDataSet.Opieka.NewOpiekaRow();
                 ResetData();
-                txtOpiekaRozpOpieki.Focus();
+                maskedTxtOpiekaRozpOpieki.Focus();
                 this.dbAction = DBActions.Add;
             }
             catch (Exception ex)
@@ -624,8 +624,8 @@ namespace Zoo
                 _selectedRowOpieka = row;
                 dbAction = DBActions.Edit;
 
-                txtOpiekaRozpOpieki.Text = _selectedRowOpieka.Start_opieki;
-                txtOpiekaKonOpieki.Text = _selectedRowOpieka.Koniec_opieki;
+                maskedTxtOpiekaRozpOpieki.Text = _selectedRowOpieka.Start_opieki;
+                maskedTxtOpiekaKonOpieki.Text = _selectedRowOpieka.Koniec_opieki;
                 txtOpiekaData.Text = _selectedRowOpieka.Data;
                 comboBoxOpiekaZwierze.Text = _selectedRowOpieka.ID_Zwierze.ToString();
                 comboBoxOpiekaOpiekun.Text = _selectedRowOpieka.ID_Opiekun.ToString();
@@ -650,8 +650,8 @@ namespace Zoo
                 {
                     case DBActions.Edit:
                         {
-                            _selectedRowOpieka.Start_opieki = txtOpiekaRozpOpieki.Text;
-                            _selectedRowOpieka.Koniec_opieki = txtOpiekaKonOpieki.Text;
+                            _selectedRowOpieka.Start_opieki = maskedTxtOpiekaRozpOpieki.Text;
+                            _selectedRowOpieka.Koniec_opieki = maskedTxtOpiekaKonOpieki.Text;
                             _selectedRowOpieka.Data = txtOpiekaData.Text;
                             _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
                             _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
@@ -663,8 +663,8 @@ namespace Zoo
                         }
                     case DBActions.Add:
                         {
-                            _selectedRowOpieka.Start_opieki = txtOpiekaRozpOpieki.Text;
-                            _selectedRowOpieka.Koniec_opieki = txtOpiekaKonOpieki.Text;
+                            _selectedRowOpieka.Start_opieki = maskedTxtOpiekaRozpOpieki.Text;
+                            _selectedRowOpieka.Koniec_opieki = maskedTxtOpiekaKonOpieki.Text;
                             _selectedRowOpieka.Data = txtOpiekaData.Text;
                             _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
                             _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
@@ -993,9 +993,80 @@ namespace Zoo
             }
         }
 
-        private void txtOpiekaRozpOpieki_TextChanged(object sender, EventArgs e)
+        private void maskedTxtOpiekaRozpOpieki_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+            if (maskedTxtOpiekaRozpOpieki.Text.Length == 5 && maskedTxtOpiekaKonOpieki.Text.Length == 5 && txtOpiekaData.Text.Length >= 8 && txtOpiekaData.Text.Length <= 20 && comboBoxOpiekaZwierze.SelectedIndex != -1 && comboBoxOpiekaOpiekun.SelectedIndex != -1)
+            {
+                btnOpiekaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekaZapisz.Enabled = false;
+            }
+        }
 
+        private void maskedTxtOpiekaKonOpieki_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (maskedTxtOpiekaRozpOpieki.Text.Length == 5 && maskedTxtOpiekaKonOpieki.Text.Length == 5 && txtOpiekaData.Text.Length >= 8 && txtOpiekaData.Text.Length <= 20 && comboBoxOpiekaZwierze.SelectedIndex != -1 && comboBoxOpiekaOpiekun.SelectedIndex != -1)
+            {
+                btnOpiekaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekaZapisz.Enabled = false;
+            }
+        }
+
+        private void txtOpiekaData_TextChanged(object sender, EventArgs e)
+        {
+            if (maskedTxtOpiekaRozpOpieki.Text.Length == 5 && maskedTxtOpiekaKonOpieki.Text.Length == 5 && txtOpiekaData.Text.Length >= 8 && txtOpiekaData.Text.Length <= 20 && comboBoxOpiekaZwierze.SelectedIndex != -1 && comboBoxOpiekaOpiekun.SelectedIndex != -1)
+            {
+                btnOpiekaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekaZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxOpiekaZwierze_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (maskedTxtOpiekaRozpOpieki.Text.Length == 5 && maskedTxtOpiekaKonOpieki.Text.Length == 5 && txtOpiekaData.Text.Length >= 8 && txtOpiekaData.Text.Length <= 20 && comboBoxOpiekaZwierze.SelectedIndex != -1 && comboBoxOpiekaOpiekun.SelectedIndex != -1)
+            {
+                btnOpiekaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekaZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxOpiekaOpiekun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (maskedTxtOpiekaRozpOpieki.Text.Length == 5 && maskedTxtOpiekaKonOpieki.Text.Length == 5 && txtOpiekaData.Text.Length >= 8 && txtOpiekaData.Text.Length <= 20 && comboBoxOpiekaZwierze.SelectedIndex != -1 && comboBoxOpiekaOpiekun.SelectedIndex != -1)
+            {
+                btnOpiekaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekaZapisz.Enabled = false;
+            }
+        }
+
+        private void maskedTxtOpiekaRozpOpieki_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void maskedTxtOpiekaKonOpieki_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -116,8 +116,6 @@
             this.comboBoxOpiekaOpiekun = new System.Windows.Forms.ComboBox();
             this.comboBoxOpiekaZwierze = new System.Windows.Forms.ComboBox();
             this.txtOpiekaData = new System.Windows.Forms.TextBox();
-            this.txtOpiekaKonOpieki = new System.Windows.Forms.TextBox();
-            this.txtOpiekaRozpOpieki = new System.Windows.Forms.TextBox();
             this.btnOpiekaEdytuj = new System.Windows.Forms.Button();
             this.btnOpiekaDodaj = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -138,6 +136,8 @@
             this.opiekaTA = new Zoo.ZooDataSetTableAdapters.OpiekaTableAdapter();
             this.opiekaBS = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxZwierzeGromada = new System.Windows.Forms.ComboBox();
+            this.maskedTxtOpiekaRozpOpieki = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTxtOpiekaKonOpieki = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabOpiekun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
@@ -1003,6 +1003,8 @@
             // 
             // tabOpieka
             // 
+            this.tabOpieka.Controls.Add(this.maskedTxtOpiekaKonOpieki);
+            this.tabOpieka.Controls.Add(this.maskedTxtOpiekaRozpOpieki);
             this.tabOpieka.Controls.Add(this.label35);
             this.tabOpieka.Controls.Add(this.label34);
             this.tabOpieka.Controls.Add(this.label33);
@@ -1012,8 +1014,6 @@
             this.tabOpieka.Controls.Add(this.comboBoxOpiekaOpiekun);
             this.tabOpieka.Controls.Add(this.comboBoxOpiekaZwierze);
             this.tabOpieka.Controls.Add(this.txtOpiekaData);
-            this.tabOpieka.Controls.Add(this.txtOpiekaKonOpieki);
-            this.tabOpieka.Controls.Add(this.txtOpiekaRozpOpieki);
             this.tabOpieka.Controls.Add(this.btnOpiekaEdytuj);
             this.tabOpieka.Controls.Add(this.btnOpiekaDodaj);
             this.tabOpieka.Controls.Add(this.label7);
@@ -1072,6 +1072,7 @@
             // 
             // btnOpiekaZapisz
             // 
+            this.btnOpiekaZapisz.Enabled = false;
             this.btnOpiekaZapisz.Location = new System.Drawing.Point(253, 214);
             this.btnOpiekaZapisz.Name = "btnOpiekaZapisz";
             this.btnOpiekaZapisz.Size = new System.Drawing.Size(75, 23);
@@ -1088,6 +1089,7 @@
             this.comboBoxOpiekaOpiekun.Name = "comboBoxOpiekaOpiekun";
             this.comboBoxOpiekaOpiekun.Size = new System.Drawing.Size(100, 21);
             this.comboBoxOpiekaOpiekun.TabIndex = 17;
+            this.comboBoxOpiekaOpiekun.SelectedIndexChanged += new System.EventHandler(this.comboBoxOpiekaOpiekun_SelectedIndexChanged);
             // 
             // comboBoxOpiekaZwierze
             // 
@@ -1097,6 +1099,7 @@
             this.comboBoxOpiekaZwierze.Name = "comboBoxOpiekaZwierze";
             this.comboBoxOpiekaZwierze.Size = new System.Drawing.Size(100, 21);
             this.comboBoxOpiekaZwierze.TabIndex = 16;
+            this.comboBoxOpiekaZwierze.SelectedIndexChanged += new System.EventHandler(this.comboBoxOpiekaZwierze_SelectedIndexChanged);
             // 
             // txtOpiekaData
             // 
@@ -1104,21 +1107,7 @@
             this.txtOpiekaData.Name = "txtOpiekaData";
             this.txtOpiekaData.Size = new System.Drawing.Size(100, 20);
             this.txtOpiekaData.TabIndex = 15;
-            // 
-            // txtOpiekaKonOpieki
-            // 
-            this.txtOpiekaKonOpieki.Location = new System.Drawing.Point(115, 104);
-            this.txtOpiekaKonOpieki.Name = "txtOpiekaKonOpieki";
-            this.txtOpiekaKonOpieki.Size = new System.Drawing.Size(100, 20);
-            this.txtOpiekaKonOpieki.TabIndex = 14;
-            // 
-            // txtOpiekaRozpOpieki
-            // 
-            this.txtOpiekaRozpOpieki.Location = new System.Drawing.Point(115, 67);
-            this.txtOpiekaRozpOpieki.Name = "txtOpiekaRozpOpieki";
-            this.txtOpiekaRozpOpieki.Size = new System.Drawing.Size(100, 20);
-            this.txtOpiekaRozpOpieki.TabIndex = 13;
-            this.txtOpiekaRozpOpieki.TextChanged += new System.EventHandler(this.txtOpiekaRozpOpieki_TextChanged);
+            this.txtOpiekaData.TextChanged += new System.EventHandler(this.txtOpiekaData_TextChanged);
             // 
             // btnOpiekaEdytuj
             // 
@@ -1207,6 +1196,26 @@
             this.comboBoxZwierzeGromada.Size = new System.Drawing.Size(164, 21);
             this.comboBoxZwierzeGromada.TabIndex = 26;
             this.comboBoxZwierzeGromada.SelectedIndexChanged += new System.EventHandler(this.comboBoxZwierzeGromada_SelectedIndexChanged);
+            // 
+            // maskedTxtOpiekaRozpOpieki
+            // 
+            this.maskedTxtOpiekaRozpOpieki.Location = new System.Drawing.Point(115, 66);
+            this.maskedTxtOpiekaRozpOpieki.Mask = "00:00";
+            this.maskedTxtOpiekaRozpOpieki.Name = "maskedTxtOpiekaRozpOpieki";
+            this.maskedTxtOpiekaRozpOpieki.Size = new System.Drawing.Size(100, 20);
+            this.maskedTxtOpiekaRozpOpieki.TabIndex = 24;
+            this.maskedTxtOpiekaRozpOpieki.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTxtOpiekaRozpOpieki_MaskInputRejected);
+            this.maskedTxtOpiekaRozpOpieki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTxtOpiekaRozpOpieki_KeyPress);
+            // 
+            // maskedTxtOpiekaKonOpieki
+            // 
+            this.maskedTxtOpiekaKonOpieki.Location = new System.Drawing.Point(115, 104);
+            this.maskedTxtOpiekaKonOpieki.Mask = "00:00";
+            this.maskedTxtOpiekaKonOpieki.Name = "maskedTxtOpiekaKonOpieki";
+            this.maskedTxtOpiekaKonOpieki.Size = new System.Drawing.Size(100, 20);
+            this.maskedTxtOpiekaKonOpieki.TabIndex = 25;
+            this.maskedTxtOpiekaKonOpieki.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTxtOpiekaKonOpieki_MaskInputRejected);
+            this.maskedTxtOpiekaKonOpieki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTxtOpiekaKonOpieki_KeyPress);
             // 
             // Form1
             // 
@@ -1353,8 +1362,6 @@
         private System.Windows.Forms.ComboBox comboBoxOpiekaOpiekun;
         private System.Windows.Forms.ComboBox comboBoxOpiekaZwierze;
         private System.Windows.Forms.TextBox txtOpiekaData;
-        private System.Windows.Forms.TextBox txtOpiekaKonOpieki;
-        private System.Windows.Forms.TextBox txtOpiekaRozpOpieki;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
@@ -1363,6 +1370,8 @@
         private ZooDataSetTableAdapters.OpiekaTableAdapter opiekaTA;
         private System.Windows.Forms.BindingSource opiekaBS;
         private System.Windows.Forms.ComboBox comboBoxZwierzeGromada;
+        private System.Windows.Forms.MaskedTextBox maskedTxtOpiekaRozpOpieki;
+        private System.Windows.Forms.MaskedTextBox maskedTxtOpiekaKonOpieki;
     }
 }
 
