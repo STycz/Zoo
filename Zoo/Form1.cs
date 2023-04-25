@@ -63,6 +63,31 @@ namespace Zoo
             //Validations
             return true;
         }
+        public void sprawdzanieWieku()
+        {
+            if (comboBoxPlec.Text == "M")
+            {
+                if (int.TryParse(txtOpiekunWiek.Text, out int ageM) && ageM >= 18 && ageM <= 70)
+                {
+                    btnOpiekunZapisz.Enabled = true;
+                }
+                else
+                {
+                    btnOpiekunZapisz.Enabled = false;
+                }
+            }
+            else if (comboBoxPlec.Text == "K")
+            {
+                if (int.TryParse(txtOpiekunWiek.Text, out int ageK) && ageK >= 18 && ageK <= 65)
+                {
+                    btnOpiekunZapisz.Enabled = true;
+                }
+                else
+                {
+                    btnOpiekunZapisz.Enabled = false;
+                }
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -698,7 +723,7 @@ namespace Zoo
         {
             if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
             {
-                btnOpiekunZapisz.Enabled = true;
+                sprawdzanieWieku();
             }
             else
             {
@@ -718,7 +743,7 @@ namespace Zoo
         {
             if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
             {
-                btnOpiekunZapisz.Enabled = true;
+                sprawdzanieWieku();
             }
             else
             {
@@ -746,7 +771,7 @@ namespace Zoo
         {
             if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
             {
-                btnOpiekunZapisz.Enabled = true;
+                sprawdzanieWieku();
             }
             else
             {
@@ -758,7 +783,7 @@ namespace Zoo
         {
             if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
             {
-                btnOpiekunZapisz.Enabled = true;
+                sprawdzanieWieku();
             }
             else
             {
@@ -814,7 +839,7 @@ namespace Zoo
         {
             if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
             {
-                btnOpiekunZapisz.Enabled = true;
+                sprawdzanieWieku();
             }
             else
             {
