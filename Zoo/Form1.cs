@@ -548,61 +548,53 @@ namespace Zoo
 
         private void btnZwierzeZapisz_Click(object sender, EventArgs e)
         {
-            if(comboBoxZwierzeGromada.Text != )
+            try
             {
+                if (!ValidateInput())
+                    return;
+
+                if (_selectedRowZwierze == null)
+                    return;
+
+                switch (dbAction)
+                {
+                    case DBActions.Edit:
+                        {
+                            _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
+                            _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
+                            _selectedRowZwierze.Gatunek = comboBoxZwierzeGromada.Text;
+                            _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
+                            _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
+                            _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
+
+
+                            zwierzeTA.Update(_selectedRowZwierze);
+                            mainDataSet.AcceptChanges();
+
+                            break;
+                        }
+                    case DBActions.Add:
+                        {
+                            _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
+                            _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
+                            _selectedRowZwierze.Gatunek = comboBoxZwierzeGromada.Text;
+                            _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
+                            _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
+                            _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
+
+                            mainDataSet.Zwierzecie.AddZwierzecieRow(_selectedRowZwierze);
+                            zwierzeTA.Update(_selectedRowZwierze);
+                            mainDataSet.Zwierzecie.AcceptChanges();
+
+                            break;
+                        }
+                }
 
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    if (!ValidateInput())
-                        return;
-
-                    if (_selectedRowZwierze == null)
-                        return;
-
-                    switch (dbAction)
-                    {
-                        case DBActions.Edit:
-                            {
-                                _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
-                                _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
-                                _selectedRowZwierze.Gatunek = comboBoxZwierzeGromada.Text;
-                                _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
-                                _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
-                                _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
-
-
-                                zwierzeTA.Update(_selectedRowZwierze);
-                                mainDataSet.AcceptChanges();
-
-                                break;
-                            }
-                        case DBActions.Add:
-                            {
-                                _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
-                                _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
-                                _selectedRowZwierze.Gatunek = comboBoxZwierzeGromada.Text;
-                                _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
-                                _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
-                                _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
-
-                                mainDataSet.Zwierzecie.AddZwierzecieRow(_selectedRowZwierze);
-                                zwierzeTA.Update(_selectedRowZwierze);
-                                mainDataSet.Zwierzecie.AcceptChanges();
-
-                                break;
-                            }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Błąd: " + ex.Message);
-                }
+                MessageBox.Show("Błąd: " + ex.Message);
             }
-            
         }
 
         private void btnOpiekaDodaj_Click(object sender, EventArgs e)
