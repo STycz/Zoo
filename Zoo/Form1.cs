@@ -545,9 +545,9 @@ namespace Zoo
                 MessageBox.Show("Błąd: " + ex.Message);
             }
         }
-
-        private void btnZwierzeZapisz_Click(object sender, EventArgs e)
+        public void btnZwierzeZapisz_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (!ValidateInput())
@@ -645,37 +645,47 @@ namespace Zoo
 
                 if (_selectedRowOpieka == null)
                     return;
-
-                switch (dbAction)
+                
+                TimeSpan diff = DateTime.Parse(maskedTxtOpiekaKonOpieki.Text).Subtract(DateTime.Parse(maskedTxtOpiekaRozpOpieki.Text));
+                if (diff.TotalHours > 2)
                 {
-                    case DBActions.Edit:
-                        {
-                            _selectedRowOpieka.Start_opieki = maskedTxtOpiekaRozpOpieki.Text;
-                            _selectedRowOpieka.Koniec_opieki = maskedTxtOpiekaKonOpieki.Text;
-                            _selectedRowOpieka.Data = txtOpiekaData.Text;
-                            _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
-                            _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
-
-                            opiekaTA.Update(_selectedRowOpieka);
-                            mainDataSet.AcceptChanges();
-
-                            break;
-                        }
-                    case DBActions.Add:
-                        {
-                            _selectedRowOpieka.Start_opieki = maskedTxtOpiekaRozpOpieki.Text;
-                            _selectedRowOpieka.Koniec_opieki = maskedTxtOpiekaKonOpieki.Text;
-                            _selectedRowOpieka.Data = txtOpiekaData.Text;
-                            _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
-                            _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
-
-                            mainDataSet.Opieka.AddOpiekaRow(_selectedRowOpieka);
-                            opiekaTA.Update(_selectedRowOpieka);
-                            mainDataSet.Opieka.AcceptChanges();
-
-                            break;
-                        }
+                    MessageBox.Show("Opieka nad zwierzęciem jest zbyt długa.");
                 }
+                else
+                {
+                    // code for the else statement goes here
+                    switch (dbAction)
+                    {
+                        case DBActions.Edit:
+                            {
+                                _selectedRowOpieka.Start_opieki = maskedTxtOpiekaRozpOpieki.Text;
+                                _selectedRowOpieka.Koniec_opieki = maskedTxtOpiekaKonOpieki.Text;
+                                _selectedRowOpieka.Data = txtOpiekaData.Text;
+                                _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
+                                _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
+
+                                opiekaTA.Update(_selectedRowOpieka);
+                                mainDataSet.AcceptChanges();
+
+                                break;
+                            }
+                        case DBActions.Add:
+                            {
+                                _selectedRowOpieka.Start_opieki = maskedTxtOpiekaRozpOpieki.Text;
+                                _selectedRowOpieka.Koniec_opieki = maskedTxtOpiekaKonOpieki.Text;
+                                _selectedRowOpieka.Data = txtOpiekaData.Text;
+                                _selectedRowOpieka.ID_Zwierze = Int32.Parse(comboBoxOpiekaZwierze.Text);
+                                _selectedRowOpieka.ID_Opiekun = Int32.Parse(comboBoxOpiekaOpiekun.Text);
+
+                                mainDataSet.Opieka.AddOpiekaRow(_selectedRowOpieka);
+                                opiekaTA.Update(_selectedRowOpieka);
+                                mainDataSet.Opieka.AcceptChanges();
+
+                                break;
+                            }
+                    }
+                }
+                
 
             }
             catch (Exception ex)
@@ -981,7 +991,7 @@ namespace Zoo
             }
         }
 
-        private void comboBoxZwierzeKlatka_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBoxZwierzeKlatka_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
             {
