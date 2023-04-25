@@ -99,7 +99,6 @@
             this.comboBoxZwierzeKlatka = new System.Windows.Forms.ComboBox();
             this.comboBoxZwierzePlec = new System.Windows.Forms.ComboBox();
             this.txtZwierzeDataPrzyjecia = new System.Windows.Forms.TextBox();
-            this.txtZwierzeGatunek = new System.Windows.Forms.TextBox();
             this.txtZwierzeWiek = new System.Windows.Forms.TextBox();
             this.txtZwierzeNazwa = new System.Windows.Forms.TextBox();
             this.btnZwierzeZapisz = new System.Windows.Forms.Button();
@@ -138,6 +137,7 @@
             this.zwierzeBS = new System.Windows.Forms.BindingSource(this.components);
             this.opiekaTA = new Zoo.ZooDataSetTableAdapters.OpiekaTableAdapter();
             this.opiekaBS = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxZwierzeGromada = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabOpiekun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
@@ -825,6 +825,7 @@
             // 
             // tabZwierze
             // 
+            this.tabZwierze.Controls.Add(this.comboBoxZwierzeGromada);
             this.tabZwierze.Controls.Add(this.label30);
             this.tabZwierze.Controls.Add(this.label29);
             this.tabZwierze.Controls.Add(this.label28);
@@ -834,7 +835,6 @@
             this.tabZwierze.Controls.Add(this.comboBoxZwierzeKlatka);
             this.tabZwierze.Controls.Add(this.comboBoxZwierzePlec);
             this.tabZwierze.Controls.Add(this.txtZwierzeDataPrzyjecia);
-            this.tabZwierze.Controls.Add(this.txtZwierzeGatunek);
             this.tabZwierze.Controls.Add(this.txtZwierzeWiek);
             this.tabZwierze.Controls.Add(this.txtZwierzeNazwa);
             this.tabZwierze.Controls.Add(this.btnZwierzeZapisz);
@@ -912,6 +912,7 @@
             this.comboBoxZwierzeKlatka.Name = "comboBoxZwierzeKlatka";
             this.comboBoxZwierzeKlatka.Size = new System.Drawing.Size(164, 21);
             this.comboBoxZwierzeKlatka.TabIndex = 19;
+            this.comboBoxZwierzeKlatka.SelectedIndexChanged += new System.EventHandler(this.comboBoxZwierzeKlatka_SelectedIndexChanged);
             // 
             // comboBoxZwierzePlec
             // 
@@ -924,6 +925,7 @@
             this.comboBoxZwierzePlec.Name = "comboBoxZwierzePlec";
             this.comboBoxZwierzePlec.Size = new System.Drawing.Size(164, 21);
             this.comboBoxZwierzePlec.TabIndex = 18;
+            this.comboBoxZwierzePlec.SelectedIndexChanged += new System.EventHandler(this.comboBoxZwierzePlec_SelectedIndexChanged);
             // 
             // txtZwierzeDataPrzyjecia
             // 
@@ -931,13 +933,7 @@
             this.txtZwierzeDataPrzyjecia.Name = "txtZwierzeDataPrzyjecia";
             this.txtZwierzeDataPrzyjecia.Size = new System.Drawing.Size(164, 20);
             this.txtZwierzeDataPrzyjecia.TabIndex = 17;
-            // 
-            // txtZwierzeGatunek
-            // 
-            this.txtZwierzeGatunek.Location = new System.Drawing.Point(84, 107);
-            this.txtZwierzeGatunek.Name = "txtZwierzeGatunek";
-            this.txtZwierzeGatunek.Size = new System.Drawing.Size(164, 20);
-            this.txtZwierzeGatunek.TabIndex = 16;
+            this.txtZwierzeDataPrzyjecia.TextChanged += new System.EventHandler(this.txtZwierzeDataPrzyjecia_TextChanged);
             // 
             // txtZwierzeWiek
             // 
@@ -945,6 +941,8 @@
             this.txtZwierzeWiek.Name = "txtZwierzeWiek";
             this.txtZwierzeWiek.Size = new System.Drawing.Size(164, 20);
             this.txtZwierzeWiek.TabIndex = 15;
+            this.txtZwierzeWiek.TextChanged += new System.EventHandler(this.txtZwierzeWiek_TextChanged);
+            this.txtZwierzeWiek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZwierzeWiek_KeyPress);
             // 
             // txtZwierzeNazwa
             // 
@@ -1120,6 +1118,7 @@
             this.txtOpiekaRozpOpieki.Name = "txtOpiekaRozpOpieki";
             this.txtOpiekaRozpOpieki.Size = new System.Drawing.Size(100, 20);
             this.txtOpiekaRozpOpieki.TabIndex = 13;
+            this.txtOpiekaRozpOpieki.TextChanged += new System.EventHandler(this.txtOpiekaRozpOpieki_TextChanged);
             // 
             // btnOpiekaEdytuj
             // 
@@ -1192,6 +1191,22 @@
             // opiekaTA
             // 
             this.opiekaTA.ClearBeforeFill = true;
+            // 
+            // comboBoxZwierzeGromada
+            // 
+            this.comboBoxZwierzeGromada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxZwierzeGromada.FormattingEnabled = true;
+            this.comboBoxZwierzeGromada.Items.AddRange(new object[] {
+            "Ssak",
+            "Gad",
+            "Płaz",
+            "Ptak",
+            "Ryba"});
+            this.comboBoxZwierzeGromada.Location = new System.Drawing.Point(84, 107);
+            this.comboBoxZwierzeGromada.Name = "comboBoxZwierzeGromada";
+            this.comboBoxZwierzeGromada.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxZwierzeGromada.TabIndex = 26;
+            this.comboBoxZwierzeGromada.SelectedIndexChanged += new System.EventHandler(this.comboBoxZwierzeGromada_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -1330,7 +1345,6 @@
         private System.Windows.Forms.ComboBox comboBoxZwierzeKlatka;
         private System.Windows.Forms.ComboBox comboBoxZwierzePlec;
         private System.Windows.Forms.TextBox txtZwierzeDataPrzyjecia;
-        private System.Windows.Forms.TextBox txtZwierzeGatunek;
         private System.Windows.Forms.TextBox txtZwierzeWiek;
         private System.Windows.Forms.TextBox txtZwierzeNazwa;
         private ZooDataSetTableAdapters.ZwierzecieTableAdapter zwierzeTA;
@@ -1348,6 +1362,7 @@
         private System.Windows.Forms.Label label31;
         private ZooDataSetTableAdapters.OpiekaTableAdapter opiekaTA;
         private System.Windows.Forms.BindingSource opiekaBS;
+        private System.Windows.Forms.ComboBox comboBoxZwierzeGromada;
     }
 }
 

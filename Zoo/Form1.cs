@@ -35,7 +35,7 @@ namespace Zoo
 
             txtZwierzeNazwa.Text = "";
             txtZwierzeWiek.Text = "";
-            txtZwierzeGatunek.Text = "";
+            comboBoxZwierzeGromada.Text = "";
             comboBoxZwierzePlec.Text = "";
             txtZwierzeDataPrzyjecia.Text = "";
             comboBoxZwierzeKlatka.Text = "";
@@ -106,6 +106,7 @@ namespace Zoo
                 zwierzeTA.Fill(mainDataSet.Zwierzecie);
                 zwierzeBS.DataSource = mainDataSet.Zwierzecie;
                 dgvZwierzeta.DataSource = zwierzeBS;
+                dgvZwierzeta.Columns[3].HeaderText = "Gromada";
                 comboBoxZwierzeKlatka.DataSource = klatkaBS;
                 comboBoxZwierzeKlatka.DisplayMember = "ID_Klatka";
                 comboBoxZwierzeKlatka.ValueMember = "ID_Klatka";
@@ -534,7 +535,7 @@ namespace Zoo
 
                 txtZwierzeNazwa.Text = _selectedRowZwierze.Nazwa;
                 txtZwierzeWiek.Text = _selectedRowZwierze.Wiek.ToString();
-                txtZwierzeGatunek.Text = _selectedRowZwierze.Gatunek;
+                comboBoxZwierzeGromada.Text = _selectedRowZwierze.Gatunek;
                 comboBoxZwierzePlec.Text = _selectedRowZwierze.Plec;
                 txtZwierzeDataPrzyjecia.Text = _selectedRowZwierze.Data_przyjecia;
                 comboBoxZwierzeKlatka.Text = _selectedRowZwierze.ID_Klatka.ToString();
@@ -561,7 +562,7 @@ namespace Zoo
                         {
                             _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
                             _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
-                            _selectedRowZwierze.Gatunek = txtZwierzeGatunek.Text;
+                            _selectedRowZwierze.Gatunek = comboBoxZwierzeGromada.Text;
                             _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
                             _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
                             _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
@@ -576,7 +577,7 @@ namespace Zoo
                         {
                             _selectedRowZwierze.Nazwa = txtZwierzeNazwa.Text;
                             _selectedRowZwierze.Wiek = Int32.Parse(txtZwierzeWiek.Text);
-                            _selectedRowZwierze.Gatunek = txtZwierzeGatunek.Text;
+                            _selectedRowZwierze.Gatunek = comboBoxZwierzeGromada.Text;
                             _selectedRowZwierze.Plec = comboBoxZwierzePlec.Text;
                             _selectedRowZwierze.Data_przyjecia = txtZwierzeDataPrzyjecia.Text;
                             _selectedRowZwierze.ID_Klatka = Int32.Parse(comboBoxZwierzeKlatka.Text);
@@ -914,7 +915,7 @@ namespace Zoo
 
         private void txtZwierzeNazwa_TextChanged(object sender, EventArgs e)
         {
-            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
             {
                 btnZwierzeZapisz.Enabled = true;
             }
@@ -922,6 +923,79 @@ namespace Zoo
             {
                 btnZwierzeZapisz.Enabled = false;
             }
+        }
+
+        private void txtZwierzeWiek_TextChanged(object sender, EventArgs e)
+        {
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
+            {
+                btnZwierzeZapisz.Enabled = true;
+            }
+            else
+            {
+                btnZwierzeZapisz.Enabled = false;
+            }
+        }
+
+        private void txtZwierzeWiek_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBoxZwierzeGromada_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
+            {
+                btnZwierzeZapisz.Enabled = true;
+            }
+            else
+            {
+                btnZwierzeZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxZwierzePlec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
+            {
+                btnZwierzeZapisz.Enabled = true;
+            }
+            else
+            {
+                btnZwierzeZapisz.Enabled = false;
+            }
+        }
+
+        private void txtZwierzeDataPrzyjecia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
+            {
+                btnZwierzeZapisz.Enabled = true;
+            }
+            else
+            {
+                btnZwierzeZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxZwierzeKlatka_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && comboBoxZwierzeGromada.SelectedIndex != -1 && comboBoxZwierzePlec.SelectedIndex != -1 && txtZwierzeDataPrzyjecia.Text.Length >= 8 && txtZwierzeDataPrzyjecia.Text.Length <= 20 && comboBoxZwierzeKlatka.SelectedIndex != -1)
+            {
+                btnZwierzeZapisz.Enabled = true;
+            }
+            else
+            {
+                btnZwierzeZapisz.Enabled = false;
+            }
+        }
+
+        private void txtOpiekaRozpOpieki_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
