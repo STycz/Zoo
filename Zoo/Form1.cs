@@ -63,29 +63,36 @@ namespace Zoo
             //Validations
             return true;
         }
-        public void sprawdzanieWieku()
+        public void sprawdzanieWiekuOpiekuna()
         {
-            if (comboBoxPlec.Text == "M")
+            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
             {
-                if (int.TryParse(txtOpiekunWiek.Text, out int ageM) && ageM >= 18 && ageM <= 70)
+                if (comboBoxPlec.Text == "M")
                 {
-                    btnOpiekunZapisz.Enabled = true;
+                    if (int.TryParse(txtOpiekunWiek.Text, out int ageM) && ageM >= 18 && ageM <= 70)
+                    {
+                        btnOpiekunZapisz.Enabled = true;
+                    }
+                    else
+                    {
+                        btnOpiekunZapisz.Enabled = false;
+                    }
                 }
-                else
+                else if (comboBoxPlec.Text == "K")
                 {
-                    btnOpiekunZapisz.Enabled = false;
+                    if (int.TryParse(txtOpiekunWiek.Text, out int ageK) && ageK >= 18 && ageK <= 65)
+                    {
+                        btnOpiekunZapisz.Enabled = true;
+                    }
+                    else
+                    {
+                        btnOpiekunZapisz.Enabled = false;
+                    }
                 }
             }
-            else if (comboBoxPlec.Text == "K")
+            else
             {
-                if (int.TryParse(txtOpiekunWiek.Text, out int ageK) && ageK >= 18 && ageK <= 65)
-                {
-                    btnOpiekunZapisz.Enabled = true;
-                }
-                else
-                {
-                    btnOpiekunZapisz.Enabled = false;
-                }
+                btnOpiekunZapisz.Enabled = false;
             }
         }
         public Form1()
@@ -721,14 +728,7 @@ namespace Zoo
 
         private void txtOpiekunImie_TextChanged_1(object sender, EventArgs e)
         {
-            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
-            {
-                sprawdzanieWieku();
-            }
-            else
-            {
-                btnOpiekunZapisz.Enabled = false;
-            }
+            sprawdzanieWiekuOpiekuna();
         }
 
         private void txtOpiekunImie_KeyPress(object sender, KeyPressEventArgs e)
@@ -741,14 +741,7 @@ namespace Zoo
 
         private void txtOpiekunNazwisko_TextChanged(object sender, EventArgs e)
         {
-            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
-            {
-                sprawdzanieWieku();
-            }
-            else
-            {
-                btnOpiekunZapisz.Enabled = false;
-            }
+            sprawdzanieWiekuOpiekuna();
         }
 
         private void txtOpiekunNazwisko_KeyPress(object sender, KeyPressEventArgs e)
@@ -769,26 +762,12 @@ namespace Zoo
 
         private void txtOpiekunWiek_TextChanged(object sender, EventArgs e)
         {
-            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
-            {
-                sprawdzanieWieku();
-            }
-            else
-            {
-                btnOpiekunZapisz.Enabled = false;
-            }
+            sprawdzanieWiekuOpiekuna();
         }
 
         private void txtOpiekunNrTel_TextChanged(object sender, EventArgs e)
         {
-            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
-            {
-                sprawdzanieWieku();
-            }
-            else
-            {
-                btnOpiekunZapisz.Enabled = false;
-            }
+            sprawdzanieWiekuOpiekuna();
         }
 
         private void txtOpiekunNrTel_KeyPress(object sender, KeyPressEventArgs e)
@@ -837,14 +816,7 @@ namespace Zoo
 
         private void comboBoxPlec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
-            {
-                sprawdzanieWieku();
-            }
-            else
-            {
-                btnOpiekunZapisz.Enabled = false;
-            }
+            sprawdzanieWiekuOpiekuna();
         }
 
         private void txtKlatkaNazwa_TextChanged(object sender, EventArgs e)
