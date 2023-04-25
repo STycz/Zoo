@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabMagazyn = new System.Windows.Forms.TabPage();
-            this.dgvMagazynZawartosc = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dgvMagazyny = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabOpiekun = new System.Windows.Forms.TabPage();
             this.btnOpiekunZapisz = new System.Windows.Forms.Button();
             this.comboBoxPlec = new System.Windows.Forms.ComboBox();
@@ -51,6 +46,11 @@
             this.btnOpiekunDodaj = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvOpiekunowie = new System.Windows.Forms.DataGridView();
+            this.tabMagazyn = new System.Windows.Forms.TabPage();
+            this.dgvMagazynZawartosc = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgvMagazyny = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabJedzenie = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -90,11 +90,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvKlatki = new System.Windows.Forms.DataGridView();
             this.tabZwierze = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBoxZwierzeKlatka = new System.Windows.Forms.ComboBox();
+            this.comboBoxZwierzePlec = new System.Windows.Forms.ComboBox();
+            this.txtZwierzeDataPrzyjecia = new System.Windows.Forms.TextBox();
+            this.txtZwierzeGatunek = new System.Windows.Forms.TextBox();
+            this.txtZwierzeWiek = new System.Windows.Forms.TextBox();
+            this.txtZwierzeNazwa = new System.Windows.Forms.TextBox();
+            this.btnZwierzeZapisz = new System.Windows.Forms.Button();
             this.btnZwierzeEdytuj = new System.Windows.Forms.Button();
             this.btnZwierzeDodaj = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvZwierzeta = new System.Windows.Forms.DataGridView();
             this.tabOpieka = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnOpiekaZapisz = new System.Windows.Forms.Button();
+            this.comboBoxOpiekaOpiekun = new System.Windows.Forms.ComboBox();
+            this.comboBoxOpiekaZwierze = new System.Windows.Forms.ComboBox();
+            this.txtOpiekaData = new System.Windows.Forms.TextBox();
+            this.txtOpiekaKonOpieki = new System.Windows.Forms.TextBox();
+            this.txtOpiekaRozpOpieki = new System.Windows.Forms.TextBox();
             this.btnOpiekaEdytuj = new System.Windows.Forms.Button();
             this.btnOpiekaDodaj = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -110,40 +134,16 @@
             this.sektorBS = new System.Windows.Forms.BindingSource(this.components);
             this.klatkaTA = new Zoo.ZooDataSetTableAdapters.Klatka_zwierzeciaTableAdapter();
             this.klatkaBS = new System.Windows.Forms.BindingSource(this.components);
-            this.btnZwierzeZapisz = new System.Windows.Forms.Button();
-            this.txtZwierzeNazwa = new System.Windows.Forms.TextBox();
-            this.txtZwierzeWiek = new System.Windows.Forms.TextBox();
-            this.txtZwierzeGatunek = new System.Windows.Forms.TextBox();
-            this.txtZwierzeDataPrzyjecia = new System.Windows.Forms.TextBox();
-            this.comboBoxZwierzePlec = new System.Windows.Forms.ComboBox();
-            this.comboBoxZwierzeKlatka = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.zwierzeTA = new Zoo.ZooDataSetTableAdapters.ZwierzecieTableAdapter();
             this.zwierzeBS = new System.Windows.Forms.BindingSource(this.components);
-            this.txtOpiekaRozpOpieki = new System.Windows.Forms.TextBox();
-            this.txtOpiekaKonOpieki = new System.Windows.Forms.TextBox();
-            this.txtOpiekaData = new System.Windows.Forms.TextBox();
-            this.comboBoxOpiekaZwierze = new System.Windows.Forms.ComboBox();
-            this.comboBoxOpiekaOpiekun = new System.Windows.Forms.ComboBox();
-            this.btnOpiekaZapisz = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.opiekaTA = new Zoo.ZooDataSetTableAdapters.OpiekaTableAdapter();
             this.opiekaBS = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
+            this.tabOpiekun.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
             this.tabMagazyn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).BeginInit();
-            this.tabOpiekun.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).BeginInit();
             this.tabJedzenie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJedzenie)).BeginInit();
             this.tabSektor.SuspendLayout();
@@ -179,6 +179,179 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1092, 693);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabOpiekun
+            // 
+            this.tabOpiekun.Controls.Add(this.btnOpiekunZapisz);
+            this.tabOpiekun.Controls.Add(this.comboBoxPlec);
+            this.tabOpiekun.Controls.Add(this.label16);
+            this.tabOpiekun.Controls.Add(this.label15);
+            this.tabOpiekun.Controls.Add(this.label14);
+            this.tabOpiekun.Controls.Add(this.label13);
+            this.tabOpiekun.Controls.Add(this.label12);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunNrTel);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunWiek);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunNazwisko);
+            this.tabOpiekun.Controls.Add(this.txtOpiekunImie);
+            this.tabOpiekun.Controls.Add(this.btnOpiekunEdytuj);
+            this.tabOpiekun.Controls.Add(this.btnOpiekunDodaj);
+            this.tabOpiekun.Controls.Add(this.label4);
+            this.tabOpiekun.Controls.Add(this.dgvOpiekunowie);
+            this.tabOpiekun.Location = new System.Drawing.Point(4, 22);
+            this.tabOpiekun.Name = "tabOpiekun";
+            this.tabOpiekun.Size = new System.Drawing.Size(1084, 667);
+            this.tabOpiekun.TabIndex = 2;
+            this.tabOpiekun.Text = "Opiekun";
+            this.tabOpiekun.UseVisualStyleBackColor = true;
+            // 
+            // btnOpiekunZapisz
+            // 
+            this.btnOpiekunZapisz.Enabled = false;
+            this.btnOpiekunZapisz.Location = new System.Drawing.Point(253, 220);
+            this.btnOpiekunZapisz.Name = "btnOpiekunZapisz";
+            this.btnOpiekunZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunZapisz.TabIndex = 24;
+            this.btnOpiekunZapisz.Text = "Zapisz";
+            this.btnOpiekunZapisz.UseVisualStyleBackColor = true;
+            this.btnOpiekunZapisz.Click += new System.EventHandler(this.btnOpiekunZapisz_Click);
+            // 
+            // comboBoxPlec
+            // 
+            this.comboBoxPlec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPlec.FormattingEnabled = true;
+            this.comboBoxPlec.Items.AddRange(new object[] {
+            "K",
+            "M"});
+            this.comboBoxPlec.Location = new System.Drawing.Point(92, 183);
+            this.comboBoxPlec.Name = "comboBoxPlec";
+            this.comboBoxPlec.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPlec.TabIndex = 23;
+            this.comboBoxPlec.SelectedIndexChanged += new System.EventHandler(this.comboBoxPlec_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 225);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Numer telefonu";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(54, 186);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Płeć";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(54, 147);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Wiek";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(33, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Nazwisko";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(60, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Imię";
+            // 
+            // txtOpiekunNrTel
+            // 
+            this.txtOpiekunNrTel.Location = new System.Drawing.Point(92, 222);
+            this.txtOpiekunNrTel.Name = "txtOpiekunNrTel";
+            this.txtOpiekunNrTel.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunNrTel.TabIndex = 17;
+            this.txtOpiekunNrTel.TextChanged += new System.EventHandler(this.txtOpiekunNrTel_TextChanged);
+            this.txtOpiekunNrTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpiekunNrTel_KeyPress);
+            // 
+            // txtOpiekunWiek
+            // 
+            this.txtOpiekunWiek.Location = new System.Drawing.Point(92, 144);
+            this.txtOpiekunWiek.Name = "txtOpiekunWiek";
+            this.txtOpiekunWiek.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunWiek.TabIndex = 15;
+            this.txtOpiekunWiek.TextChanged += new System.EventHandler(this.txtOpiekunWiek_TextChanged);
+            this.txtOpiekunWiek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpiekunWiek_KeyPress);
+            // 
+            // txtOpiekunNazwisko
+            // 
+            this.txtOpiekunNazwisko.Location = new System.Drawing.Point(92, 105);
+            this.txtOpiekunNazwisko.Name = "txtOpiekunNazwisko";
+            this.txtOpiekunNazwisko.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunNazwisko.TabIndex = 14;
+            this.txtOpiekunNazwisko.TextChanged += new System.EventHandler(this.txtOpiekunNazwisko_TextChanged);
+            this.txtOpiekunNazwisko.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpiekunNazwisko_KeyPress);
+            // 
+            // txtOpiekunImie
+            // 
+            this.txtOpiekunImie.Location = new System.Drawing.Point(92, 66);
+            this.txtOpiekunImie.Name = "txtOpiekunImie";
+            this.txtOpiekunImie.Size = new System.Drawing.Size(122, 20);
+            this.txtOpiekunImie.TabIndex = 13;
+            this.txtOpiekunImie.TextChanged += new System.EventHandler(this.txtOpiekunImie_TextChanged_1);
+            this.txtOpiekunImie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpiekunImie_KeyPress);
+            // 
+            // btnOpiekunEdytuj
+            // 
+            this.btnOpiekunEdytuj.Location = new System.Drawing.Point(253, 142);
+            this.btnOpiekunEdytuj.Name = "btnOpiekunEdytuj";
+            this.btnOpiekunEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunEdytuj.TabIndex = 12;
+            this.btnOpiekunEdytuj.Text = "Edytuj";
+            this.btnOpiekunEdytuj.UseVisualStyleBackColor = true;
+            this.btnOpiekunEdytuj.Click += new System.EventHandler(this.btnOpiekunEdytuj_Click);
+            // 
+            // btnOpiekunDodaj
+            // 
+            this.btnOpiekunDodaj.Location = new System.Drawing.Point(253, 64);
+            this.btnOpiekunDodaj.Name = "btnOpiekunDodaj";
+            this.btnOpiekunDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekunDodaj.TabIndex = 11;
+            this.btnOpiekunDodaj.Text = "Dodaj";
+            this.btnOpiekunDodaj.UseVisualStyleBackColor = true;
+            this.btnOpiekunDodaj.Click += new System.EventHandler(this.btnOpiekunDodaj_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(348, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Opiekunowie";
+            // 
+            // dgvOpiekunowie
+            // 
+            this.dgvOpiekunowie.AllowUserToAddRows = false;
+            this.dgvOpiekunowie.AllowUserToDeleteRows = false;
+            this.dgvOpiekunowie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOpiekunowie.Location = new System.Drawing.Point(351, 48);
+            this.dgvOpiekunowie.MultiSelect = false;
+            this.dgvOpiekunowie.Name = "dgvOpiekunowie";
+            this.dgvOpiekunowie.ReadOnly = true;
+            this.dgvOpiekunowie.RowHeadersVisible = false;
+            this.dgvOpiekunowie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOpiekunowie.Size = new System.Drawing.Size(694, 554);
+            this.dgvOpiekunowie.TabIndex = 9;
+            this.dgvOpiekunowie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOpiekunowie_CellContentClick);
             // 
             // tabMagazyn
             // 
@@ -238,168 +411,6 @@
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Zawartość magazynu";
-            // 
-            // tabOpiekun
-            // 
-            this.tabOpiekun.Controls.Add(this.btnOpiekunZapisz);
-            this.tabOpiekun.Controls.Add(this.comboBoxPlec);
-            this.tabOpiekun.Controls.Add(this.label16);
-            this.tabOpiekun.Controls.Add(this.label15);
-            this.tabOpiekun.Controls.Add(this.label14);
-            this.tabOpiekun.Controls.Add(this.label13);
-            this.tabOpiekun.Controls.Add(this.label12);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunNrTel);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunWiek);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunNazwisko);
-            this.tabOpiekun.Controls.Add(this.txtOpiekunImie);
-            this.tabOpiekun.Controls.Add(this.btnOpiekunEdytuj);
-            this.tabOpiekun.Controls.Add(this.btnOpiekunDodaj);
-            this.tabOpiekun.Controls.Add(this.label4);
-            this.tabOpiekun.Controls.Add(this.dgvOpiekunowie);
-            this.tabOpiekun.Location = new System.Drawing.Point(4, 22);
-            this.tabOpiekun.Name = "tabOpiekun";
-            this.tabOpiekun.Size = new System.Drawing.Size(1084, 667);
-            this.tabOpiekun.TabIndex = 2;
-            this.tabOpiekun.Text = "Opiekun";
-            this.tabOpiekun.UseVisualStyleBackColor = true;
-            // 
-            // btnOpiekunZapisz
-            // 
-            this.btnOpiekunZapisz.Location = new System.Drawing.Point(253, 220);
-            this.btnOpiekunZapisz.Name = "btnOpiekunZapisz";
-            this.btnOpiekunZapisz.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekunZapisz.TabIndex = 24;
-            this.btnOpiekunZapisz.Text = "Zapisz";
-            this.btnOpiekunZapisz.UseVisualStyleBackColor = true;
-            this.btnOpiekunZapisz.Click += new System.EventHandler(this.btnOpiekunZapisz_Click);
-            // 
-            // comboBoxPlec
-            // 
-            this.comboBoxPlec.FormattingEnabled = true;
-            this.comboBoxPlec.Items.AddRange(new object[] {
-            "K",
-            "M"});
-            this.comboBoxPlec.Location = new System.Drawing.Point(92, 183);
-            this.comboBoxPlec.Name = "comboBoxPlec";
-            this.comboBoxPlec.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPlec.TabIndex = 23;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 225);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Numer telefonu";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(54, 186);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(30, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Płeć";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(54, 147);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Wiek";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(33, 108);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Nazwisko";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(60, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Imię";
-            // 
-            // txtOpiekunNrTel
-            // 
-            this.txtOpiekunNrTel.Location = new System.Drawing.Point(92, 222);
-            this.txtOpiekunNrTel.Name = "txtOpiekunNrTel";
-            this.txtOpiekunNrTel.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunNrTel.TabIndex = 17;
-            // 
-            // txtOpiekunWiek
-            // 
-            this.txtOpiekunWiek.Location = new System.Drawing.Point(92, 144);
-            this.txtOpiekunWiek.Name = "txtOpiekunWiek";
-            this.txtOpiekunWiek.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunWiek.TabIndex = 15;
-            // 
-            // txtOpiekunNazwisko
-            // 
-            this.txtOpiekunNazwisko.Location = new System.Drawing.Point(92, 105);
-            this.txtOpiekunNazwisko.Name = "txtOpiekunNazwisko";
-            this.txtOpiekunNazwisko.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunNazwisko.TabIndex = 14;
-            // 
-            // txtOpiekunImie
-            // 
-            this.txtOpiekunImie.Location = new System.Drawing.Point(92, 66);
-            this.txtOpiekunImie.Name = "txtOpiekunImie";
-            this.txtOpiekunImie.Size = new System.Drawing.Size(122, 20);
-            this.txtOpiekunImie.TabIndex = 13;
-            // 
-            // btnOpiekunEdytuj
-            // 
-            this.btnOpiekunEdytuj.Location = new System.Drawing.Point(253, 142);
-            this.btnOpiekunEdytuj.Name = "btnOpiekunEdytuj";
-            this.btnOpiekunEdytuj.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekunEdytuj.TabIndex = 12;
-            this.btnOpiekunEdytuj.Text = "Edytuj";
-            this.btnOpiekunEdytuj.UseVisualStyleBackColor = true;
-            this.btnOpiekunEdytuj.Click += new System.EventHandler(this.btnOpiekunEdytuj_Click);
-            // 
-            // btnOpiekunDodaj
-            // 
-            this.btnOpiekunDodaj.Location = new System.Drawing.Point(253, 64);
-            this.btnOpiekunDodaj.Name = "btnOpiekunDodaj";
-            this.btnOpiekunDodaj.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekunDodaj.TabIndex = 11;
-            this.btnOpiekunDodaj.Text = "Dodaj";
-            this.btnOpiekunDodaj.UseVisualStyleBackColor = true;
-            this.btnOpiekunDodaj.Click += new System.EventHandler(this.btnOpiekunDodaj_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(348, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Opiekunowie";
-            // 
-            // dgvOpiekunowie
-            // 
-            this.dgvOpiekunowie.AllowUserToAddRows = false;
-            this.dgvOpiekunowie.AllowUserToDeleteRows = false;
-            this.dgvOpiekunowie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOpiekunowie.Location = new System.Drawing.Point(351, 48);
-            this.dgvOpiekunowie.MultiSelect = false;
-            this.dgvOpiekunowie.Name = "dgvOpiekunowie";
-            this.dgvOpiekunowie.ReadOnly = true;
-            this.dgvOpiekunowie.RowHeadersVisible = false;
-            this.dgvOpiekunowie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOpiekunowie.Size = new System.Drawing.Size(694, 554);
-            this.dgvOpiekunowie.TabIndex = 9;
-            this.dgvOpiekunowie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOpiekunowie_CellContentClick);
             // 
             // tabJedzenie
             // 
@@ -462,6 +473,7 @@
             // 
             // comboBoxJedzenieMagID
             // 
+            this.comboBoxJedzenieMagID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJedzenieMagID.FormattingEnabled = true;
             this.comboBoxJedzenieMagID.Items.AddRange(new object[] {
             "1",
@@ -471,9 +483,11 @@
             this.comboBoxJedzenieMagID.Name = "comboBoxJedzenieMagID";
             this.comboBoxJedzenieMagID.Size = new System.Drawing.Size(206, 21);
             this.comboBoxJedzenieMagID.TabIndex = 16;
+            this.comboBoxJedzenieMagID.SelectedIndexChanged += new System.EventHandler(this.comboBoxJedzenieMagID_SelectedIndexChanged);
             // 
             // comboBoxJedzenieRodzaj
             // 
+            this.comboBoxJedzenieRodzaj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJedzenieRodzaj.FormattingEnabled = true;
             this.comboBoxJedzenieRodzaj.Items.AddRange(new object[] {
             "Mięso",
@@ -483,6 +497,7 @@
             this.comboBoxJedzenieRodzaj.Name = "comboBoxJedzenieRodzaj";
             this.comboBoxJedzenieRodzaj.Size = new System.Drawing.Size(206, 21);
             this.comboBoxJedzenieRodzaj.TabIndex = 15;
+            this.comboBoxJedzenieRodzaj.SelectedIndexChanged += new System.EventHandler(this.comboBoxJedzenieRodzaj_SelectedIndexChanged);
             // 
             // txtJedzenieOpis
             // 
@@ -498,9 +513,11 @@
             this.txtJedzenieNazwa.Name = "txtJedzenieNazwa";
             this.txtJedzenieNazwa.Size = new System.Drawing.Size(206, 20);
             this.txtJedzenieNazwa.TabIndex = 13;
+            this.txtJedzenieNazwa.TextChanged += new System.EventHandler(this.txtJedzenieNazwa_TextChanged);
             // 
             // btnJedzenieZapisz
             // 
+            this.btnJedzenieZapisz.Enabled = false;
             this.btnJedzenieZapisz.Location = new System.Drawing.Point(334, 200);
             this.btnJedzenieZapisz.Name = "btnJedzenieZapisz";
             this.btnJedzenieZapisz.Size = new System.Drawing.Size(79, 34);
@@ -641,6 +658,7 @@
             // 
             // btnKlatkaZapisz
             // 
+            this.btnKlatkaZapisz.Enabled = false;
             this.btnKlatkaZapisz.Location = new System.Drawing.Point(227, 198);
             this.btnKlatkaZapisz.Name = "btnKlatkaZapisz";
             this.btnKlatkaZapisz.Size = new System.Drawing.Size(75, 23);
@@ -705,14 +723,17 @@
             // 
             // comboBoxKlatkaOpiekun
             // 
+            this.comboBoxKlatkaOpiekun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKlatkaOpiekun.FormattingEnabled = true;
             this.comboBoxKlatkaOpiekun.Location = new System.Drawing.Point(96, 198);
             this.comboBoxKlatkaOpiekun.Name = "comboBoxKlatkaOpiekun";
             this.comboBoxKlatkaOpiekun.Size = new System.Drawing.Size(100, 21);
             this.comboBoxKlatkaOpiekun.TabIndex = 18;
+            this.comboBoxKlatkaOpiekun.SelectedIndexChanged += new System.EventHandler(this.comboBoxKlatkaOpiekun_SelectedIndexChanged);
             // 
             // comboBoxKlatkaSektor
             // 
+            this.comboBoxKlatkaSektor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKlatkaSektor.FormattingEnabled = true;
             this.comboBoxKlatkaSektor.Items.AddRange(new object[] {
             "1",
@@ -725,6 +746,7 @@
             this.comboBoxKlatkaSektor.Name = "comboBoxKlatkaSektor";
             this.comboBoxKlatkaSektor.Size = new System.Drawing.Size(100, 21);
             this.comboBoxKlatkaSektor.TabIndex = 17;
+            this.comboBoxKlatkaSektor.SelectedIndexChanged += new System.EventHandler(this.comboBoxKlatkaSektor_SelectedIndexChanged);
             // 
             // txtKlatkaGlebokosc
             // 
@@ -732,6 +754,8 @@
             this.txtKlatkaGlebokosc.Name = "txtKlatkaGlebokosc";
             this.txtKlatkaGlebokosc.Size = new System.Drawing.Size(100, 20);
             this.txtKlatkaGlebokosc.TabIndex = 16;
+            this.txtKlatkaGlebokosc.TextChanged += new System.EventHandler(this.txtKlatkaGlebokosc_TextChanged);
+            this.txtKlatkaGlebokosc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKlatkaGlebokosc_KeyPress);
             // 
             // txtKlatkaSzerokosc
             // 
@@ -739,6 +763,8 @@
             this.txtKlatkaSzerokosc.Name = "txtKlatkaSzerokosc";
             this.txtKlatkaSzerokosc.Size = new System.Drawing.Size(100, 20);
             this.txtKlatkaSzerokosc.TabIndex = 15;
+            this.txtKlatkaSzerokosc.TextChanged += new System.EventHandler(this.txtKlatkaSzerokosc_TextChanged);
+            this.txtKlatkaSzerokosc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKlatkaSzerokosc_KeyPress);
             // 
             // txtKlatkaWysokosc
             // 
@@ -746,6 +772,8 @@
             this.txtKlatkaWysokosc.Name = "txtKlatkaWysokosc";
             this.txtKlatkaWysokosc.Size = new System.Drawing.Size(100, 20);
             this.txtKlatkaWysokosc.TabIndex = 14;
+            this.txtKlatkaWysokosc.TextChanged += new System.EventHandler(this.txtKlatkaWysokosc_TextChanged);
+            this.txtKlatkaWysokosc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKlatkaWysokosc_KeyPress);
             // 
             // txtKlatkaNazwa
             // 
@@ -753,6 +781,8 @@
             this.txtKlatkaNazwa.Name = "txtKlatkaNazwa";
             this.txtKlatkaNazwa.Size = new System.Drawing.Size(100, 20);
             this.txtKlatkaNazwa.TabIndex = 13;
+            this.txtKlatkaNazwa.TextChanged += new System.EventHandler(this.txtKlatkaNazwa_TextChanged);
+            this.txtKlatkaNazwa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKlatkaNazwa_KeyPress);
             // 
             // btnKlatkaEdytuj
             // 
@@ -819,6 +849,121 @@
             this.tabZwierze.Text = "Zwierzę";
             this.tabZwierze.UseVisualStyleBackColor = true;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(41, 189);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(37, 13);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Klatka";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(4, 163);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(74, 13);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "Data przyjęcia";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(48, 136);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(30, 13);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Płeć";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(30, 110);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(50, 13);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Gromada";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(46, 84);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(32, 13);
+            this.label26.TabIndex = 21;
+            this.label26.Text = "Wiek";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(38, 60);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(40, 13);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "Nazwa";
+            // 
+            // comboBoxZwierzeKlatka
+            // 
+            this.comboBoxZwierzeKlatka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxZwierzeKlatka.FormattingEnabled = true;
+            this.comboBoxZwierzeKlatka.Location = new System.Drawing.Point(84, 186);
+            this.comboBoxZwierzeKlatka.Name = "comboBoxZwierzeKlatka";
+            this.comboBoxZwierzeKlatka.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxZwierzeKlatka.TabIndex = 19;
+            // 
+            // comboBoxZwierzePlec
+            // 
+            this.comboBoxZwierzePlec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxZwierzePlec.FormattingEnabled = true;
+            this.comboBoxZwierzePlec.Items.AddRange(new object[] {
+            "K",
+            "M"});
+            this.comboBoxZwierzePlec.Location = new System.Drawing.Point(84, 133);
+            this.comboBoxZwierzePlec.Name = "comboBoxZwierzePlec";
+            this.comboBoxZwierzePlec.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxZwierzePlec.TabIndex = 18;
+            // 
+            // txtZwierzeDataPrzyjecia
+            // 
+            this.txtZwierzeDataPrzyjecia.Location = new System.Drawing.Point(84, 160);
+            this.txtZwierzeDataPrzyjecia.Name = "txtZwierzeDataPrzyjecia";
+            this.txtZwierzeDataPrzyjecia.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeDataPrzyjecia.TabIndex = 17;
+            // 
+            // txtZwierzeGatunek
+            // 
+            this.txtZwierzeGatunek.Location = new System.Drawing.Point(84, 107);
+            this.txtZwierzeGatunek.Name = "txtZwierzeGatunek";
+            this.txtZwierzeGatunek.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeGatunek.TabIndex = 16;
+            // 
+            // txtZwierzeWiek
+            // 
+            this.txtZwierzeWiek.Location = new System.Drawing.Point(84, 81);
+            this.txtZwierzeWiek.Name = "txtZwierzeWiek";
+            this.txtZwierzeWiek.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeWiek.TabIndex = 15;
+            // 
+            // txtZwierzeNazwa
+            // 
+            this.txtZwierzeNazwa.Location = new System.Drawing.Point(84, 55);
+            this.txtZwierzeNazwa.Name = "txtZwierzeNazwa";
+            this.txtZwierzeNazwa.Size = new System.Drawing.Size(164, 20);
+            this.txtZwierzeNazwa.TabIndex = 14;
+            this.txtZwierzeNazwa.TextChanged += new System.EventHandler(this.txtZwierzeNazwa_TextChanged);
+            // 
+            // btnZwierzeZapisz
+            // 
+            this.btnZwierzeZapisz.Location = new System.Drawing.Point(265, 183);
+            this.btnZwierzeZapisz.Name = "btnZwierzeZapisz";
+            this.btnZwierzeZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnZwierzeZapisz.TabIndex = 13;
+            this.btnZwierzeZapisz.Text = "Zapisz";
+            this.btnZwierzeZapisz.UseVisualStyleBackColor = true;
+            this.btnZwierzeZapisz.Click += new System.EventHandler(this.btnZwierzeZapisz_Click);
+            // 
             // btnZwierzeEdytuj
             // 
             this.btnZwierzeEdytuj.Location = new System.Drawing.Point(265, 119);
@@ -881,6 +1026,100 @@
             this.tabOpieka.TabIndex = 5;
             this.tabOpieka.Text = "Opieka";
             this.tabOpieka.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(62, 219);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(47, 13);
+            this.label35.TabIndex = 23;
+            this.label35.Text = "Opiekun";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(65, 181);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(44, 13);
+            this.label34.TabIndex = 22;
+            this.label34.Text = "Zwierzę";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(79, 144);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(30, 13);
+            this.label33.TabIndex = 21;
+            this.label33.Text = "Data";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(38, 107);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(71, 13);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "Koniec opieki";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(9, 69);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(100, 13);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "Rozpoczęcie opieki";
+            // 
+            // btnOpiekaZapisz
+            // 
+            this.btnOpiekaZapisz.Location = new System.Drawing.Point(253, 214);
+            this.btnOpiekaZapisz.Name = "btnOpiekaZapisz";
+            this.btnOpiekaZapisz.Size = new System.Drawing.Size(75, 23);
+            this.btnOpiekaZapisz.TabIndex = 18;
+            this.btnOpiekaZapisz.Text = "Zapisz";
+            this.btnOpiekaZapisz.UseVisualStyleBackColor = true;
+            this.btnOpiekaZapisz.Click += new System.EventHandler(this.btnOpiekaZapisz_Click);
+            // 
+            // comboBoxOpiekaOpiekun
+            // 
+            this.comboBoxOpiekaOpiekun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOpiekaOpiekun.FormattingEnabled = true;
+            this.comboBoxOpiekaOpiekun.Location = new System.Drawing.Point(115, 216);
+            this.comboBoxOpiekaOpiekun.Name = "comboBoxOpiekaOpiekun";
+            this.comboBoxOpiekaOpiekun.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxOpiekaOpiekun.TabIndex = 17;
+            // 
+            // comboBoxOpiekaZwierze
+            // 
+            this.comboBoxOpiekaZwierze.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOpiekaZwierze.FormattingEnabled = true;
+            this.comboBoxOpiekaZwierze.Location = new System.Drawing.Point(115, 178);
+            this.comboBoxOpiekaZwierze.Name = "comboBoxOpiekaZwierze";
+            this.comboBoxOpiekaZwierze.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxOpiekaZwierze.TabIndex = 16;
+            // 
+            // txtOpiekaData
+            // 
+            this.txtOpiekaData.Location = new System.Drawing.Point(115, 141);
+            this.txtOpiekaData.Name = "txtOpiekaData";
+            this.txtOpiekaData.Size = new System.Drawing.Size(100, 20);
+            this.txtOpiekaData.TabIndex = 15;
+            // 
+            // txtOpiekaKonOpieki
+            // 
+            this.txtOpiekaKonOpieki.Location = new System.Drawing.Point(115, 104);
+            this.txtOpiekaKonOpieki.Name = "txtOpiekaKonOpieki";
+            this.txtOpiekaKonOpieki.Size = new System.Drawing.Size(100, 20);
+            this.txtOpiekaKonOpieki.TabIndex = 14;
+            // 
+            // txtOpiekaRozpOpieki
+            // 
+            this.txtOpiekaRozpOpieki.Location = new System.Drawing.Point(115, 67);
+            this.txtOpiekaRozpOpieki.Name = "txtOpiekaRozpOpieki";
+            this.txtOpiekaRozpOpieki.Size = new System.Drawing.Size(100, 20);
+            this.txtOpiekaRozpOpieki.TabIndex = 13;
             // 
             // btnOpiekaEdytuj
             // 
@@ -946,213 +1185,9 @@
             // 
             this.klatkaTA.ClearBeforeFill = true;
             // 
-            // btnZwierzeZapisz
-            // 
-            this.btnZwierzeZapisz.Location = new System.Drawing.Point(265, 183);
-            this.btnZwierzeZapisz.Name = "btnZwierzeZapisz";
-            this.btnZwierzeZapisz.Size = new System.Drawing.Size(75, 23);
-            this.btnZwierzeZapisz.TabIndex = 13;
-            this.btnZwierzeZapisz.Text = "Zapisz";
-            this.btnZwierzeZapisz.UseVisualStyleBackColor = true;
-            this.btnZwierzeZapisz.Click += new System.EventHandler(this.btnZwierzeZapisz_Click);
-            // 
-            // txtZwierzeNazwa
-            // 
-            this.txtZwierzeNazwa.Location = new System.Drawing.Point(84, 55);
-            this.txtZwierzeNazwa.Name = "txtZwierzeNazwa";
-            this.txtZwierzeNazwa.Size = new System.Drawing.Size(164, 20);
-            this.txtZwierzeNazwa.TabIndex = 14;
-            // 
-            // txtZwierzeWiek
-            // 
-            this.txtZwierzeWiek.Location = new System.Drawing.Point(84, 81);
-            this.txtZwierzeWiek.Name = "txtZwierzeWiek";
-            this.txtZwierzeWiek.Size = new System.Drawing.Size(164, 20);
-            this.txtZwierzeWiek.TabIndex = 15;
-            // 
-            // txtZwierzeGatunek
-            // 
-            this.txtZwierzeGatunek.Location = new System.Drawing.Point(84, 107);
-            this.txtZwierzeGatunek.Name = "txtZwierzeGatunek";
-            this.txtZwierzeGatunek.Size = new System.Drawing.Size(164, 20);
-            this.txtZwierzeGatunek.TabIndex = 16;
-            // 
-            // txtZwierzeDataPrzyjecia
-            // 
-            this.txtZwierzeDataPrzyjecia.Location = new System.Drawing.Point(84, 160);
-            this.txtZwierzeDataPrzyjecia.Name = "txtZwierzeDataPrzyjecia";
-            this.txtZwierzeDataPrzyjecia.Size = new System.Drawing.Size(164, 20);
-            this.txtZwierzeDataPrzyjecia.TabIndex = 17;
-            // 
-            // comboBoxZwierzePlec
-            // 
-            this.comboBoxZwierzePlec.FormattingEnabled = true;
-            this.comboBoxZwierzePlec.Items.AddRange(new object[] {
-            "K",
-            "M"});
-            this.comboBoxZwierzePlec.Location = new System.Drawing.Point(84, 133);
-            this.comboBoxZwierzePlec.Name = "comboBoxZwierzePlec";
-            this.comboBoxZwierzePlec.Size = new System.Drawing.Size(164, 21);
-            this.comboBoxZwierzePlec.TabIndex = 18;
-            // 
-            // comboBoxZwierzeKlatka
-            // 
-            this.comboBoxZwierzeKlatka.FormattingEnabled = true;
-            this.comboBoxZwierzeKlatka.Location = new System.Drawing.Point(84, 186);
-            this.comboBoxZwierzeKlatka.Name = "comboBoxZwierzeKlatka";
-            this.comboBoxZwierzeKlatka.Size = new System.Drawing.Size(164, 21);
-            this.comboBoxZwierzeKlatka.TabIndex = 19;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(38, 60);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(40, 13);
-            this.label25.TabIndex = 20;
-            this.label25.Text = "Nazwa";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(46, 84);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(32, 13);
-            this.label26.TabIndex = 21;
-            this.label26.Text = "Wiek";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(30, 110);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(48, 13);
-            this.label27.TabIndex = 22;
-            this.label27.Text = "Gatunek";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(48, 136);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(30, 13);
-            this.label28.TabIndex = 23;
-            this.label28.Text = "Płeć";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(4, 163);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(74, 13);
-            this.label29.TabIndex = 24;
-            this.label29.Text = "Data przyjęcia";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(41, 189);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(37, 13);
-            this.label30.TabIndex = 25;
-            this.label30.Text = "Klatka";
-            // 
             // zwierzeTA
             // 
             this.zwierzeTA.ClearBeforeFill = true;
-            // 
-            // txtOpiekaRozpOpieki
-            // 
-            this.txtOpiekaRozpOpieki.Location = new System.Drawing.Point(115, 67);
-            this.txtOpiekaRozpOpieki.Name = "txtOpiekaRozpOpieki";
-            this.txtOpiekaRozpOpieki.Size = new System.Drawing.Size(100, 20);
-            this.txtOpiekaRozpOpieki.TabIndex = 13;
-            // 
-            // txtOpiekaKonOpieki
-            // 
-            this.txtOpiekaKonOpieki.Location = new System.Drawing.Point(115, 104);
-            this.txtOpiekaKonOpieki.Name = "txtOpiekaKonOpieki";
-            this.txtOpiekaKonOpieki.Size = new System.Drawing.Size(100, 20);
-            this.txtOpiekaKonOpieki.TabIndex = 14;
-            // 
-            // txtOpiekaData
-            // 
-            this.txtOpiekaData.Location = new System.Drawing.Point(115, 141);
-            this.txtOpiekaData.Name = "txtOpiekaData";
-            this.txtOpiekaData.Size = new System.Drawing.Size(100, 20);
-            this.txtOpiekaData.TabIndex = 15;
-            // 
-            // comboBoxOpiekaZwierze
-            // 
-            this.comboBoxOpiekaZwierze.FormattingEnabled = true;
-            this.comboBoxOpiekaZwierze.Location = new System.Drawing.Point(115, 178);
-            this.comboBoxOpiekaZwierze.Name = "comboBoxOpiekaZwierze";
-            this.comboBoxOpiekaZwierze.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxOpiekaZwierze.TabIndex = 16;
-            // 
-            // comboBoxOpiekaOpiekun
-            // 
-            this.comboBoxOpiekaOpiekun.FormattingEnabled = true;
-            this.comboBoxOpiekaOpiekun.Location = new System.Drawing.Point(115, 216);
-            this.comboBoxOpiekaOpiekun.Name = "comboBoxOpiekaOpiekun";
-            this.comboBoxOpiekaOpiekun.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxOpiekaOpiekun.TabIndex = 17;
-            // 
-            // btnOpiekaZapisz
-            // 
-            this.btnOpiekaZapisz.Location = new System.Drawing.Point(253, 214);
-            this.btnOpiekaZapisz.Name = "btnOpiekaZapisz";
-            this.btnOpiekaZapisz.Size = new System.Drawing.Size(75, 23);
-            this.btnOpiekaZapisz.TabIndex = 18;
-            this.btnOpiekaZapisz.Text = "Zapisz";
-            this.btnOpiekaZapisz.UseVisualStyleBackColor = true;
-            this.btnOpiekaZapisz.Click += new System.EventHandler(this.btnOpiekaZapisz_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(9, 69);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(100, 13);
-            this.label31.TabIndex = 19;
-            this.label31.Text = "Rozpoczęcie opieki";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(38, 107);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(71, 13);
-            this.label32.TabIndex = 20;
-            this.label32.Text = "Koniec opieki";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(79, 144);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(30, 13);
-            this.label33.TabIndex = 21;
-            this.label33.Text = "Data";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(65, 181);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(44, 13);
-            this.label34.TabIndex = 22;
-            this.label34.Text = "Zwierzę";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(62, 219);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(47, 13);
-            this.label35.TabIndex = 23;
-            this.label35.Text = "Opiekun";
             // 
             // opiekaTA
             // 
@@ -1167,13 +1202,13 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
+            this.tabOpiekun.ResumeLayout(false);
+            this.tabOpiekun.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).EndInit();
             this.tabMagazyn.ResumeLayout(false);
             this.tabMagazyn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazynZawartosc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMagazyny)).EndInit();
-            this.tabOpiekun.ResumeLayout(false);
-            this.tabOpiekun.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOpiekunowie)).EndInit();
             this.tabJedzenie.ResumeLayout(false);
             this.tabJedzenie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJedzenie)).EndInit();

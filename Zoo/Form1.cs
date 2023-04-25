@@ -49,6 +49,8 @@ namespace Zoo
             this.dbAction = DBActions.None;
         }
 
+        
+
         private DBActions dbAction = DBActions.None;
         ZooDataSet.OpiekunRow _selectedRow = null;
         ZooDataSet.JedzenieRow _selectedRowJedzenie = null;
@@ -65,6 +67,7 @@ namespace Zoo
         {
             InitializeComponent();
             //LOADING
+
             try
             {
                 //1. fill data set
@@ -153,8 +156,6 @@ namespace Zoo
                 MessageBox.Show("Błąd: " + ex.Message);
             }
         }
-
-        
 
         private void btnOpiekunEdytuj_Click(object sender, EventArgs e)
         {
@@ -679,6 +680,247 @@ namespace Zoo
             catch (Exception ex)
             {
                 MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        private void txtOpiekunImie_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
+            {
+                btnOpiekunZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekunZapisz.Enabled = false;
+            }
+        }
+
+        private void txtOpiekunImie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOpiekunNazwisko_TextChanged(object sender, EventArgs e)
+        {
+            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
+            {
+                btnOpiekunZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekunZapisz.Enabled = false;
+            }
+        }
+
+        private void txtOpiekunNazwisko_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOpiekunWiek_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOpiekunWiek_TextChanged(object sender, EventArgs e)
+        {
+            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
+            {
+                btnOpiekunZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekunZapisz.Enabled = false;
+            }
+        }
+
+        private void txtOpiekunNrTel_TextChanged(object sender, EventArgs e)
+        {
+            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
+            {
+                btnOpiekunZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekunZapisz.Enabled = false;
+            }
+        }
+
+        private void txtOpiekunNrTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtJedzenieNazwa_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxJedzenieMagID.SelectedIndex != -1 && comboBoxJedzenieRodzaj.SelectedIndex != -1 && txtJedzenieNazwa.Text.Length >= 3)
+            {
+                btnJedzenieZapisz.Enabled = true;
+            }
+            else
+            {
+                btnJedzenieZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxJedzenieRodzaj_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxJedzenieMagID.SelectedIndex != -1 && comboBoxJedzenieRodzaj.SelectedIndex != -1 && txtJedzenieNazwa.Text.Length >= 3)
+            {
+                btnJedzenieZapisz.Enabled = true;
+            }
+            else
+            {
+                btnJedzenieZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxJedzenieMagID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxJedzenieMagID.SelectedIndex != -1 && comboBoxJedzenieRodzaj.SelectedIndex != -1 && txtJedzenieNazwa.Text.Length >= 3)
+            {
+                btnJedzenieZapisz.Enabled = true;
+            }
+            else
+            {
+                btnJedzenieZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxPlec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtOpiekunNrTel.Text.Length == 9 && comboBoxPlec.SelectedIndex != -1 && txtOpiekunNazwisko.Text.Length >= 3 && int.TryParse(txtOpiekunWiek.Text, out int age) && age >= 18 && age <= 70 && txtOpiekunImie.Text.Length >= 3)
+            {
+                btnOpiekunZapisz.Enabled = true;
+            }
+            else
+            {
+                btnOpiekunZapisz.Enabled = false;
+            }
+        }
+
+        private void txtKlatkaNazwa_TextChanged(object sender, EventArgs e)
+        {
+            if (txtKlatkaNazwa.Text.Length >= 2 && int.TryParse(txtKlatkaWysokosc.Text, out int wysokosc) && wysokosc >= 50 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnKlatkaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnKlatkaZapisz.Enabled = false;
+            }
+        }
+
+        private void txtKlatkaNazwa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtKlatkaWysokosc_TextChanged(object sender, EventArgs e)
+        {
+            if (txtKlatkaNazwa.Text.Length >= 2 && int.TryParse(txtKlatkaWysokosc.Text, out int wysokosc) && wysokosc >= 50 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnKlatkaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnKlatkaZapisz.Enabled = false;
+            }
+        }
+
+        private void txtKlatkaWysokosc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtKlatkaSzerokosc_TextChanged(object sender, EventArgs e)
+        {
+            if (txtKlatkaNazwa.Text.Length >= 2 && int.TryParse(txtKlatkaWysokosc.Text, out int wysokosc) && wysokosc >= 50 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnKlatkaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnKlatkaZapisz.Enabled = false;
+            }
+        }
+
+        private void txtKlatkaSzerokosc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtKlatkaGlebokosc_TextChanged(object sender, EventArgs e)
+        {
+            if (txtKlatkaNazwa.Text.Length >= 2 && int.TryParse(txtKlatkaWysokosc.Text, out int wysokosc) && wysokosc >= 50 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnKlatkaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnKlatkaZapisz.Enabled = false;
+            }
+        }
+
+        private void txtKlatkaGlebokosc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBoxKlatkaSektor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtKlatkaNazwa.Text.Length >= 2 && int.TryParse(txtKlatkaWysokosc.Text, out int wysokosc) && wysokosc >= 50 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnKlatkaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnKlatkaZapisz.Enabled = false;
+            }
+        }
+
+        private void comboBoxKlatkaOpiekun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtKlatkaNazwa.Text.Length >= 2 && int.TryParse(txtKlatkaWysokosc.Text, out int wysokosc) && wysokosc >= 50 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnKlatkaZapisz.Enabled = true;
+            }
+            else
+            {
+                btnKlatkaZapisz.Enabled = false;
+            }
+        }
+
+        private void txtZwierzeNazwa_TextChanged(object sender, EventArgs e)
+        {
+            if (txtZwierzeNazwa.Text.Length >= 3 && int.TryParse(txtZwierzeWiek.Text, out int wiek) && wiek >= 0 && wiek <= 500 && int.TryParse(txtKlatkaSzerokosc.Text, out int szerokosc) && szerokosc >= 50 && int.TryParse(txtKlatkaGlebokosc.Text, out int glebokosc) && glebokosc >= 50 && comboBoxKlatkaSektor.SelectedIndex != -1 && comboBoxKlatkaOpiekun.SelectedIndex != -1)
+            {
+                btnZwierzeZapisz.Enabled = true;
+            }
+            else
+            {
+                btnZwierzeZapisz.Enabled = false;
             }
         }
     }
